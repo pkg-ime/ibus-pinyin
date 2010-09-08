@@ -1,0 +1,54 @@
+Source: ibus-pinyin
+Section: utils
+Priority: optional
+Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
+Uploaders: LI Daobing <lidaobing@debian.org>, Asias He <asias.hejun@gmail.com>
+Build-Depends: debhelper (>= 7), autotools-dev, swig, pkg-config,
+ libibus-dev (>= 1.2.99), libsqlite3-dev (>= 3.6), sqlite3, uuid-dev,
+ python-support, intltool (>= 0.35.0), libboost-dev (>= 1.39), liblua5.1-0-dev,
+ libopencc-dev (>= 0.1.0)
+Standards-Version: 3.9.1
+Homepage: http://code.google.com/p/ibus
+Vcs-Bzr: lp:~pkg-ime/ibus/debian-ibus-pinyin
+Vcs-Browser: https://code.launchpad.net/~pkg-ime/ibus/debian-ibus-pinyin
+
+Package: ibus-pinyin
+Architecture: any
+Depends: ibus-pinyin-db-open-phrase (=${source:Version}) | ibus-pinyin-db-android (=${source:Version}),
+ ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, ibus (>= 1.2.99)
+Description: pinyin engine for ibus
+ ibus-pinyin is a im engine for Chinese, based on ibus.
+ .
+ this package provide one input method:
+   * pinyin: pinyin input method.
+ .
+ for more information on pinyin input method, check
+ http://en.wikipedia.org/wiki/Pinyin_method .
+
+Package: ibus-pinyin-db-open-phrase
+Architecture: all
+Depends: ${misc:Depends}, pinyin-database (>= 1.2.99-3~), pinyin-database (<< 1.2.100)
+Description: pinyin engine for ibus, open-phrase database
+ ibus-pinyin is a im engine for Chinese, based on ibus.
+ .
+ this package provide one input method:
+   * pinyin: pinyin input method.
+ .
+ for more information on pinyin input method, check
+ http://en.wikipedia.org/wiki/Pinyin_method .
+ .
+ This package contains the open-phrase data files used by ibus-pinyin.
+
+Package: ibus-pinyin-db-android
+Architecture: all
+Depends: ${misc:Depends}
+Description: pinyin engine for ibus, android database
+ ibus-pinyin is a im engine for Chinese, based on ibus.
+ .
+ this package provide one input method:
+   * pinyin: pinyin input method.
+ .
+ for more information on pinyin input method, check
+ http://en.wikipedia.org/wiki/Pinyin_method .
+ .
+ This package contains the android data files used by ibus-pinyin.
