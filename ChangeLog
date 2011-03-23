@@ -1,0 +1,7888 @@
+commit eb321b4ad179d0f30a6bbf08bcc8e793a0c29f19
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-09-06 10:43:20 +0800
+
+    release 1.3.11
+
+M	configure.ac
+
+commit 895bd567cbf353927839647303fa58e12a3ab5e1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-09-06 10:41:04 +0800
+
+    Fix make distcheck errors.
+
+M	po/POTFILES.in
+M	po/ru.po
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+M	src/Makefile.am
+
+commit ff252da6d8603fcf3679a369a63ceb731f2caeb7
+Author: Yusuke Sato <yusukes@chromium.org>
+Date:   2010-05-11 11:33:05 +0900
+
+    Tiny modification to m4/boost.m4.
+    
+    Pass $CXXFLAGS to $ac_cpp to make cross-compilation of ibus-pinyin easy.
+    
+    BUG=none
+    TEST=ran emerge-x86-generic -a ibus-pinyin.
+    
+    Review URL: http://codereview.chromium.org/2045008
+
+M	m4/boost.m4
+
+commit 8fef79fdf46eb0c9a342c76f79b613540dbf6632
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-08-23 09:54:49 +0800
+
+    Remove sqlite3 in create_db.py
+
+M	data/db/android/create_db.py
+
+commit e47965d40f5cf56b15c10aca74fff0e3739c988d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-08-14 06:43:29 +0800
+
+    Remove duplicated EXTRA_DIST value in lua/Makefile.am
+
+M	lua/Makefile.am
+
+commit f3f325b0603ed635d076a5e6430164b2c72b21da
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-08-13 16:20:01 +0800
+
+    Add PY prefix of all file names to avoid name conflict on some file
+    system than is case insensitive.
+
+D	src/Bopomofo.h
+D	src/BopomofoEditor.cc
+D	src/BopomofoEditor.h
+D	src/BopomofoEngine.cc
+D	src/BopomofoEngine.h
+D	src/BopomofoKeyboard.h
+D	src/Bus.h
+D	src/Config.cc
+D	src/Config.h
+D	src/Database.cc
+D	src/Database.h
+D	src/DoublePinyinEditor.cc
+D	src/DoublePinyinEditor.h
+D	src/DoublePinyinTable.h
+D	src/DynamicSpecialPhrase.cc
+D	src/DynamicSpecialPhrase.h
+D	src/Editor.cc
+D	src/Editor.h
+D	src/Engine.cc
+D	src/Engine.h
+D	src/ExtEditor.cc
+D	src/ExtEditor.h
+D	src/FallbackEditor.cc
+D	src/FallbackEditor.h
+D	src/FullPinyinEditor.cc
+D	src/FullPinyinEditor.h
+D	src/HalfFullConverter.cc
+D	src/HalfFullConverter.h
+D	src/LookupTable.h
+D	src/Main.cc
+M	src/Makefile.am
+D	src/Object.h
+A	src/PYBopomofo.h
+A	src/PYBopomofoEditor.cc
+A	src/PYBopomofoEditor.h
+A	src/PYBopomofoEngine.cc
+A	src/PYBopomofoEngine.h
+A	src/PYBopomofoKeyboard.h
+A	src/PYBus.h
+A	src/PYConfig.cc
+A	src/PYConfig.h
+A	src/PYDatabase.cc
+A	src/PYDatabase.h
+A	src/PYDoublePinyinEditor.cc
+A	src/PYDoublePinyinEditor.h
+A	src/PYDoublePinyinTable.h
+A	src/PYDynamicSpecialPhrase.cc
+A	src/PYDynamicSpecialPhrase.h
+A	src/PYEditor.cc
+A	src/PYEditor.h
+A	src/PYEngine.cc
+A	src/PYEngine.h
+A	src/PYExtEditor.cc
+A	src/PYExtEditor.h
+A	src/PYFallbackEditor.cc
+A	src/PYFallbackEditor.h
+A	src/PYFullPinyinEditor.cc
+A	src/PYFullPinyinEditor.h
+A	src/PYHalfFullConverter.cc
+A	src/PYHalfFullConverter.h
+A	src/PYLookupTable.h
+A	src/PYMain.cc
+A	src/PYObject.h
+A	src/PYPhoneticEditor.cc
+A	src/PYPhoneticEditor.h
+A	src/PYPhrase.h
+A	src/PYPhraseArray.h
+A	src/PYPhraseEditor.cc
+A	src/PYPhraseEditor.h
+A	src/PYPinyinArray.h
+A	src/PYPinyinEditor.cc
+A	src/PYPinyinEditor.h
+A	src/PYPinyinEngine.cc
+A	src/PYPinyinEngine.h
+A	src/PYPinyinParser.cc
+A	src/PYPinyinParser.h
+A	src/PYPinyinParserTable.h
+A	src/PYPinyinProperties.cc
+A	src/PYPinyinProperties.h
+A	src/PYPointer.h
+A	src/PYProperty.h
+A	src/PYPunctEditor.cc
+A	src/PYPunctEditor.h
+A	src/PYPunctTable.h
+A	src/PYRawEditor.h
+A	src/PYRegex.h
+A	src/PYSignal.h
+A	src/PYSimpTradConverter.cc
+A	src/PYSimpTradConverter.h
+A	src/PYSimpTradConverterTable.h
+A	src/PYSpecialPhrase.cc
+A	src/PYSpecialPhrase.h
+A	src/PYSpecialPhraseTable.cc
+A	src/PYSpecialPhraseTable.h
+A	src/PYString.h
+A	src/PYText.h
+A	src/PYTypes.h
+A	src/PYUtil.h
+D	src/PhoneticEditor.cc
+D	src/PhoneticEditor.h
+D	src/Phrase.h
+D	src/PhraseArray.h
+D	src/PhraseEditor.cc
+D	src/PhraseEditor.h
+D	src/PinyinArray.h
+D	src/PinyinEditor.cc
+D	src/PinyinEditor.h
+D	src/PinyinEngine.cc
+D	src/PinyinEngine.h
+D	src/PinyinParser.cc
+D	src/PinyinParser.h
+D	src/PinyinParserTable.h
+D	src/PinyinProperties.cc
+D	src/PinyinProperties.h
+D	src/Pointer.h
+D	src/Property.h
+D	src/PunctEditor.cc
+D	src/PunctEditor.h
+D	src/PunctTable.h
+D	src/RawEditor.h
+D	src/Regex.h
+D	src/Signal.h
+D	src/SimpTradConverter.cc
+D	src/SimpTradConverter.h
+D	src/SimpTradConverterTable.h
+D	src/SpecialPhrase.cc
+D	src/SpecialPhrase.h
+D	src/SpecialPhraseTable.cc
+D	src/SpecialPhraseTable.h
+D	src/String.h
+D	src/Text.h
+D	src/Types.h
+D	src/Util.h
+
+commit a32d2b4d5194559b4601cf7e2c65ddc68bdf13e3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-08-17 13:15:52 +0900
+
+    change the default fuzzy settings
+
+M	setup/main.py
+M	src/Config.cc
+
+commit 20f31c8b18cefce89a8ce4b1c790f5aa37442a65
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-08-06 10:45:40 +0800
+
+    Release 1.3.10
+
+M	configure.ac
+
+commit dea6dd8336caa9d76a64b69343d43a65312c6df4
+Author: BYVoid <byvoid.kcp@gmail.com>
+Date:   2010-07-27 22:01:25 +0800
+
+    Use ucs4_t API of OpenCC.
+
+M	src/SimpTradConverter.cc
+
+commit ca206af4c2d9a0b312e3154f57cd4cf8d53bb845
+Author: BYVoid <byvoid.kcp@gmail.com>
+Date:   2010-07-27 22:00:47 +0800
+
+    Fix some default punct mappings in traditional Chinese
+
+M	src/FallbackEditor.cc
+
+commit fb788847f855c0aa4b51797a4049c487fdd80a79
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-20 08:59:15 +0800
+
+    Refine coding style and update AUTHORS
+
+M	AUTHORS
+M	src/DoublePinyinTable.h
+
+commit 4577dca3f1680445177f270dfc63c70af1e0f3d2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-16 14:24:07 +0800
+
+    Release 1.3.9
+
+M	configure.ac
+
+commit f2b7ff6d4eca3b9a6ca284575ff1cbce9d7d0c30
+Merge: d4eb78f f850d40
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-16 14:02:10 +0800
+
+    Merge remote branch 'epic/master'
+
+commit f850d40f939175382e7b801d6b16b4651820c448
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-14 13:40:53 +0800
+
+    fixes error when make distcheck.
+
+M	lua/Makefile.am
+M	lua/test-lua-plugin.c
+M	src/Makefile.am
+
+commit d4eb78f97a6bf7a6a6aedbca7b13ca20b6e7cdb2
+Merge: a05cf80 d604684
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-09 15:36:04 +0800
+
+    Merge remote branch 'epic/master'
+
+commit a05cf80fa3cf602dee0a3ddead14d2e646d6b2f9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-09 15:35:41 +0800
+
+    Fix build problem in ppa
+
+M	configure.ac
+M	debian/control
+M	debian/rules
+M	lua/Makefile.am
+
+commit d6046846b0f5214ed61d92fe8e98b02bb87767d2
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-09 11:42:01 +0800
+
+    only enable lua extension when use single pinyin.
+
+M	src/PinyinEngine.cc
+
+commit 826497eb99e46cc6aa6e4b23b3a94be1e04fe0d1
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-08 13:43:29 +0800
+
+    fixes autoconf bug.
+
+M	configure.ac
+
+commit 15925b00c1d119dd343f3bb6c6532bc36df70c03
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-06 13:55:32 +0800
+
+    add lua version check.
+
+M	configure.ac
+
+commit c4cbd703027566205b9dc4dfef6316717746f097
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-06 12:49:10 +0800
+
+    fixes ExtEditor compile.
+
+M	src/Makefile.am
+
+commit 6cc8818cf72cbe7b56c6394030c6256178e71d28
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-06 12:42:15 +0800
+
+    fixes ubuntu build.
+
+M	configure.ac
+
+commit 1ab6137e03e3d63968544e318d74ff36b807a611
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-06 11:22:44 +0800
+
+    fixes a typo.
+
+M	configure.ac
+
+commit 0d928e4d3300f7dfb4969c7e662d006ff2f73502
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-06 10:46:46 +0800
+
+    Use opencc
+
+M	debian/control
+M	debian/rules
+M	src/SimpTradConverter.cc
+
+commit f46a3755384fb6dab200d42c059d3d9ec6ebbbf3
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-07-05 16:29:48 +0800
+
+    Revert to OpenCC C language API
+
+M	src/SimpTradConverter.cc
+
+commit 4b0a1b6d39fa13a401c70b3ed1f3d293904e8b45
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-22 16:42:18 +0800
+
+    Use Constant of C++ wrapper of OpenCC instead of macro
+
+M	src/SimpTradConverter.cc
+
+commit 47fea81343591499c2949b8c691af037c94539ff
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-18 13:54:33 +0800
+
+    Add error handler for call of OpenCC
+
+M	src/SimpTradConverter.cc
+
+commit a09afd5445915f69bec2d374d9145aa6596978c2
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-18 13:49:58 +0800
+
+    Fix call of OpenCC
+
+M	src/SimpTradConverter.cc
+
+commit 9821b99fb1cfd1925e04e00e5b04184398ffcf0c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-05 15:31:03 +0800
+
+    Disable lua extension by default
+
+M	Makefile.am
+M	configure.ac
+M	lua/Makefile.am
+
+commit 97dd325909f7f8293ce8651a6c04d9ae0b912a00
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-01 16:27:54 +0800
+
+    fixes traditional number.
+
+M	src/DynamicSpecialPhrase.cc
+
+commit 3e35a3aaf06ddb063c04293fc3faa5402119ea60
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-01 16:17:19 +0800
+
+    adding lua-extension flags.
+
+M	configure.ac
+M	src/BopomofoEngine.cc
+M	src/Makefile.am
+M	src/PinyinEngine.cc
+
+commit 0bf5e528bef93ab20ab0c05ca62f5fc0032eaab4
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-01 15:32:36 +0800
+
+    add lua extension compile flags.
+
+M	configure.ac
+M	lua/Makefile.am
+
+commit 008393c40013869af5a8d8c4de618e232ee42dc4
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-01 11:55:52 +0800
+
+    fixes compile errors.
+
+M	src/DynamicSpecialPhrase.cc
+M	src/ExtEditor.cc
+
+commit f754d164d05cc38832837ee75337cd9da8247ca0
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-01 11:46:59 +0800
+
+    re-factor chinese number code.
+
+M	src/DynamicSpecialPhrase.cc
+M	src/DynamicSpecialPhrase.h
+M	src/ExtEditor.cc
+
+commit 607a7ec4e9c67155d931fa66f5d13cb04d986f20
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-01 10:36:39 +0800
+
+    remove some warnings.
+
+M	lua/lua-plugin-init.c
+
+commit e594be88108d50445e7521f69c95bf217c779a8c
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-07-01 10:32:40 +0800
+
+    fixes translation.
+
+M	src/ExtEditor.cc
+
+commit daaebd3d854f4cdaac268a6bf616137eb735ae55
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-29 15:26:32 +0800
+
+    add comments.
+
+M	src/ExtEditor.cc
+
+commit f9f1ef9451a64a1d303bdd3cba8a3f617cb97b4a
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-29 15:21:34 +0800
+
+    fixes huge number.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit e02cb1929119ef62eb9e570d2e530ad9c7513985
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-29 14:50:10 +0800
+
+    fixes aux text.
+
+M	src/ExtEditor.cc
+M	src/LookupTable.h
+
+commit 00533c453e8ab19099ee0e093bdd7e91c94df77f
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-29 14:34:09 +0800
+
+    fixes compile errors.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit a19742702ef27a9f56205534a8172eb9dc894cb2
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-29 14:17:28 +0800
+
+    add Chinese Number Gen code
+
+M	src/ExtEditor.cc
+
+commit 35e87ecdaa28b59607d1570cf87c94ec8ea9d47e
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-23 15:54:13 +0800
+
+    re-factor include headers.
+
+M	lua/lua-ext-console.c
+M	lua/lua-plugin-init.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+M	src/ExtEditor.cc
+
+commit 9af65cb9b6503020450caa14276f42421239ba43
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-23 15:31:58 +0800
+
+    fixes strlen.
+
+M	src/ExtEditor.cc
+
+commit fc845a6adc93589000f2cbff2dff60d33706927c
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-23 10:48:29 +0800
+
+    fixes help display on aux text.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 83a549ad0dd6872fcea509df02666b5cb6488324
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-22 18:08:00 +0800
+
+    fixes space and m_cursor handles.
+
+M	src/ExtEditor.cc
+
+commit 263e1ae756cb07e0c95417e78e478bfa21c05a30
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-22 15:41:46 +0800
+
+    fixes return key.
+    fixes lua script load path.
+
+M	src/ExtEditor.cc
+
+commit 8bb3778bc49ed59114f23f0f80cac738e24e6e0e
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-22 15:16:15 +0800
+
+    fixes digit labels gen.
+    fixes label key '0' to '9'.
+
+M	lua/lua-plugin-init.c
+M	src/ExtEditor.cc
+
+commit 44202f0e3ba96da80197c6ad9a00073015ae7df9
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-22 15:13:09 +0800
+
+    add lua command help hint.
+
+M	src/ExtEditor.cc
+
+commit f0a5cb8020b9689774ce420aa24a66b54dd4d4b5
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-22 15:08:19 +0800
+
+    add enter key press handle.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit e64172c40521e34edeb9ee0aae19de1f0b1a05cd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-22 10:43:36 +0800
+
+    refine code
+
+M	src/ExtEditor.h
+
+commit d8c519eea5f4c21c8158db57a8bac44078708f7e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-22 10:40:44 +0800
+
+    Refine code and fix some warnings
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+M	src/String.h
+
+commit a3f8f98c1c743389ffb2a5e0199cab0fb774c0d7
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-22 10:37:01 +0800
+
+    re-factor ExtEditor header.
+
+M	lua/lua-plugin.h
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit e453b7ecacde36925771326a3eb23380dd3007c1
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-21 15:17:48 +0800
+
+    fixes m_cursor computing.
+
+M	src/ExtEditor.cc
+
+commit 804df27528b7328b62b3a30f11e65b948f7691d1
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-21 14:19:35 +0800
+
+    add license for lua ext mode.
+
+M	lua/lua-ext-console.c
+M	lua/lua-plugin-init.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+
+commit 34bbe4c76b28368411cf921705c8c62fd4da975a
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-21 14:17:21 +0800
+
+    fixes label
+
+M	src/ExtEditor.cc
+
+commit 7841b9d8c603911f5f09e75914f7272f367c22ac
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-21 13:34:12 +0800
+
+    fixes base.lua path.
+
+M	lua/Makefile.am
+M	src/ExtEditor.cc
+
+commit 5f70f6792d22758e37f2875db716ad5a2fefb6da
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-21 13:21:47 +0800
+
+    add stripped oslib for lua ext.
+
+M	lua/Makefile.am
+A	lua/lmyoslib.c
+M	lua/lua-ext-console.c
+M	lua/lua-plugin-init.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+
+commit 0f0a0be50b9946429b06357d9f729bbfc358c109
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-21 13:06:01 +0800
+
+    add base.lua
+
+A	lua/base.lua
+
+commit ac1476aabed3efb8c96f45c3eac225ece5376394
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-18 15:58:01 +0800
+
+    fixes compile warnings.
+
+M	src/ExtEditor.cc
+
+commit 1d8521a263f5f83dba2135890833978d246a773d
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-18 13:37:56 +0800
+
+    re-factor code.
+
+M	src/ExtEditor.cc
+
+commit fad30945d4f755f4fb5c83c72dacd08d45b827db
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-18 13:07:51 +0800
+
+    re-order code sequence.
+
+M	src/ExtEditor.cc
+
+commit 3bf430a7b99edf7445e770e8a810aa3a1c39900a
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-18 12:54:18 +0800
+
+    fixes include header.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 083a07dcd61b744d126398a737055928cbfd5778
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-18 11:37:25 +0800
+
+    Fix build errors.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit f1944e652c6e4c73b87193c7e8cc82ccb0c35ddd
+Merge: f1f9363 4009394
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-18 11:25:15 +0800
+
+    Merge remote branch 'epico/lua-plugin' into lua-plugin
+    
+    Conflicts:
+    	src/ExtEditor.cc
+    	src/ExtEditor.h
+    	src/LookupTable.h
+    	src/Makefile.am
+    	src/PinyinEngine.cc
+
+commit 40093940e25ada4c0cf3c258ab49e9ebd32bbc65
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-18 11:08:36 +0800
+
+    fixes multi-line candidate content.
+
+M	src/ExtEditor.cc
+
+commit 870e428c52a32c071d82a580e67dc88d64bbe848
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-18 11:01:22 +0800
+
+    fixes riqi and shijian.
+
+M	src/ExtEditor.cc
+
+commit 7ce996a6aed9d6ce75e31c9a4f9eba73bdd10f14
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-18 10:45:16 +0800
+
+    fixes some typos.
+
+M	src/ExtEditor.cc
+
+commit 62da73fd21c498281f4d9e7bca96db3a96609b14
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-17 15:17:27 +0800
+
+    add label and space key handle.
+
+M	src/ExtEditor.cc
+
+commit d0cf9237364a52aac30ae06bcb8dadf75e02b3ef
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-17 13:07:20 +0800
+
+    write select candidate.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit f1f93631962b46a8a2744796ebbb9fdc74c981ff
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-17 00:02:11 +0800
+
+    Add er in xhe double pinyin schema
+
+M	scripts/pydict.py
+M	src/DoublePinyinTable.h
+
+commit 4894ed5d2db043eff4c9bc4f0fa54093a8b63444
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-15 00:12:30 +0800
+
+    Use gint8 for pinyin id in double pinyin table
+
+M	scripts/double.py
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinTable.h
+
+commit 9dbe241f90e55ec7114de2d3352e795841bd2802
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-14 23:47:36 +0800
+
+    Update configure.ac
+
+M	configure.ac
+
+commit b6a3f1fec76b01269677f1b237b6d9cc08317957
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-14 23:44:27 +0800
+
+    Refine code
+
+M	src/SimpTradConverter.cc
+
+commit b41c08e8c74c3995db7ae0b3745d91a2c4195194
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-14 13:54:25 +0800
+
+    Use utf8 string encode
+
+M	scripts/update-simptrad-table.py
+M	src/PinyinParser.cc
+M	src/SimpTradConverter.cc
+M	src/SimpTradConverterTable.h
+
+commit 139a45ffcaa7c09f4003e86b805d3c4bf3f7d406
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-14 11:09:21 +0800
+
+    Add --enable-opencc option
+
+M	configure.ac
+
+commit eb0d395403b53372dbffca12c08107527822f303
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-13 16:03:08 +0800
+
+    refine code
+
+M	src/DoublePinyinTable.h
+M	src/DynamicSpecialPhrase.h
+M	src/SimpTradConverter.h
+
+commit 970b3c307810159b53310ecc741f7683d8f6ec0e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-13 15:38:36 +0800
+
+    Add XiaoHe double pinyin schema
+
+M	po/ru.po
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+M	scripts/double.py
+M	scripts/pydict.py
+M	setup/ibus-pinyin-preferences.ui
+M	src/Config.cc
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinTable.h
+
+commit b8e83906f859da4e1d31fa7502a94afcfe07504f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-11 17:26:10 +0800
+
+    Improve performance of SimpTradConvert
+
+M	src/SimpTradConverter.cc
+
+commit 90ef953d8523738c8f5be4181a38063095a74ee5
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-10 22:28:04 +0800
+
+    Use C++ API of OpenCC
+
+M	src/SimpTradConverter.cc
+
+commit c6fd949534e2ff0e98018327f7f1ff1313a51285
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-10 12:51:13 +0800
+
+    Print message when an error occurs in opencc_convert
+
+M	src/SimpTradConverter.cc
+
+commit 957d49989b7a48ad1488168bc1a5fc2a7e7121de
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-10 13:34:18 +0800
+
+    Set release = 0
+
+M	configure.ac
+
+commit 99e5cbcd24fa135cd146e0340875ca994fd08c88
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-10 07:56:54 +0800
+
+    Add class OpenCC to encapsulate opencc
+
+M	src/SimpTradConverter.cc
+
+commit 36e523c6ec97311a4cb73c6c5d713de99cd88656
+Merge: 63777ac 26b03fd
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-09 22:38:08 +0800
+
+    Merge from origin
+
+commit 26b03fd0eb5bcc7203ab22fcf5dd050cc63b81c4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-09 22:29:31 +0800
+
+    Refine some code.
+
+M	src/SimpTradConverter.cc
+
+commit 63777acd3aa2537a7a5f79c62ec3e0ae9c44a169
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-09 22:29:31 +0800
+
+    Refine some code.
+
+M	src/SimpTradConverter.cc
+
+commit 1502908f965cf9327497a2fc672e1b3e9aa2c5f6
+Merge: 7beb2b2 6c84399
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-09 22:14:58 +0800
+
+    Merge remote branch 'byvoid/opencc' into opencc
+    
+    Conflicts:
+    	src/SimpTradConverter.cc
+
+commit 7beb2b25ed9e38aa9ce1dcaf6a1a62a787e7db25
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-09 22:12:48 +0800
+
+    Fix build warnings
+
+M	src/SimpTradConverter.cc
+
+commit 6c84399193cbde0ad740eb114c3463336fa67ef4
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-09 21:20:55 +0800
+
+    Modified interface of opencc in SimpTradConveter
+
+M	src/SimpTradConverter.cc
+
+commit e6084e309c5fbeff0def79b04c4fb1e17ddd2e13
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-09 15:38:40 +0800
+
+    refactor code.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 89a3b85e366defaf3bae44173be7e7091939ea41
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-09 14:44:22 +0800
+
+    Fix opencc API
+
+M	src/SimpTradConverter.cc
+
+commit ccff065a241ad0b30a5a36e2933a76ba6a0c5402
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-09 14:33:16 +0800
+
+    add some code.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 9fd12b0354161edc98fe39ebf8b6aa4e9269f3f3
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-09 10:51:59 +0800
+
+    refactor key handling.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit bb48dfc2d26dfc4fe8bbdf85115f39186906cab2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-09 07:56:40 +0800
+
+    Use opencc
+
+M	configure.ac
+M	src/Makefile.am
+M	src/SimpTradConverter.cc
+M	src/SimpTradConverter.h
+
+commit 749b90a893831fd542b371393e988fe5e916a214
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-07 16:48:49 +0800
+
+    add backspace/delete key handles.
+
+M	src/ExtEditor.cc
+
+commit 35000f739315aa55123ba1599e04878f578366f1
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-07 16:22:35 +0800
+
+    add key handles.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit e92b6f27040f75a102d8b5aa25c8e1d301ce5800
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-07 14:49:26 +0800
+
+    add cursor up/down and page up/down function.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit c4701aac1131854cf9db31e80ca18c146d3c4c8e
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-06-07 11:00:35 +0800
+
+    rename sendLookupTable to updateLookupTable.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 5ae0d6290c9cbd7d7bbef065d8eb9ab7ad7ac728
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-05 17:14:36 +0800
+
+    Fix a bug of Traditional Chinese translation
+
+M	po/zh_HK.po
+M	po/zh_TW.po
+
+commit d27091f290d3f0a135500565db5b1027336fe815
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-05 09:15:21 +0800
+
+    Remove some debug output
+
+M	setup/main.py
+
+commit 317efbfb9472b4696895baa2b771ba7a8eea681c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-05 09:14:58 +0800
+
+    Move php_2_py.php to scripts/
+
+A	scripts/php_2_py.php
+M	src/Makefile.am
+D	src/php_2_py.php
+
+commit dacee4558562dd4c64f97fbbcd825c41672b9942
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-05 09:07:59 +0800
+
+    Refine some code
+
+M	src/BopomofoEditor.cc
+
+commit 0479700cde6a86fce05a233f6db7ed5b0991baca
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-05 08:21:05 +0800
+
+    Update label of one property
+
+M	po/ru.po
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+M	src/PinyinProperties.cc
+
+commit 77d9c68257fbc8de007b1524239d9bdb39346655
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-05 07:38:04 +0800
+
+    Fix some build warning and verify some config item.
+
+M	src/Bopomofo.h
+M	src/BopomofoEditor.cc
+M	src/Config.cc
+
+commit 52442871862a6558cf616601b97c7bd57d00d12a
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-04 15:33:15 +0800
+
+    Update translation po files
+
+M	po/ru.po
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+
+commit 8a23fe6b8b4f5028887d797db25ad2aac13d8747
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-04 15:07:13 +0800
+
+    Disabled Custom of SelectKey
+
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/Bopomofo.h
+M	src/BopomofoEditor.cc
+M	src/Config.cc
+M	src/Config.h
+
+commit 38b97ecdf29a66709a9aa284cd065a99dca30a5e
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-02 14:30:20 +0800
+
+    Update Config & Preferences UI for BopomofoEditor
+
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/Config.cc
+M	src/Config.h
+
+commit 8afcc64f37944b3e8f31b9df1e3058fcbdb1479c
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-06-01 20:56:56 +0800
+
+    Improved user interaction of BopomofoEditor
+
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/LookupTable.h
+M	src/PhoneticEditor.cc
+M	src/PhoneticEditor.h
+
+commit da7738330638e147deeef0fc53684249c51f494f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-05 07:28:26 +0800
+
+    Reduce dependency among header files.
+
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/BopomofoEngine.cc
+M	src/Config.cc
+M	src/Config.h
+M	src/Database.cc
+M	src/Database.h
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/DynamicSpecialPhrase.cc
+M	src/Editor.cc
+M	src/Editor.h
+M	src/ExtEditor.h
+M	src/FallbackEditor.cc
+M	src/FallbackEditor.h
+M	src/FullPinyinEditor.cc
+M	src/FullPinyinEditor.h
+M	src/PhoneticEditor.cc
+M	src/PhoneticEditor.h
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinProperties.cc
+M	src/PinyinProperties.h
+M	src/PunctEditor.cc
+M	src/PunctEditor.h
+M	src/RawEditor.h
+M	src/SpecialPhrase.h
+M	src/SpecialPhraseTable.cc
+M	src/SpecialPhraseTable.h
+
+commit f01adcdb0a4df396e7c2388f39dff70d1319c098
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-06-02 21:52:59 +0800
+
+    Add --version -V option
+
+M	src/Database.cc
+M	src/Database.h
+M	src/Main.cc
+M	src/SpecialPhrase.cc
+
+commit 984ce06e5c96603ce3d2edbee008c0df9b8328b1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-31 10:56:20 +0800
+
+    Refine coding style
+
+M	src/PhraseEditor.h
+M	src/PinyinProperties.h
+M	src/Pointer.h
+M	src/Regex.h
+
+commit c1d6020cf3333b264937ac44132d82e4591adeba
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-31 08:07:39 +0800
+
+    Update README
+
+M	README
+
+commit 9fc7711231bc4734541b50087b813e598a6813db
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-30 21:53:34 +0800
+
+    Refine coding style
+
+M	src/Bus.h
+M	src/Property.h
+
+commit 502b8e814fe1aa59c7f607a04c363ef0c03e476f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-30 21:39:08 +0800
+
+    Use inline function and const value to replace some macors.
+
+M	src/BopomofoEditor.cc
+M	src/BopomofoEngine.cc
+M	src/DoublePinyinEditor.cc
+M	src/FallbackEditor.cc
+M	src/PhoneticEditor.cc
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.cc
+M	src/PunctEditor.cc
+M	src/Util.h
+
+commit 9211cbcd3d580cf96a2bea7d8dd3ec8beefca9a7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-30 21:04:22 +0800
+
+    Refine coding style
+
+M	src/BopomofoEngine.cc
+M	src/BopomofoEngine.h
+M	src/Config.cc
+M	src/Config.h
+M	src/Database.h
+M	src/Editor.h
+M	src/Engine.h
+M	src/FallbackEditor.h
+M	src/LookupTable.h
+M	src/Object.h
+M	src/PhoneticEditor.h
+M	src/Phrase.h
+M	src/PhraseEditor.h
+M	src/PinyinArray.h
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/PinyinParser.h
+M	src/PinyinProperties.h
+M	src/SpecialPhrase.h
+M	src/String.h
+M	src/Text.h
+M	src/Util.h
+
+commit 44f4960fb84fbb3643d523932bc8612bff5ff18c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-30 14:55:37 +0800
+
+    Move python script files to scripts folder
+
+A	scripts/update-simptrad-table.py
+A	scripts/valid_hanzi.py
+M	src/Makefile.am
+D	src/sctc.py
+D	src/update-simptrad-table.py
+D	src/valid_hanzi.py
+
+commit 6b29ccd6523cf87c75d9f2327f930ea94a4e35a0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-30 14:45:37 +0800
+
+    Fix special phrases option problem in Bopomofo engine.
+
+M	src/PhoneticEditor.cc
+M	src/SpecialPhraseTable.cc
+
+commit 89bb1454a7b7b228170605ffb1d9ee6eecbaa869
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-30 12:12:48 +0800
+
+    Optimize dependence of headers
+
+M	src/BopomofoEngine.cc
+M	src/DynamicSpecialPhrase.cc
+M	src/Engine.cc
+M	src/Engine.h
+M	src/PhoneticEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinParser.cc
+M	src/PinyinProperties.cc
+M	src/PunctEditor.cc
+M	src/PunctEditor.h
+M	src/SimpTradConverter.cc
+M	src/SpecialPhraseTable.cc
+M	src/SpecialPhraseTable.h
+
+commit 89340fe814c2fbf5648b7a3f84cb5ef7bb4e370c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-29 17:21:25 +0800
+
+    Release 1.3.8
+
+M	configure.ac
+
+commit 25227863e045a89e5a8aa3c626318dcae6bde895
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-29 11:18:39 +0800
+
+    Do not call readDefaultValues in constructor function.
+
+M	src/Config.cc
+
+commit 3950e439f487e88dc519344b24871ebac96e7d86
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-29 08:22:00 +0800
+
+    Write default value to config, if the value does not exist
+
+M	src/Config.cc
+
+commit 700bc273d43b3e9df401defc3a27a2ac86e7b2f4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-29 05:51:27 +0800
+
+    Remove inline modifier for some functions
+
+M	src/PhoneticEditor.cc
+
+commit e775fe8869e3f294e26bf672306922c907d8589e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-29 05:42:40 +0800
+
+    Add "·" in PunctTable
+
+M	scripts/punct.py
+M	src/PunctTable.h
+
+commit 80d4092bc0f83b0cf9a0292b44fa033cf411fc54
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-29 05:42:14 +0800
+
+    Fix problem in PunctEditor.
+
+M	src/PunctEditor.cc
+
+commit e19ff554f28ed03f01423ff7d9ca6f9bac18f978
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 14:53:48 +0800
+
+    Release 1.3.7
+
+M	configure.ac
+
+commit 4f41efbd5eebba8c9b09c1b46f27a51cbfb13254
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 14:44:01 +0800
+
+    Disable special phrases by default in bopomofo engine
+
+M	src/Config.cc
+
+commit ad860b1d8f7a4838e850881cc7111ec9604ec171
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 14:41:32 +0800
+
+    Reset engine status when enable again
+
+M	src/BopomofoEngine.h
+M	src/PinyinEngine.h
+M	src/PinyinProperties.cc
+M	src/PinyinProperties.h
+
+commit 701c14239112acd27d0d440f3ea0f21d33d415e1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 14:30:38 +0800
+
+    Refine Config
+
+M	src/Config.cc
+
+commit aa48377217d099e073caa4a85debd871f01bc93e
+Merge: c1b1a2e 0a9d1b4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 14:21:04 +0800
+
+    Merge remote branch 'byvoid/master'
+
+commit c1b1a2e6f38ebfec473b430c1aa3ee692e3b76ec
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 14:15:35 +0800
+
+    Use different default config values for Pinyin and Bopomofo
+
+M	src/Config.cc
+M	src/Config.h
+
+commit 0a9d1b485c22f30c0023df78ec892cb1d42770a8
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-28 14:00:12 +0800
+
+    Update Chinese translation
+
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+
+commit 54ffd76da5dfb02f4f67950c59c55d2ee85eaee0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 10:09:57 +0800
+
+    Use const gchar * const
+
+M	src/Config.cc
+
+commit 0862e8bcb0ce7a5a7471f1e503f6fff053662f69
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-28 10:08:41 +0800
+
+    Use const gchar * to replace macros
+
+M	src/Config.cc
+
+commit e21253f31aa2149a92e0cef06f543e1c00f5817e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-27 13:51:21 +0800
+
+    Switch to Chinese mode when enable
+
+M	src/BopomofoEngine.h
+M	src/PinyinEngine.h
+
+commit ba89d9ef399ce61a63929d44773153191fa71412
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-27 10:33:16 +0800
+
+    Add debian/changelog.in
+
+M	Makefile.am
+A	debian/changelog.in
+
+commit 69247ae60b786af9125390a0b5f9def4107935e8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-27 10:16:50 +0800
+
+    Fix build error in converting void * to int.
+
+M	src/BopomofoEditor.cc
+
+commit c9850205a602b5d36172d13ee5c2a9ccb02d418e
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-26 15:49:50 +0800
+
+    Fix a bug of bsearch while converting keyval to Bopomofo
+
+M	src/BopomofoEditor.cc
+
+commit 6d232faeef299048a2d2d4f02aa36614a40e4cc0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-26 13:21:34 +0800
+
+    Add ppa target for generate debian source packages.
+
+M	Makefile.am
+M	configure.ac
+D	debian/changelog
+M	debian/control
+
+commit 0ba1b74b141c445832c64a17945830aa2da277ee
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-26 10:39:59 +0800
+
+    Update po files.
+
+M	po/zh_CN.po
+M	po/zh_TW.po
+
+commit 177313343f4122342cfccccc5e0d7b8e977875f9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-25 17:00:54 +0800
+
+    Update po files.
+
+M	po/ru.po
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+
+commit a4c5ebefd2fea0ccc140d2ee08f08e7a46a4d8e8
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-25 16:52:33 +0800
+
+    Correct some labels
+
+M	setup/ibus-pinyin-preferences.ui
+
+commit b02483cd38e62fbca46a52d9348322088fd6f9b1
+Merge: a72b309 72fa95d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-25 16:30:40 +0800
+
+    Merge remote branch 'byvoid/fallbackeditor'
+
+commit 72fa95d9454d021a645426e5e7ae7a7ba510251f
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-25 16:28:26 +0800
+
+    Add Traditional Chinese mode punct for FallbackEditor
+
+M	src/FallbackEditor.cc
+M	src/FallbackEditor.h
+
+commit a72b309c8b890362fe679533a9286415759f9e50
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-25 16:22:28 +0800
+
+    Change some variables' name.
+
+M	src/Makefile.am
+
+commit 4d5e9f2ea2475df2e8fa33a0bdd2561e89060214
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-25 15:45:42 +0800
+
+    Fix make distcheck errors.
+
+M	src/Makefile.am
+
+commit 9f495b05abf522fea51fcea341c425d1a9a73e52
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-25 13:29:22 +0800
+
+    Update po files and adjust ui
+
+M	po/ru.po
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+M	setup/ibus-pinyin-preferences.ui
+
+commit f39251e51b09d8b386a903a67dd3cf65dbadf296
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-25 12:58:50 +0800
+
+    Adjust the setup interface.
+
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+
+commit 6f088990f755857ec1d8f2e0ccc9794aee0fbb23
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-24 14:21:31 +0800
+
+    Use boost::scoped_ptr to maintain Config instances.
+
+M	src/Config.cc
+M	src/Config.h
+
+commit 839285e57e76ddf94b6c77233ed6296ebead2a8c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-24 13:41:24 +0800
+
+    Refine coding style and use guint8 in BopomofoKeyboard.h
+
+M	scripts/genbopomofokeyboard.py
+M	src/Bopomofo.h
+M	src/BopomofoKeyboard.h
+M	src/Makefile.am
+
+commit 9258379bbdaedc5ab48688303d13df8ef4446f9d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-24 10:05:50 +0800
+
+    Use const gchar * to replase std::string for static strings.
+
+M	src/Config.cc
+
+commit e034dcfa68d6652d0a85d7a476db3faf97a70076
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-24 08:48:00 +0800
+
+    Refine modifiers test code for Ctrl + Shift + F
+
+M	src/BopomofoEngine.cc
+M	src/PinyinEngine.cc
+M	src/Util.h
+
+commit 19bb8989b043c292ab22523733bac2ef127f80d2
+Merge: c95380c 8b7ac7c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-24 07:29:27 +0800
+
+    Merge remote branch 'byvoid/st_switch_hotkey'
+
+commit c95380ca00b797431c8d5b8fdb7ed0bb0773df40
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-23 21:01:53 +0800
+
+    Fix a bug on Config & Enable Bopomofo specialized settings
+
+M	setup/main.py
+M	src/BopomofoEditor.cc
+M	src/Config.cc
+M	src/Config.h
+M	src/PhoneticEditor.cc
+
+commit 8b7ac7c654eeaccf1fb45fcca6088eed537bad2b
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-23 20:18:45 +0800
+
+    Add hotkey Ctrl + Shift + F to toggle simp/trad Chinese input mode
+
+M	src/BopomofoEngine.cc
+M	src/PinyinEngine.cc
+
+commit 11f83b7110549559aa0741fc054aaeb2b2f1f164
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-23 17:37:09 +0800
+
+    Launch setup with different arguments in PinyinEngine & BopomofoEngine
+
+M	src/BopomofoEngine.cc
+M	src/PinyinEngine.cc
+
+commit 86649ed500fc5ce607a2cd36101bc9fc9d749ae6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-23 17:35:03 +0800
+
+    Use pinyin setup as default
+
+M	setup/main.py
+
+commit 82f0c59bf63523f6c5255ade681a3e43bfc1af2c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-23 17:07:41 +0800
+
+    Add test-pinyin and test-bopomofo targets
+
+M	setup/Makefile.am
+
+commit 83e194de430e70ca46034016f2b172e5ac8a2aeb
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-23 17:04:49 +0800
+
+    Reorganize setup User Interface
+
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+
+commit b4e80d22b99d42afdc5067738129910877160704
+Merge: 163587a f9a90e8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-23 12:48:45 +0800
+
+    Merge remote branch 'byvoid/PhoneticEditor' into config
+    
+    Conflicts:
+    	src/BopomofoEditor.cc
+    	src/Editor.h
+    	src/PinyinEditor.cc
+
+commit 163587a5185b137df364194d862a671019e3528c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-23 11:59:06 +0800
+
+    Separate Config to PinyinConfig and BopomofoConfig
+
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/BopomofoEngine.cc
+M	src/Config.cc
+M	src/Config.h
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/Editor.cc
+M	src/Editor.h
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+M	src/FallbackEditor.h
+M	src/FullPinyinEditor.cc
+M	src/FullPinyinEditor.h
+M	src/Main.cc
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinProperties.cc
+M	src/PinyinProperties.h
+M	src/PunctEditor.cc
+M	src/PunctEditor.h
+M	src/RawEditor.h
+M	src/SpecialPhraseTable.cc
+
+commit f9a90e87c0de01909659b5c134bd8d0fc5fd14b1
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-23 12:30:57 +0800
+
+    Add abstract class PhoneticEditor
+
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/BopomofoEngine.cc
+M	src/DoublePinyinEditor.cc
+M	src/Editor.h
+M	src/FallbackEditor.cc
+M	src/Makefile.am
+A	src/PhoneticEditor.cc
+A	src/PhoneticEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PunctEditor.cc
+M	src/Util.h
+
+commit d30c3eb38d344234f0c2b4c64b7ade8fe32be667
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-23 08:11:09 +0800
+
+    Add BopomofoKeyboard.h in Makefile.am
+
+M	src/Makefile.am
+
+commit 97e6b06bfbff6e97f34927abfb68ca787a04e81c
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-20 16:20:08 +0800
+
+    Add keyboard mappings for Bopomofo
+
+A	scripts/genbopomofokeyboard.py
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+A	src/BopomofoKeyboard.h
+
+commit 2850ed99948e24996e494ca85e4520b28eb6e7c9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 14:12:59 +0800
+
+    PunctEditor.c: reset editor, when commit some text to application
+
+M	src/PunctEditor.cc
+
+commit 7b9b5d6855992dc5115e1ba16a1c12ed708328b2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 13:03:28 +0800
+
+    Refine coding style
+
+M	src/Bopomofo.h
+M	src/BopomofoEngine.h
+M	src/Database.h
+M	src/Engine.h
+M	src/ExtEditor.h
+M	src/FallbackEditor.h
+M	src/PinyinEngine.h
+M	src/PinyinParser.h
+M	src/PunctEditor.h
+M	src/RawEditor.h
+M	src/Types.h
+
+commit 01b5e9f5177b1f2c98ddbc80c4d120a775ea2f8d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 13:00:21 +0800
+
+    Add copyright header in some python file
+
+M	setup/main.py
+M	setup/version.py.in
+
+commit 7bde3870c152ed24d81a53fbcb658ec223e35f52
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 12:56:48 +0800
+
+    Remove WideString.h
+
+D	src/WideString.h
+
+commit f52e95706d705509320a84c9cc3383ac3adf7027
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 12:54:10 +0800
+
+    Add BYVoid in copyright header for some files
+
+M	src/Bopomofo.h
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/BopomofoEngine.cc
+M	src/BopomofoEngine.h
+M	src/PunctEditor.cc
+M	src/PunctEditor.h
+
+commit b1a91ad39f89efcaeb7bd01c3877b7fea0e6d1c7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 12:49:05 +0800
+
+    Add copyright header
+
+A	scripts/addheader.py
+A	scripts/header
+M	src/Bopomofo.h
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/BopomofoEngine.cc
+M	src/BopomofoEngine.h
+M	src/Bus.h
+M	src/Config.cc
+M	src/Config.h
+M	src/Database.cc
+M	src/Database.h
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/DoublePinyinTable.h
+M	src/DynamicSpecialPhrase.cc
+M	src/DynamicSpecialPhrase.h
+M	src/Editor.cc
+M	src/Editor.h
+M	src/Engine.cc
+M	src/Engine.h
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+M	src/FallbackEditor.cc
+M	src/FallbackEditor.h
+M	src/FullPinyinEditor.cc
+M	src/FullPinyinEditor.h
+M	src/HalfFullConverter.cc
+M	src/HalfFullConverter.h
+M	src/LookupTable.h
+M	src/Main.cc
+M	src/Object.h
+M	src/Phrase.h
+M	src/PhraseArray.h
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinArray.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/PinyinParser.cc
+M	src/PinyinParser.h
+M	src/PinyinProperties.cc
+M	src/PinyinProperties.h
+M	src/Pointer.h
+M	src/Property.h
+M	src/PunctEditor.cc
+M	src/PunctEditor.h
+M	src/RawEditor.h
+M	src/Regex.h
+M	src/Signal.h
+M	src/SimpTradConverter.cc
+M	src/SimpTradConverter.h
+M	src/SpecialPhrase.cc
+M	src/SpecialPhrase.h
+M	src/SpecialPhraseTable.cc
+M	src/SpecialPhraseTable.h
+M	src/String.h
+M	src/Text.h
+M	src/Types.h
+M	src/Util.h
+M	src/WideString.h
+
+commit d52ce00ad6718933db0df16451a8ea0a9e15e505
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 11:07:30 +0800
+
+    Adjust Phrase struct
+
+M	src/Database.cc
+M	src/Phrase.h
+
+commit db8a93b8dfce99abfd827f34d20abbeff2538d7b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 10:18:49 +0800
+
+    Adjust struct Pinyin
+
+M	scripts/genpytable.py
+M	src/Database.cc
+M	src/PinyinParserTable.h
+M	src/Types.h
+
+commit e50e58a4739793c72ff50ddd9965ad1488b3eacc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-20 10:03:36 +0800
+
+    Use guint8 for pinyin id
+
+M	src/Phrase.h
+
+commit 1c29151417b47765f1ecd4beffda2f9f4d3cfa9a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 22:27:48 +0800
+
+    Set CFLAGS and CXXFLAGS in distcheck
+
+M	Makefile.am
+
+commit 1639e147b1f247ff7e81799f125d4cd9d2f0435c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 22:04:47 +0800
+
+    Remove slots in Engines.
+
+M	src/BopomofoEngine.cc
+M	src/BopomofoEngine.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 5b3ed4eedf0163cf87e697675805e0a73ea974c2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 21:55:49 +0800
+
+    Use StaticText
+
+M	src/PunctEditor.cc
+
+commit f276b2072f2c9b2b344a673486bb7907d7c8ac44
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 21:43:56 +0800
+
+    Refine coding style
+
+M	src/Phrase.h
+
+commit b7afcc3ca1e9a7efac29f7f10da008b6ec052a91
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 21:43:39 +0800
+
+    Use guint8 for pinyin id
+
+M	src/Types.h
+
+commit bfbc50af2a613232cec8dd4e776c0ac0e433688b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 17:29:49 +0800
+
+    Fix build errors in NetBSD
+
+M	src/PinyinEditor.cc
+
+commit b9a2255b4478ec5ab3d3793462e89fc98a498393
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 13:39:10 +0800
+
+    Update Copyright information
+
+M	Makefile.am
+M	configure.ac
+M	data/Makefile.am
+M	data/db/Makefile.am
+M	data/db/android/Makefile.am
+M	data/db/open-phrase/Makefile.am
+M	data/icons/Makefile.am
+M	m4/Makefile.am
+M	po/ru.po
+M	po/zh_CN.po
+M	po/zh_HK.po
+M	po/zh_TW.po
+M	setup/Makefile.am
+M	setup/ibus-pinyin-preferences.ui
+M	src/Makefile.am
+
+commit 5293d9fa8c71471c8fa7e94b05e4ea7bfdff2538
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 13:21:00 +0800
+
+    Clear the lookup table when cursor == 0
+
+M	src/PunctEditor.cc
+
+commit ca5db95f90da616c7a9db0a57a2e9ae0a77d7dc0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 12:58:55 +0800
+
+    Do not use color for candidates of PunctEditor
+
+M	src/PunctEditor.cc
+
+commit f23f898e21418421bd59b9d58cbb328dacded57c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 12:45:27 +0800
+
+    Fix some bugs in PunctEditor
+
+M	src/PunctEditor.cc
+
+commit 4eb4f42bfa5b456e6fc176bfde4fb1bc4cbb78bd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 12:08:45 +0800
+
+    Fix crash when move curso in pinyin "pi'ao"
+
+M	src/PinyinParser.cc
+
+commit ed0651e5dba02d4629811aad85eedb85ad9d1700
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 11:19:27 +0800
+
+    Improve punct editor.
+
+M	src/LookupTable.h
+M	src/PunctEditor.cc
+M	src/PunctEditor.h
+
+commit b987eef1b9d4768f3ea458189afb660afdc704cb
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-18 15:12:10 +0800
+
+    change fillCommandCandidates behaviour.
+
+M	src/ExtEditor.cc
+
+commit 5dba4f1d3e7eb38c85d550d71f36f63c5b17496a
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-18 14:57:15 +0800
+
+    rename ibus_engine_plugin_free part 2.
+
+M	src/ExtEditor.cc
+
+commit f5a9d67dbcd11d289c84ed8cbd5dee82d0f6afe4
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-18 14:56:01 +0800
+
+    rename ibus_engine_plugin_free.
+
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+
+commit f29d0e8c70bd9a7744be7dfe3e79a71e20f07f05
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-18 14:54:23 +0800
+
+    add fill candidates.
+
+M	src/ExtEditor.cc
+
+commit 9702be36351fbf1cd7a7be2a6bd27415880c3b9a
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-17 16:08:09 +0800
+
+    add update auxiliary and fill candidates label according to m_mode.
+
+M	src/ExtEditor.cc
+
+commit 717ec8f7335511d33a2a0f054bb1eb141c945a79
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-13 18:56:13 +0800
+
+    add aux and preedit text.
+
+M	src/ExtEditor.cc
+
+commit 6d36d1133befbd5dc4e62ba7443222c45027a6f3
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-12 17:03:55 +0800
+
+    fixes retval of function processKeyEvent.
+
+M	src/ExtEditor.cc
+
+commit a63bb1b2052afb203783d50eb41e6801d14710ae
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-12 16:46:27 +0800
+
+    enable ext mode in pinyin engine.
+
+M	src/PinyinEngine.cc
+
+commit f52a8aaf5a8fada6a2b2e203dd50c1aaa27037b5
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-12 16:45:28 +0800
+
+    rename m_input to m_text and m_cursor_pos to m_cursor.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 64f12372db7e24af20d000d399d73d74a2667c35
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-12 13:44:25 +0800
+
+    clean up code.
+
+M	src/ExtEditor.cc
+
+commit 539d0d0bb455ebc79477a4adc3c51520c95beec0
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-11 19:03:11 +0800
+
+    refact code into updateStateFromInput and fixes compiling errors.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 4a56a37823f7cf93a89f9fea0afedcdbe3ce69d1
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-11 14:48:25 +0800
+
+    add m_cursor_pos.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit cedc8d5c6968deae7936a59a608184d91edd5121
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-10 15:56:32 +0800
+
+    begin to implement input logic for ibus-pinyin lua module.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 2f0cb527ea398e0ee8debe86231fd20a0e12d30f
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-07 12:55:13 +0800
+
+    add const modifier.
+
+M	lua/lua-ext-console.c
+M	lua/lua-plugin.h
+
+commit d3df4ef4811c8a6ef1c5660b8e63d4d916b0369a
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-07 12:53:36 +0800
+
+    add const modifier.
+
+M	src/ExtEditor.cc
+
+commit 209d06b04a13247ffd31895e9e87d59c25fd3b2d
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-07 12:51:24 +0800
+
+    refactor lua plugin interface.
+
+M	lua/lua-ext-console.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+
+commit e63b0016502ff2f535894006c67364ed8fa48ef0
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-07 11:15:20 +0800
+
+    begin to modify lua plugin.
+
+M	lua/lua-plugin.h
+
+commit 31a21dbb7c449813d61459a1a232dbbd0b576d1e
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-07 11:12:27 +0800
+
+    begin to write input logic.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit e2295b71251476650fb376a3d973c53e0c319bdc
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-06 16:24:28 +0800
+
+    add fillCommandCandidates(string) implementation.
+
+M	src/ExtEditor.cc
+
+commit 5cf2d6572742d095af07c84182fb3ae4e96f7602
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-05 15:05:11 +0800
+
+    define ExtEditor interface.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 695cd737ebf281f6a030ec22707a6717df455614
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-05 11:21:14 +0800
+
+    add appendLabel for LookupTable.
+
+M	src/LookupTable.h
+
+commit 233b0a7bc8f74d2e14996364998db8ef3c2e747b
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-05 11:18:10 +0800
+
+    add comments
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit 1e1e7075b63f56117c9e7646ac78efa8d4adeb31
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-04 15:23:17 +0800
+
+    define ext editor interface.
+
+M	src/ExtEditor.cc
+M	src/ExtEditor.h
+
+commit c498c0a73b72be8d1dc3a492e88ce52246ec8d67
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-05-04 13:37:29 +0800
+
+    begin to integrate lua ext.
+
+M	src/ExtEditor.h
+M	src/Makefile.am
+
+commit f49a84c21e00e023a2732aea6156e5727b373618
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-23 14:13:01 +0800
+
+    dump all arguments for register_trigger.
+
+M	lua/lua-plugin-init.c
+
+commit 090a378d1b42c5d72615b5d4a7c3bf93d99a2078
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-20 16:01:29 +0800
+
+    remove lua_plugin_retrieve_plugin declaration on lua-plugin.h
+
+M	lua/lua-plugin.h
+
+commit 3e179a84e4e08b19b2bff856b1af8f8c6fefb35e
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-20 15:57:27 +0800
+
+    do some clean up on lua-plugin.h
+
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+
+commit 077892da6d8545bb487ff58e79b1d5a9d892ca0c
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-20 15:53:21 +0800
+
+    fixes Makefile.am
+
+M	lua/Makefile.am
+
+commit 0ec7c3edfd6ec32aaf6cd37e745568a82bf9e565
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-20 15:48:43 +0800
+
+    add lua-ext-console.c
+
+M	lua/Makefile.am
+A	lua/lua-ext-console.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+
+commit bdc0c91efa8dd6532ad550b46cf3a3756c7662dc
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-16 16:36:08 +0800
+
+    add ibus_engine_plugin_get_candidate and enhance ibus_engine_plugin_get_retval.
+
+M	lua/lua-plugin.c
+
+commit f2411d43bf3a5433930c57809a386703ea31f50f
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-16 16:00:43 +0800
+
+    add ibus_engine_plugin_call.
+
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+
+commit 560cdb15c6c238252d49c362a631de35d05713c2
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-04-16 14:10:04 +0800
+
+    write ibus_engine_plugin_load_lua_script.
+
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+
+commit 7cf2505a5790195814e05e4a26f40fe8319d5e67
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-14 17:56:47 +0800
+
+    lua extension (ime.register_command) in progress.
+
+M	lua/lua-plugin-init.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+
+commit aae2c566368ddd45a60b47a4b571f845d7a19b01
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-13 16:31:03 +0800
+
+    re-factor lua-plugin interface.
+
+M	lua/lua-plugin.h
+
+commit c3bc5bd52879a85a7a6bfd4e2baefbe7cf37bc01
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-13 15:55:07 +0800
+
+    ime register command in progress.
+
+M	lua/lua-plugin-init.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+
+commit 604d367fc223e142617b93f550dc7aa10f859848
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-11 15:29:11 +0800
+
+    code cleanup.
+
+M	lua/lua-plugin.c
+M	lua/test-lua-plugin.c
+
+commit 25776642382b9e780e197b9f85aeb5aeb7852c7b
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-11 15:26:30 +0800
+
+    refactor lua-plugin
+
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+
+commit 83ae73bf667347973ce53f8124a64310b00b0805
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-11 15:10:41 +0800
+
+    refactor lua-plugin gobject interface.
+
+M	lua/lua-plugin-init.c
+M	lua/lua-plugin.c
+M	lua/lua-plugin.h
+
+commit 7505cd8f7c7298f6db1dc1ad665b082810234944
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-11 15:01:11 +0800
+
+    add gobject interface for lua-plugin.
+
+M	lua/Makefile.am
+M	lua/lua-plugin-init.c
+A	lua/lua-plugin.c
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+
+commit 07351a7e974d192a1b93679d518be75cb764fdd2
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-11 13:43:52 +0800
+
+    add comment.
+
+M	lua/lua-plugin-init.c
+
+commit fc07e4c1311e9ed7702fac1f0bd6882804d1a362
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-07 14:52:32 +0800
+
+    change isnil to isnone.
+
+M	lua/lua-plugin-init.c
+
+commit d6d3f471888f57f0f5758189da1573cb5d93931f
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-07 14:28:53 +0800
+
+    add arguments check.
+
+M	lua/lua-plugin-init.c
+
+commit 693daa8e9d463ffae61b398243ec97c89fd896eb
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-07 14:04:46 +0800
+
+    sketch for ime_register_trigger, begin to write ime_register_command.
+
+M	lua/lua-plugin-init.c
+
+commit c27eacbbed0415fd97bf5521b430ffe54802646f
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-07 11:06:11 +0800
+
+    interface changed to lua_plugin_context.
+
+M	lua/lua-plugin.h
+
+commit 55e2c5679defc8184a0ba69f31fbf4d77d5eae8f
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-06 16:50:28 +0800
+
+    add table check in join_string.
+
+M	lua/lua-plugin-init.c
+M	lua/test.lua
+
+commit f0caf8ca6f53961952bae84b678dce76762b4ed3
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-06 15:17:52 +0800
+
+    change ime_join_string behavior.
+
+M	lua/lua-plugin-init.c
+
+commit a3987f2e2a8fea3916ee410a3679bdf3d57b4188
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-06 13:22:12 +0800
+
+    change ime_join_string implementation.
+
+M	lua/lua-plugin-init.c
+M	lua/test.lua
+
+commit bfee085f2be86e3bd16a96c8dd70c3cc937852b1
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-06 12:53:36 +0800
+
+    change tolstring to checklstring.
+
+M	lua/lua-plugin-init.c
+M	lua/test-lua-plugin.c
+M	lua/test.lua
+
+commit 113f004efdbf39ef37a1758b862117b38ba4fedf
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-04-01 16:34:21 +0800
+
+    begin lua-plugin integration.
+
+M	lua/lua-plugin.h
+M	lua/test-lua-plugin.c
+
+commit 870473405c70bb592d80cbe291acf1470dc5468e
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-31 17:45:59 +0800
+
+    add some test cases and safe arguments check.
+
+M	lua/lua-plugin-init.c
+M	lua/test.lua
+
+commit 3295f6ac1d2b7232926840b1285703eae93f2573
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-30 15:48:28 +0800
+
+    add more test case.
+
+M	lua/test.lua
+
+commit 1a65af9f22a58dd4534fcfe9142cfd4fe0162626
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-30 15:35:46 +0800
+
+    add ime.parse_mapping func.
+
+M	lua/lua-plugin-init.c
+M	lua/test.lua
+
+commit 43c4d46425e43907570ca09d880a9f03a90a419c
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-29 18:51:18 +0800
+
+    add more test case and fixes join_string with empty table.
+
+M	lua/lua-plugin-init.c
+M	lua/test.lua
+
+commit c99ffc77af565bbe84981fa8b9fd881a21dd5f42
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-31 10:54:40 +0800
+
+    Integrate lua
+
+M	Makefile.am
+M	configure.ac
+A	lua/Makefile.am
+
+commit 8f63f9f3362e97377bcad584ecb5fb4ac75d5223
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-26 17:33:20 +0800
+
+    add new test cases for split/join.
+
+M	lua/lua-plugin-init.c
+M	lua/test.lua
+
+commit 0bcdae428741bd8e12692df0cb3f93efb76fdd8e
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-25 15:37:32 +0800
+
+    add split_string function.
+
+M	lua/lua-plugin-init.c
+
+commit 43b0f21525db609c86800064f176f95cf3e49be1
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-24 14:43:47 +0800
+
+    the initial ime_join_string implement and add lua_pop for trim_string functions.
+
+M	lua/lua-plugin-init.c
+
+commit a1a3c7e061376b6426c12f29b4131785a27e943b
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-22 10:00:22 +0800
+
+    change luaL_checklstring to lua_tolstring.
+
+M	lua/lua-plugin-init.c
+M	lua/test.lua
+
+commit 9235290adcd1ca1a7c1de6bafc1a275f677aa01f
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-15 18:00:30 +0800
+
+    add some check on IME_TRIM_PRECHECK.
+
+M	lua/lua-plugin-init.c
+
+commit c6705a7f4e28568ad42a479d0f41d854f0e111d2
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-15 17:28:52 +0800
+
+    add retval to lua_plugin_fini.
+
+M	lua/lua-plugin-init.c
+
+commit d77fa9a821620d1b645394ab7871bd99232882a9
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-15 17:03:13 +0800
+
+    change to pushliteral in ime_get_version.
+
+M	lua/lua-plugin-init.c
+
+commit 38e3513af3026135910647a5b09eee6b51d04a3c
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-15 16:06:18 +0800
+
+    refactor code for checking condition.
+
+M	lua/lua-plugin-init.c
+
+commit 5ce8a5206d8778a6513b74ccf3a3421cc86b6d4c
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-15 15:54:45 +0800
+
+    add ime.trim*.
+
+M	lua/lua-plugin-init.c
+
+commit ea36603015ab31469aa59eff8ee09880d006f83d
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-11 10:45:43 +0800
+
+    lua plugin hello world is ok.
+
+M	lua/lua-plugin-init.c
+A	lua/lua-plugin.h
+A	lua/test-lua-plugin.c
+A	lua/test.lua
+
+commit a00e941af1ecef13149d8ca2adfbfca3b6725f26
+Author: Peng Wu <epico@dhcp-65-116.nay.redhat.com>
+Date:   2010-03-09 18:38:14 +0800
+
+    initial code for lua plugin.
+
+A	lua/lua-plugin-init.c
+
+commit 1737c1be0c98d5f17bef6fca5151de0a4278f04b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 08:10:39 +0800
+
+    Add some half chars in PunctTable
+
+M	scripts/punct.py
+M	src/BopomofoEngine.cc
+M	src/PinyinEngine.h
+M	src/PunctTable.h
+
+commit 41b2b52a009f38f47df37bb58f7e76a8ecfba013
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-19 08:10:08 +0800
+
+    Add PunctMode in PinyinEngine.
+
+M	src/PinyinEngine.cc
+
+commit dd2ae1fb20d75f8f248effc6803f833ad80d0d3a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-18 20:50:13 +0800
+
+    Unify the coding style
+
+M	src/BopomofoEditor.cc
+M	src/PinyinParser.cc
+
+commit 3ceab924f440a0537caf89c8328fa5d78f3b3a2c
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-19 00:33:22 +0800
+
+    Fix a bug of Bopomofo parse
+
+M	src/BopomofoEditor.cc
+M	src/PinyinParser.cc
+
+commit 670cf5d77a038114579c461234832d1032bdda29
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-18 22:27:09 +0800
+
+    Fix a bug of displaying tone characters in BopomofoEditor
+
+M	setup/ibus-pinyin-preferences.ui
+M	src/BopomofoEditor.cc
+M	src/Main.cc
+M	src/pinyin.xml.in.in
+
+commit 142b740249c74f0c6352c774fc7c44debeafb631
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-18 20:26:20 +0800
+
+    Add zh_TW & zh_HK language support
+
+M	po/LINGUAS
+M	po/ru.po
+M	po/zh_CN.po
+A	po/zh_HK.po
+A	po/zh_TW.po
+
+commit 35cfad6072d4fb875f7406cdee89ea91e11f93c0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-18 19:11:33 +0800
+
+    Add BYVoid in AUTHORS
+
+M	AUTHORS
+M	src/Main.cc
+M	src/pinyin.xml.in.in
+
+commit bdca1d82764a747e9869f63f3040ef3edfc8333e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-18 19:11:13 +0800
+
+    Remove CustomPhrases in POTFILES
+
+M	po/POTFILES.in
+
+commit 51438d761eb28fc9c19efc7eef82681ebdc86e65
+Merge: 28d811b c5aefb2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 10:41:11 +0800
+
+    Merge branch 'bopomofo'
+    
+    Conflicts:
+    	ibus-pinyin.spec.in
+
+commit c5aefb2ca27010474d12032f51be840c92ed4770
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 10:01:31 +0800
+
+    Add Bopomof in spec file.
+
+M	ibus-pinyin.spec.in
+
+commit d153239dd1681837f445719cacca045a43c9d877
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 10:01:11 +0800
+
+    register properties in focusIn
+
+M	src/BopomofoEngine.cc
+M	src/BopomofoEngine.h
+M	src/Engine.h
+M	src/PinyinEngine.h
+
+commit 90bb72d5cea0f36397d477251e89ef7e6f627ddc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 09:53:55 +0800
+
+    Reset PunctEditor when press Esc
+
+M	src/PunctEditor.cc
+
+commit b46bb4bd7443dcdef7fb790fde5138b9f9f36007
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 09:47:52 +0800
+
+    Include PunctTable.h in tarball
+
+M	src/Makefile.am
+
+commit 70c8b03d0e5112fc1fcd9fcc557ff5714767c8bd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 07:23:36 +0800
+
+    Do not allow input chars more than 2
+
+M	src/Main.cc
+M	src/PunctEditor.cc
+
+commit 9e4631290f6c40a74ba1403644b8536fe065ca91
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 07:17:20 +0800
+
+    Refine some code.
+
+M	src/PunctEditor.cc
+
+commit acf0cdaca6d0c75359f90f4a888c6c99fc47c49b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-17 07:12:59 +0800
+
+    Fix the order of punct_table
+
+M	scripts/punct.py
+M	src/PunctEditor.cc
+M	src/PunctTable.h
+
+commit 8df3e417526b436fadfb7eeced6bde5cc24577e0
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-16 23:02:07 +0800
+
+    implement PunctEditor for BopomofoEngine
+
+M	src/BopomofoEditor.cc
+M	src/PunctEditor.cc
+M	src/PunctEditor.h
+
+commit af19867e06534726ed91ab6c7b17bc5214ac53fa
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-16 13:01:27 +0800
+
+    Add PunctEditor.h
+
+A	src/PunctEditor.h
+
+commit b3ac1d2c04008c989c215b2ff3e9f84585bc76ce
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-16 12:57:00 +0800
+
+    Add PunctTable in Makefile.am
+
+M	src/Makefile.am
+
+commit 40b35c83033ba26a661731f44405280ed91bd48a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-16 12:42:22 +0800
+
+    Add PunctTable.h
+
+A	scripts/genpuncttable.py
+M	src/PunctEditor.cc
+A	src/PunctTable.h
+
+commit 3cd7a8f7f2741d966fa9bea2dcaced4376c2e277
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-16 11:45:58 +0800
+
+    Add punct.py
+
+A	scripts/punct.py
+
+commit bb8f130fb94108cb1fa6863d14e1b2cd165a1594
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-16 09:33:59 +0800
+
+    Add MODE_PUNCT in BopomofoEngine
+
+M	src/BopomofoEngine.cc
+M	src/BopomofoEngine.h
+M	src/Makefile.am
+A	src/PunctEditor.cc
+
+commit ea3c000a332c8dd67147f479e1fdc13747d560c2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-16 09:16:48 +0800
+
+    Fix two build warnings.
+
+M	src/BopomofoEditor.cc
+
+commit 98e590baa65b9fb133f71994877cd2068c505d7f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-16 08:42:44 +0800
+
+    Refine coding style in Database.cc
+
+M	src/Database.cc
+
+commit 28d811bfa3676d1f96ec7b366caedececb6cc60b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-14 21:32:40 +0800
+
+    Remove PinyinParserTable.h.open-phrase
+
+D	src/PinyinParserTable.h.open-phrase
+
+commit 301be52c7bc6c15fb7d41ce4d8d1330ec8af737e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-14 19:25:42 +0800
+
+    Add bopomofo icon
+
+M	data/icons/Makefile.am
+A	data/icons/ibus-bopomofo.svg
+M	src/Main.cc
+M	src/pinyin.xml.in.in
+
+commit 3537d0592fdf92a900c285980255aba39440a7e8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-14 16:58:40 +0800
+
+    Add date string in version for testing
+
+M	configure.ac
+
+commit ef13f112bc1a9a837bc116abe691670dd2c73f20
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-14 17:26:35 +0800
+
+    Add Input mode/Select mode for Bopomofo
+
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/BopomofoEngine.cc
+M	src/PinyinParser.cc
+
+commit 6b4b7a6a082851ac734de624602dd4e7d013ab95
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-14 10:55:49 +0800
+
+    Allow multiple tone character
+
+M	src/BopomofoEditor.cc
+
+commit 35e5f6a5e90dde1b3683774247a4d9bb304bcc3c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-14 10:44:01 +0800
+
+    Create BopomofoEngine
+
+A	src/BopomofoEngine.cc
+A	src/BopomofoEngine.h
+M	src/Engine.cc
+M	src/Engine.h
+M	src/Makefile.am
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit c18e74986fb1e608e313497d3b3914ab22a4854b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-13 19:15:39 +0800
+
+    Make bopomofo as a separate input engine.
+
+M	src/BopomofoEditor.cc
+M	src/Engine.cc
+M	src/Engine.h
+M	src/Main.cc
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/pinyin.xml.in.in
+
+commit 44eb3a3beaaf8a9ee66a633783b3e6dd03a9e1f1
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-13 17:41:57 +0800
+
+    Bopomofo
+
+M	src/BopomofoEditor.cc
+M	src/BopomofoEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.cc
+M	src/PinyinParser.cc
+M	src/PinyinParser.h
+
+commit 98dae8ce422354031a82d940b1e2a4086bfb621d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-13 16:19:49 +0800
+
+    Refine some descriptions in spec file
+
+M	ibus-pinyin.spec.in
+
+commit a360dbe761107cd98530c24f2c115dd5c7613dca
+Author: BYVoid <byvoid1@gmail.com>
+Date:   2010-05-13 11:18:30 +0800
+
+    add Bopomofo Support
+
+A	src/Bopomofo.h
+A	src/BopomofoEditor.cc
+A	src/BopomofoEditor.h
+M	src/Makefile.am
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinParser.cc
+M	src/PinyinParser.h
+M	src/PinyinParserTable.h
+
+commit 5a3d87178bf076bd7d2e59ff53d5eb49f36f3a1a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-12 20:44:00 +0800
+
+    Use wchar_t for bopomofo
+
+M	scripts/genpytable.py
+M	src/PinyinParserTable.h
+M	src/Types.h
+
+commit e37e15be51cab2dfe85785b17a4707c09de402cd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-12 17:34:38 +0800
+
+    Generate some fuzzy bopomofo
+
+M	scripts/bopomofo.py
+M	scripts/genpytable.py
+M	src/PinyinParserTable.h
+
+commit 0fe0c8fdb5c2ce9090394034a505427b1aeab176
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-12 15:35:56 +0800
+
+    Generate PinyinParserTable with bopomofo
+
+A	scripts/bopomofo.py
+M	scripts/genpytable.py
+M	src/PinyinParserTable.h
+M	src/Types.h
+
+commit dbd5b6db458766db85d25e26303c2ad8490f0d53
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-11 15:00:23 +0800
+
+    Remove unused classes
+
+D	src/CustomPhrase.cc
+D	src/CustomPhrase.h
+M	src/Makefile.am
+
+commit 5aaa19db584a081a1aa33b020e9151a582beaa6b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-10 16:27:19 +0800
+
+    Does not include SimpTradConverter.h
+
+M	src/PinyinEngine.cc
+
+commit 1eddfed90792799379b7fb17f4f29c493ba062c9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-10 15:49:57 +0800
+
+    Drop indexes before create indexes.
+
+M	data/db/create_index.sql
+
+commit 3bdcd64dec6955fae09a828ae72e50ddd4fce84f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-10 15:32:25 +0800
+
+    Create index if not exists
+
+M	data/db/create_index.sql
+
+commit 875cfae16797f441fa60dc9976fdf34ff8f40007
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-07 22:26:36 +0800
+
+    Refine rpm packages:
+    ibus-pinyin be split into ibus-pinyin, -db-android and -db-open-phrase.
+
+M	ibus-pinyin.spec.in
+
+commit 724c443b776ded963d3804c2468a8b260bbebd1e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-03 15:47:58 +0800
+
+    Add macro DOUBLE_PINYIN_ZGPY
+
+M	src/DoublePinyinTable.h
+
+commit 1e1a3dcf395ef25860af696ed99528bfc1a33091
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-03 15:41:13 +0800
+
+    Release 1.3.5
+
+M	configure.ac
+
+commit 0e1f4a854482344e08fecbed9efe404063158d74
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-03 15:08:59 +0800
+
+    Fix problem in parse double pinyin
+
+M	src/DoublePinyinEditor.cc
+M	src/PinyinParser.cc
+
+commit 26b0f41caafe71d918d4c77a3f68fd31afd9436c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-03 14:24:24 +0800
+
+    Add MS double pinyin back
+
+M	src/DoublePinyinTable.h
+
+commit d3724f8e4698acee7505e0270ef4723a160d0d59
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-02 20:20:34 +0800
+
+    support correct: van => uan, vn => un, ven=>un, vang => uang
+
+M	scripts/genpytable.py
+M	setup/ibus-pinyin-preferences.ui
+M	src/Config.cc
+M	src/PinyinParserTable.h
+M	src/Types.h
+
+commit 8ee87ff84b8832ffa38a5b750f0c53dd3dabf3ae
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-05-02 18:58:57 +0800
+
+    Support correct jv,qv,xv,yv to ju,qu,xu,yu
+
+M	configure.ac
+M	scripts/genpytable.py
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/Config.cc
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinTable.h
+M	src/PinyinParserTable.h
+M	src/Types.h
+
+commit 9f34b7fd069299791a3dff1a205014a4b42759e8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-28 18:48:11 +0800
+
+    Refine python script
+
+M	src/update-simptrad-table.py
+
+commit 65303df35cc8db82810faa24235d6728234ee895
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-28 17:47:41 +0800
+
+    Add sctc
+
+A	src/sctc.py
+M	src/update-simptrad-table.py
+
+commit fdf98223a7219a698d0795b8acfa2064999061be
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-25 20:28:31 +0800
+
+    Use macro VERION
+
+M	src/Main.cc
+
+commit 67bfe008d98d8ee9b916956f2c0705a41aad65b5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-25 16:37:27 +0800
+
+    Refine coding style
+
+M	src/Signal.h
+
+commit 9221dcd2a12dff8d01190b31e5b620b8d653930c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-25 10:03:00 +0800
+
+    Refine coding style
+
+M	src/Main.cc
+
+commit 9f52877a68de2552e636e2ce5571cad6f7f28953
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-24 16:03:43 +0800
+
+    Clear editor, when user presses Shift to switch En/Ch mode
+
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.cc
+
+commit bc3df925397856d5110552dbc98a7867afb02d11
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-24 15:38:09 +0800
+
+    add assert in Object.h
+
+M	src/Object.h
+
+commit c9d7cd3ce501e7134692c51b3ba42e2eb079b312
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-24 15:31:13 +0800
+
+    Fix half and full punch problem
+
+M	src/FallbackEditor.cc
+M	src/FallbackEditor.h
+M	src/PinyinEngine.cc
+M	src/Text.h
+
+commit 0bb27ab4b07716102e7c86c103a88476e74335f1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-20 15:30:02 +0800
+
+    Add libboost-dev >= 1.39 in debian build script
+
+M	debian/control
+
+commit f4b43ed2e2957f27c5a92db8b21aed28c3a7f0b8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-20 11:00:41 +0800
+
+    Use libboost to replace sigc++
+
+M	debian/control
+
+commit ae017a35e8055b002f87d5ba0a9f62d7a874e911
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-16 12:45:21 +0800
+
+    Does not need swig
+
+M	debian/control
+
+commit 05f37204f748e0093506bd2293d16a2de5e47cdf
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-16 12:43:00 +0800
+
+    Update debian from Li Daobing's repository
+
+M	debian/changelog
+M	debian/control
+M	debian/rules
+A	debian/source/format
+
+commit a33abc5b604a056f7c8adb66ce72d3407014d0fd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-20 14:01:56 +0800
+
+    Check boost::signals2 in configure.ac
+
+M	configure.ac
+M	src/Makefile.am
+M	src/Signal.h
+
+commit 27ad7fcaacf9ff6e2d6c026ca9a659502b2fca72
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-20 08:38:06 +0800
+
+    Fix typo in phrases.txt
+
+M	src/phrases.txt
+
+commit bd5261752efc27558d4ccc46498faaf1d6955cd4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-19 15:12:03 +0800
+
+    Does not use typedef any more
+
+M	src/Phrase.h
+M	src/Types.h
+
+commit 1454d9f1192bbc42f3ed70a7c220fdef56c1cb8c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-19 14:52:07 +0800
+
+    Use tab for page down
+
+M	src/PinyinEditor.cc
+M	src/String.h
+
+commit 37e2dce77ff0c0a48fd51e74a19179e9044fb536
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-19 13:35:30 +0800
+
+    Use std::string to replace String
+
+M	src/Editor.h
+M	src/Text.h
+M	src/Util.h
+
+commit 9eaf10e010931ad4f3b4249957ce29633492e8b8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-19 12:09:45 +0800
+
+    Reset m_prev_commited_char in FallbackEditor
+
+M	src/FallbackEditor.cc
+
+commit 1433c8fc3a9a92d2da0f04d565e954ba3b366590
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-19 11:54:38 +0800
+
+    Remove unused code
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 812c0178fc27969f371eb0e5d373141ab2efe9ee
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-19 11:16:36 +0800
+
+    Remove StaticString
+
+M	src/Config.cc
+M	src/Config.h
+M	src/PinyinEngine.cc
+M	src/PinyinProperties.cc
+M	src/Util.h
+
+commit 15e5b18dfea9b6d66d39bf486070c6a33ffd6227
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-19 11:03:05 +0800
+
+    Remove PinyinEnginePtr
+
+M	src/Engine.cc
+M	src/PinyinEngine.h
+
+commit cbbfa1fbec89ab312fc132c465404b8c0da754aa
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-18 12:27:37 +0800
+
+    Use Object as the base class to replace Pointer.
+
+M	src/Bus.h
+M	src/Config.cc
+M	src/Config.h
+M	src/LookupTable.h
+M	src/Main.cc
+M	src/Makefile.am
+A	src/Object.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/PinyinProperties.cc
+M	src/Property.h
+M	src/Text.h
+
+commit 319924aa7ea5bb9cce557d0c474ac5d641f78dbb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-18 11:03:24 +0800
+
+    Remove debug output
+
+M	src/Pointer.h
+
+commit a417506b1cd0e2987745a925053160ff8182ecaa
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-17 20:11:46 +0800
+
+    Use struct
+
+M	src/Pointer.h
+M	src/Signal.h
+
+commit 2bb3f4dda26efcdcd93fcae0b2e5983a324272aa
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-17 19:39:58 +0800
+
+    Generate ChangeLog from git during make dist
+
+M	Makefile.am
+
+commit 414466300e91073a3af1f8c43024f8aeb454954d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-17 17:01:37 +0800
+
+    Use boost::shared_ptr to manage object instance.
+
+M	src/Database.cc
+M	src/Database.h
+M	src/Editor.h
+M	src/Engine.cc
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/SpecialPhrase.cc
+M	src/SpecialPhrase.h
+M	src/SpecialPhraseTable.cc
+M	src/SpecialPhraseTable.h
+
+commit 30b4b372c2c4bad09c6ae94ebbd5b00e57ee9adf
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-17 10:38:13 +0800
+
+    Use boost::signals2 to replace sigc++, do not need sigc++ library in
+    runtime
+
+M	configure.ac
+M	ibus-pinyin.spec.in
+A	m4/boost.m4
+M	src/Editor.h
+M	src/Makefile.am
+M	src/PinyinEngine.cc
+M	src/PinyinProperties.h
+A	src/Signal.h
+
+commit 8a0155f9c840cc4ee50dad97a13337d3fe5eb1a7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-16 09:14:48 +0800
+
+    Refine code.
+
+M	src/DynamicSpecialPhrase.cc
+M	src/SimpTradConverterTable.h
+M	src/update-simptrad-table.py
+
+commit 9218f1c22be21ea5199d1c180435071892d5faaa
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 20:49:09 +0800
+
+    Fix build error on NetBSD and does not call localtime every time.
+
+M	src/DynamicSpecialPhrase.cc
+M	src/DynamicSpecialPhrase.h
+
+commit ed642f7341bca83d39297a99905fb152bde4a66e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 15:38:25 +0800
+
+    Update comments in phrases.txt
+
+M	src/phrases.txt
+
+commit 406baa0f95f084e897db8845e407503bdcff6d6c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 15:34:28 +0800
+
+    Fix copy phrases.txt error
+
+M	setup/main.py
+
+commit fb08ff9bc55513b58f31a298c27dcf57a4d4196a
+Merge: 9e5ecb8 035bec8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 15:26:31 +0800
+
+    Merge remote branch 'origin/master'
+
+commit 9e5ecb8182be4e5a7c91cb92e9c5c64ed63fe8a2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 15:24:26 +0800
+
+    Add special phrases in setup ui
+
+M	po/ru.po
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/Config.cc
+M	src/Config.h
+M	src/SpecialPhraseTable.cc
+M	src/phrases.txt
+
+commit 547f5f2edf23027731a3e9f13f2de60a32224c9f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 13:11:40 +0800
+
+    Update the phrases.txt location
+
+M	po/ru.po
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/SpecialPhraseTable.cc
+
+commit 035bec8a9f02ffa9fd6354439799f45ef8de5e53
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 13:11:40 +0800
+
+    Update the phrases.txt location
+
+M	src/SpecialPhraseTable.cc
+
+commit 5b2e8ff3ea0efa7e44eafef1a697683f3f06fdf5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 12:21:47 +0800
+
+    Don't include WideString.h in Makefile.am
+
+M	src/Makefile.am
+
+commit 593375cfeaee95ff25778c06c784900a95301ec0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 12:09:35 +0800
+
+    Add clear of SpecialPhraseTable
+
+M	po/POTFILES.in
+M	src/DynamicSpecialPhrase.cc
+M	src/DynamicSpecialPhrase.h
+M	src/Makefile.am
+M	src/SpecialPhrase.cc
+M	src/SpecialPhrase.h
+M	src/SpecialPhraseTable.cc
+M	src/SpecialPhraseTable.h
+
+commit 3543873912a94b38853769c4bb9c81264a54337b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 11:30:25 +0800
+
+    Fix make distcheck errors.
+
+M	po/POTFILES.in
+M	src/Makefile.am
+
+commit 1b161011fb6aa5f2197fe83d8e310bc44586de5d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 11:15:53 +0800
+
+    Remove some unused code
+
+M	src/DynamicSpecialPhrase.cc
+M	src/SpecialPhraseTable.cc
+
+commit e84345b5d8bd1ce1aa0ffe4d2910b38581f4b7b9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 11:13:04 +0800
+
+    Update phrases.txt
+
+M	src/phrases.txt
+
+commit 98f2c717f5c7d0d532e5ee53c55370bff01e3b33
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 11:02:07 +0800
+
+    Split SpecialTable.{h, cc}
+
+A	src/DynamicSpecialPhrase.cc
+A	src/DynamicSpecialPhrase.h
+M	src/Makefile.am
+M	src/PinyinEditor.h
+A	src/SpecialPhrase.cc
+A	src/SpecialPhrase.h
+A	src/SpecialPhraseTable.cc
+A	src/SpecialPhraseTable.h
+D	src/SpecialTable.cc
+D	src/SpecialTable.h
+
+commit ade4b089f5f5974e070f59941c70376b72921219
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 10:38:36 +0800
+
+    Comment the lunar phrase
+
+M	src/phrases.txt
+
+commit d48cbf22c71b41ea14d7fb4e58dc24153ca1331a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 08:30:32 +0800
+
+    Fix several bugs in SpecialTable
+
+M	src/SpecialTable.cc
+M	src/phrases.txt
+
+commit 10eeeed063f31e9c83de4b3860e65774cd725964
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 07:39:04 +0800
+
+    Install phrases.txt
+
+M	configure.ac
+M	ibus-pinyin.spec.in
+M	src/Makefile.am
+M	src/PinyinEditor.cc
+M	src/phrases.txt
+
+commit 884385c71d3fc63a11b01d08e69fce8ba5a9c3f4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-15 07:23:56 +0800
+
+    Remove some unused code.
+
+M	src/Makefile.am
+
+commit b64e42f4000785e38a83322a381fe6dd98d347cd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 22:29:31 +0800
+
+    Load phrases.txt from home dir & pkgdata dir
+
+M	src/SpecialTable.cc
+A	src/phrases.txt
+D	src/special_phrases
+
+commit 9118f465a155b230435ace53e4ecb196964b4548
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 19:24:35 +0800
+
+    Update special table.
+
+M	src/SpecialTable.cc
+M	src/special_phrases
+
+commit 1b09a2d9d16d805c1b9ad8a5d35178f75441e3dc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 19:05:34 +0800
+
+    Change special_phrases format
+
+M	src/SpecialTable.cc
+M	src/special_phrases
+
+commit 15ae23dc3b5d07f94a3846a52489975b6b2f6b58
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 18:33:30 +0800
+
+    Fix commit special phrases issue
+
+M	src/PinyinEditor.cc
+
+commit ab506536d10fc7d965241eff64cf261c6e7c8f06
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 18:28:13 +0800
+
+    Support load special phrases from file.
+
+M	src/SpecialTable.cc
+M	src/special_phrases
+
+commit c608cfe155df89906b7c37fc42e8f910ad91914a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 17:48:00 +0800
+
+    Convert to unix format
+
+M	src/special_phrases
+
+commit cfa46f77f2a451bffd1cba71b95382ded6d6efeb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 17:47:35 +0800
+
+    Add special_phrases
+
+M	src/Regex.h
+M	src/SpecialTable.cc
+A	src/special_phrases
+
+commit 1ad5b89b18fe5a67334bff423ceaf129109d2c98
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 15:10:49 +0800
+
+    Use cstdlib to replace stdlib.h
+
+M	src/Util.h
+
+commit 68fce9f627c524412f6b07a22810230c9befbbd5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 11:25:39 +0800
+
+    Update SimpTradConverterTable.h from wikipedia
+
+M	src/SimpTradConverterTable.h
+
+commit b3ea7266a0b491dfe727e1ebfa3cedc70da30276
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 11:19:09 +0800
+
+    Use cheaders
+
+M	src/Database.cc
+M	src/Engine.cc
+M	src/Phrase.h
+M	src/PinyinEngine.cc
+M	src/PinyinParser.cc
+M	src/SimpTradConverter.cc
+
+commit b113c8be8ca9b8d5f4b44ee991012d1513e29236
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-14 11:04:28 +0800
+
+    Support some dynamic special phrases
+
+M	src/PinyinEditor.cc
+M	src/SpecialTable.cc
+
+commit 06ae4e4984c1fea0ef0154ac94e8ebba2af7140a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-13 22:17:43 +0800
+
+    Show auxiliary text correctly with special phrase.
+
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+
+commit ccf66d9244a59e2830b71abe2d9b9ce007aff52a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-13 21:21:49 +0800
+
+    Refactory PinyinParser
+
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/FullPinyinEditor.cc
+M	src/FullPinyinEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinParser.h
+
+commit 4707357783c1bcf44cfab5d7915182f38f231398
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-13 17:41:38 +0800
+
+    Refine code
+
+M	src/Database.cc
+M	src/Database.h
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/SpecialTable.cc
+M	src/SpecialTable.h
+
+commit 11da825e682f1341b97cdb9f5482d6293338888a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-13 16:18:29 +0800
+
+    Add a special phrase.
+
+M	src/SpecialTable.cc
+
+commit fdf8943c8a0745f208e715e96d4dd6162e9e7e81
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-13 15:54:57 +0800
+
+    Enable special phrases in double pinyin
+
+M	src/DoublePinyinEditor.cc
+M	src/FullPinyinEditor.cc
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+
+commit 3f394df7cf47f4287d886463f2a5e94c4f658d57
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-12 20:27:04 +0800
+
+    Support special phrases
+
+M	src/DoublePinyinEditor.cc
+M	src/Editor.cc
+M	src/FullPinyinEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/SpecialTable.cc
+M	src/SpecialTable.h
+
+commit 28b5b9d35ae884e37f45ec213e6b884517d32c56
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-12 17:40:45 +0800
+
+    Fix configure problem in MacOSX
+
+M	configure.ac
+
+commit 058446491c9480ef1fab9e02c7f4b089cb71dcf2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-12 16:19:38 +0800
+
+    Refine uuid checking in libc and libuuid
+
+M	configure.ac
+M	src/Makefile.am
+M	src/Util.h
+
+commit 9c9f091e7af575254e8fa8aff84bc8de981ef7fa
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-12 07:34:40 +0800
+
+    Use lower format uuid
+
+M	src/Util.h
+
+commit ee0f3b1dde90c200df91b3b03a3c1ae3ffcb8fa6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-12 06:45:50 +0800
+
+    Fix compile errors in FreeBSD and NetBSD.
+
+M	configure.ac
+M	src/Util.h
+
+commit 447efa4d8e3b5b4958780d6d70273a1e754982f7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-12 06:38:55 +0800
+
+    Do not use strnlen any more.
+
+M	src/PinyinParser.cc
+
+commit 29c97aebdcdb7009d7cdc97e5b70d6818af22427
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-11 08:32:32 +0800
+
+    Release 1.3.2
+
+M	configure.ac
+
+commit 8e7c53a4a90944f33c9e8a280e6a43a30085bfbc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-11 08:24:48 +0800
+
+    Check program sqlite3 in configure
+
+M	configure.ac
+M	data/db/android/Makefile.am
+
+commit 384604e049b7fff31b06ab2e715dc6a46cd21291
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-11 08:15:43 +0800
+
+    Removce some debug output
+
+M	src/Database.cc
+M	src/SimpTradConverter.cc
+
+commit 35374ff6a33cb02a95c03c3d3a20a62e7217a366
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-10 20:16:24 +0800
+
+    Refine code
+
+M	src/Database.cc
+M	src/Phrase.h
+
+commit 3c28f607c3d81378e102fd7ea20744e301e7b191
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-10 19:52:41 +0800
+
+    Do not prefetch tables.
+
+M	src/Database.cc
+
+commit de1000ba701981b4d803dad7865ab8e31ec13d13
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-10 08:00:36 +0800
+
+    Refine code.
+
+M	src/SimpTradConverter.cc
+
+commit d2fc360725280ca7ef4b8608377f4bf27ef19b9d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-09 16:59:30 +0800
+
+    Remove HashTable.h
+
+D	src/HashTable.h
+M	src/Makefile.am
+
+commit e0f0c97df02cb3fbaffb11b59340b2656e0e9277
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-09 08:51:22 +0800
+
+    Remove empty line
+
+M	src/Main.cc
+
+commit 80bbe996748d29faec361794bb7290870bc7a649
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-09 08:35:33 +0800
+
+    Refine some code.
+
+M	src/Database.cc
+M	src/Database.h
+M	src/String.h
+
+commit 8f076b93a1bda49d91a5aa0902b3ce19cf0c283d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-09 07:22:49 +0800
+
+    Return references for signals
+
+M	src/Editor.h
+
+commit 8d68ce7e97e4d822c0ea3d7e938ed5a6e581c7e6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-08 18:30:55 +0800
+
+    Remove Array.h
+
+D	src/Array.h
+M	src/Makefile.am
+
+commit 1496b0a56bbd45cdafa44934a73e026b19593dae
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-08 18:29:59 +0800
+
+    Does not use Array anymore
+
+M	src/Database.cc
+M	src/DoublePinyinEditor.cc
+M	src/FullPinyinEditor.cc
+M	src/PhraseArray.h
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinArray.h
+M	src/PinyinParser.cc
+M	src/WideString.h
+
+commit 5817602139905bd82a9cf9d14811d2ed08ded672
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-08 15:33:34 +0800
+
+    Refine code
+
+M	src/Database.cc
+M	src/Database.h
+
+commit 7d53bd778bcb4ce47a6b99ca01cb3a12f1cc73ee
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-08 15:07:18 +0800
+
+    Update po files.
+
+M	po/ru.po
+M	po/zh_CN.po
+
+commit 706a1ba1acdb338cbb3b022a1581123b08920afb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-08 15:03:52 +0800
+
+    Refine some code
+
+M	src/Util.h
+
+commit b11ffca250e50c2968eff626696496f74c6d98ea
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-08 14:45:29 +0800
+
+    Refine code.
+
+M	src/Array.h
+M	src/Database.cc
+M	src/DoublePinyinEditor.cc
+M	src/FullPinyinEditor.cc
+M	src/Phrase.h
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinParser.cc
+M	src/String.h
+
+commit f8f97605d124b0c3cc128477cd7f9aba994f6906
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-08 14:44:13 +0800
+
+    Use pinyin-debug as engine name if debug mode
+
+M	src/Main.cc
+
+commit 09f6296294a63284e673873cacf9ddd460b4787c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-06 19:21:43 +0800
+
+    only output warning if sqlite api return failed.
+
+M	src/Database.cc
+
+commit 7be63665482a9912abd0c535144fa335a8752da1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-06 19:14:04 +0800
+
+    Refine some code.
+
+M	src/FullPinyinEditor.cc
+M	src/PinyinParser.cc
+
+commit 4e9d34c0420416abc8a0de656808699ff4a4ed7f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-06 17:54:10 +0800
+
+    reorder options
+
+M	src/Config.cc
+
+commit 33dfec2fce74cb9107bd66c82b10c8f4214239c9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-06 17:42:19 +0800
+
+    Refine code of class Conditions
+
+M	src/Database.cc
+
+commit f21c6030382dfe65ac982e52291b7b496d08e120
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-06 17:25:02 +0800
+
+    Optimize some loops.
+
+M	src/Database.cc
+
+commit 40b9e8911d184e91c454f2e78b72110cc5ff021d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-06 17:24:25 +0800
+
+    Remove debug output.
+
+M	src/Text.h
+
+commit e0be555919b224198fcb643c712b7ce5278b45ba
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-06 16:44:33 +0800
+
+    Only store prev pressed key if the keyevent is ignored by editors.
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 205db5838a28fc594086aa129c6b186c39e42b36
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 17:25:14 +0800
+
+    Release 1.3.1
+
+M	configure.ac
+
+commit 0ec8339d6ee6984b491ddde78e6f0b3fc4fa97da
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 17:24:14 +0800
+
+    Use update_lookup_table_fast
+
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.cc
+
+commit f87705de00c5acd669957f002d38fd3c8d8e28a0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 16:04:27 +0800
+
+    Fix some problems
+
+M	src/Array.h
+M	src/Database.cc
+M	src/Database.h
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.cc
+M	src/Text.h
+
+commit 11013e93069ba8dba07da3256d6fd71e8a1c2b23
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 13:17:09 +0800
+
+    Fix some problems.
+
+M	src/Database.cc
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+
+commit 5ffc5af22bce48f4a113e2205cd0a059b753a540
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 10:44:08 +0800
+
+    Optimize database query
+
+M	src/Database.cc
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+
+commit 937f048ec16f01b5eaeed04f947e10b23a92c7c6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 10:30:56 +0800
+
+    Modify test target
+
+M	src/Makefile.am
+
+commit 21da4073bbcf9a59913fd09bbe442deef284e204
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 08:30:34 +0800
+
+    Refactory Database
+
+M	src/Database.cc
+M	src/Database.h
+M	src/PhraseEditor.cc
+
+commit 9ea30d33b9b720dbcd6cf507dbdf0128cbc3ba84
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-05 07:15:26 +0800
+
+    Refactory Database class
+
+M	src/Database.cc
+M	src/Database.h
+
+commit 1f2e8fd251ed8ee8315b0a4560e9e89cfe0b2d9e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-04 23:27:31 +0800
+
+    Optimize lookup table logic
+
+M	src/LookupTable.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+
+commit 25c77d2176c5eee69149dbb3b6ed0f96b30912c1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-04 22:24:32 +0800
+
+    Always unselectCandidates before move cursor
+
+M	src/PinyinEditor.cc
+
+commit e470a4fffcc4d3ea1a0b85347ab284dde4738ad7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-04 13:08:13 +0800
+
+    unselectCandidates before move cursor left or remove char before cursor
+
+M	src/PhraseEditor.h
+M	src/PinyinEditor.cc
+
+commit 1072ff8709f18469c7723858fdf97818ac62beae
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-04 12:50:52 +0800
+
+    Does not update lookup table, when remove chars after cursor.
+
+M	src/FullPinyinEditor.cc
+
+commit 5b84d10844e82be9bd21b6bd3fc98f6dad1b7d41
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-03 11:44:17 +0800
+
+    Show candidates in correct colour.
+
+M	src/PhraseEditor.h
+
+commit c14fbdda03d9fd5e53bf840916f8cef09e977593
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-04-03 11:33:36 +0800
+
+    Update lookup table before preedit text and aux text to avoid crash
+
+M	src/PinyinEditor.cc
+
+commit fecbae61279b9b25b303575cadcb4cbdaa34cf3f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-31 17:36:29 +0800
+
+    Quit to initial mode when the editor is empty
+
+M	src/PinyinEngine.cc
+
+commit 34578e3c1a0720333e94f1ca276fc9f21d236b7c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-31 12:43:57 +0800
+
+    Fix make check problems.
+
+M	po/POTFILES.skip
+
+commit c59f1ced318cb06441c29f9e0971ee9fef99d5ff
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-27 17:21:50 +0800
+
+    Fix build warnings
+
+M	src/DoublePinyinEditor.cc
+M	src/PhraseEditor.cc
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/Types.h
+
+commit fb8a36b64df6f48ae95f68ceb58e204e388f070f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-26 11:35:56 +0800
+
+    Bump version to 1.3.0
+
+M	configure.ac
+
+commit c4ff5531597501a63a1f2b1fc7c6edeea7af2e56
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-26 12:29:57 +0800
+
+    Fix rpm build errors
+
+M	ibus-pinyin.spec.in
+M	src/DoublePinyinEditor.cc
+
+commit 7b1597153b3aec71d328731112fb89e122960a40
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-26 11:17:03 +0800
+
+    Remove pot file.
+
+D	po/ibus-pinyin.pot
+
+commit ee09ef872e775f7e7097cef96b0d3de6d65d3de0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-26 11:08:32 +0800
+
+    Adjust setup UI
+
+M	po/ibus-pinyin.pot
+M	po/ru.po
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.ui
+
+commit 090dd34a67d4dfa5d0546c5bd05bc1cf27d9cc5b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-25 19:35:30 +0800
+
+    Add option - Show raw input of Double Pinyin
+
+M	po/ibus-pinyin.pot
+M	po/ru.po
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/Config.cc
+M	src/Config.h
+M	src/DoublePinyinEditor.cc
+
+commit 1b3ffa8d9368078b9cc4a2c4515f3330f554f906
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-25 19:10:24 +0800
+
+    Add option - orientation of candidates
+
+M	po/ibus-pinyin.pot
+M	po/ru.po
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/Config.cc
+M	src/Config.h
+M	src/DoublePinyinEditor.cc
+M	src/LookupTable.h
+M	src/PinyinEditor.cc
+
+commit cfcabb9b9483cb6a9d954a5e189c2a5212b315bd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-25 16:56:16 +0800
+
+    Fix bug when use Ctrl+Backspace to remove word in double pinyin
+
+M	src/DoublePinyinEditor.cc
+
+commit e193cc8a2cb74a94dc30e201eb76a0a9d939a097
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-25 14:01:09 +0800
+
+    Use G_DEFINE_TYPE to make code simple
+
+M	src/Engine.cc
+
+commit e46e050a07680ba4b944502f35c4c0ad3c6fd774
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 23:37:10 +0800
+
+    clean ZhConversion.*
+
+M	src/Makefile.am
+
+commit 9bedb474e6dc36620a1c3da27b4a6f8c3b7f9b4a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 23:33:16 +0800
+
+    Remove some unused code.
+
+M	src/PhraseEditor.cc
+
+commit 25bcc654cbd14cbdddecc725540239bbce1d2684
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 11:27:15 +0800
+
+    Show raw input in double pinyin
+
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+
+commit a4174ee888c622d1a1a49a9acd6f7f4504b11806
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 11:04:22 +0800
+
+    Add some log message
+
+M	src/Database.cc
+
+commit db0adc56b80b99042ec4446261e345d3a5634a0b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 10:58:55 +0800
+
+    Use svn to get ZhConversion.php from wikipedia svn repository
+
+M	src/Makefile.am
+
+commit 28537612f243ca03a30ec74d8142232b70c51d45
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 10:50:37 +0800
+
+    Add make target update-simptrad-table
+
+M	src/Makefile.am
+
+commit 1931a870082ac9312d63b1ebc616f9697b5ac00b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 10:40:42 +0800
+
+    Disable CONFIG_REVERSE_FIRST_CANDIDATE
+
+M	src/PhraseEditor.cc
+
+commit 5fdfb6cd25f67dd70e9275bb396975150f08f20c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 10:33:27 +0800
+
+    Make build output looks better
+
+M	data/db/open-phrase/Makefile.am
+
+commit 55439c14d7fac09c52d9d84e38e270978b6dc038
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-24 10:21:24 +0800
+
+    Remove unused code
+
+M	src/DoublePinyinEditor.cc
+
+commit a475efbee8d7a77dbd48c4519acd7434f9bfcafb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-23 19:15:39 +0800
+
+    Trace 'a', 'e', 'o' as PINYIN_ID_ZERO in double pinyin
+
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinTable.h
+
+commit edde50a74d387c0b4301e8e4f6f11fb05db9f3d8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-23 17:14:19 +0800
+
+    make build output looks better
+
+M	data/db/android/Makefile.am
+M	src/Makefile.am
+
+commit f7762c5207535c21d6f5c83bef8436653c7d0f56
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-22 21:16:27 +0800
+
+    Use AM_SILENT_RULES
+
+M	configure.ac
+
+commit 71812a3b94c86340f1fedbb08a3ecf84b2daae5e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-22 17:00:31 +0800
+
+    Add a new logic to generate the first candidate
+
+M	src/PhraseEditor.cc
+
+commit 48d6d17217165a1858d53d4fe97054045f845b15
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-22 15:09:07 +0800
+
+    Avoid pinyin > MAX_PHRASE_LEN
+
+M	src/DoublePinyinEditor.cc
+
+commit 5ec3728d4479634f07bf9484ce08e0c063d8bf3f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-22 15:05:37 +0800
+
+    Adjust functions' order
+
+M	src/DoublePinyinEditor.cc
+
+commit 910ffd54303ebcc1c2957cc06aa8bd106be34141
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-22 14:37:29 +0800
+
+    Refactory double pinyin to make code simplier
+
+M	src/Array.h
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+
+commit 9d297615b72eb2441f5cdcaa560b21d8ba314fa3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-17 04:37:28 +0800
+
+    Put the setup dialog in center of screen
+
+M	setup/ibus-pinyin-preferences.ui
+
+commit f64aee5b081c37cad3c04dae616f5680b1e54aeb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-18 12:22:53 +0800
+
+    Fix bug in double pinyin
+
+M	src/DoublePinyinEditor.cc
+
+commit 9f28f25476175252d1a74db667acfc2fef0c9bc7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-18 12:16:09 +0800
+
+    Fix auto commit problem in double pinyin
+
+M	src/DoublePinyinEditor.cc
+
+commit f88af11c2dba110350a4b8c794c2754c57c6d953
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-18 10:50:16 +0800
+
+    Refine the macro
+
+M	src/DoublePinyinEditor.cc
+
+commit 50124cb3085c75a50b602cb5738db8f9bc2e11af
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-18 10:44:32 +0800
+
+    Use macro to replace inline function
+
+M	src/DoublePinyinEditor.cc
+
+commit f4bf29f7c41edb63ba2687342b763f8b3b90256e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-16 04:54:45 +0800
+
+    Ignore puncts in double pinyin
+
+M	src/DoublePinyinEditor.cc
+
+commit 9222a2be0bec112eaa0f37b544408380d17f5b78
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-16 04:08:48 +0800
+
+    Limit pinyin <= MAX_PHRASE_LEN in double pinyin
+
+M	src/DoublePinyinEditor.cc
+
+commit 0f184b6073c28275c967727bf1abf3e8d52b488d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-17 19:33:08 +0800
+
+    Ignore all chars if preedit is too long.
+
+M	src/DoublePinyinEditor.cc
+M	src/FullPinyinEditor.cc
+
+commit 7ca770df020c57febc9dfa23184c2de47532fac8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-17 19:28:52 +0800
+
+    Fix bug in double pinyin
+
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/PinyinEditor.cc
+
+commit 84fe2739b3d5197731038cc95e65f8c771953335
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-16 10:13:37 +0800
+
+    Display correct version in setup ui
+
+M	configure.ac
+M	po/POTFILES.in
+M	po/ibus-pinyin.pot
+M	po/ru.po
+M	po/zh_CN.po
+M	setup/Makefile.am
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+A	setup/version.py.in
+
+commit f1673ae973bcb1375c233b8b8551fd256d5b0f2d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-16 10:00:44 +0800
+
+    Add a spece between pinyin and non-pinyin in aux text
+
+M	src/PinyinEditor.cc
+
+commit 098ffd9a2881b27af60ccec1c21879a83f544074
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-16 09:56:34 +0800
+
+    Unify coding style
+
+M	src/DoublePinyinEditor.cc
+
+commit 72e1d4d6bc20f7470dd8db05397ddf914660765f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-16 09:54:26 +0800
+
+    Fix bug when move cursor left with double pinyin
+
+M	src/DoublePinyinEditor.cc
+
+commit 5e68579df521289278dfb30957de3e2f8856ccfe
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-15 18:34:24 +0800
+
+    Make incomplete pinyin configurable with double pinyin
+
+M	setup/main.py
+
+commit 9fab244066a91f3b8ab5f14a03cf89510cd7dc35
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-15 18:22:10 +0800
+
+    Update preedit text in DoublePinyin
+
+M	src/DoublePinyinEditor.cc
+
+commit 6b34c5989e5dd385011d2907f46730d7773d22b4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-15 13:07:39 +0800
+
+    Implement Double PinYin
+
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/PinyinEditor.h
+
+commit 144f1424a3a9c7825e88932949a10158b969e73d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-15 11:25:05 +0800
+
+    Store last commit text
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/Text.h
+
+commit 07cc0da14d42bd1544617e7af961242c0932da16
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-10 15:54:24 +0800
+
+    Auto swith mode when user press www. http: xxx@
+
+M	src/Editor.cc
+M	src/Editor.h
+M	src/Makefile.am
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/Pointer.h
+
+commit b8d4fa27411735b1889f111ab82d959a6804acb5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-08 17:49:55 +0800
+
+    Update SimpTradConverterTable.h from wikipedia
+
+M	src/SimpTradConverterTable.h
+
+commit 78346c5a993222f50239c5d9bd28e7b363a7c429
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-08 17:48:00 +0800
+
+    Fix bug in toHalf
+
+M	src/HalfFullConverter.cc
+
+commit 3997433c29479bf41380fc9d94800801a2ab1241
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-08 13:43:59 +0800
+
+    Remove some unused variables.
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit cf35e158e2ff2ce862bd54101bf616bb63fb29f2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-08 12:06:13 +0800
+
+    Fix problem in FallbackEditor.
+
+M	src/FallbackEditor.cc
+
+commit 6fa5284c44abff5fb4ddb193db9069e5585faca8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-08 12:06:02 +0800
+
+    Add G_DEBUG env in make test
+
+M	src/Makefile.am
+
+commit 928073165da6d9cc55ee8728912bb56c9141f008
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-02 14:03:28 +0800
+
+    Process other keys on KeyPad
+
+M	src/FallbackEditor.cc
+
+commit 5c2708b82fe9bab7740c707036e77d991adb9bf3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-03-02 13:47:23 +0800
+
+    Process IBUS_KP_0 ... IBUS_KP_9 as IBUS_0 ... IBUS_9
+
+M	src/FallbackEditor.cc
+
+commit 981760a963ca82a3cd9fde77a303e4745e3e293b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-13 17:11:41 +0800
+
+    Fix comment
+
+M	src/PinyinEngine.cc
+
+commit d8329f5a207efaa020eaa484fd9ec56b7ed75ce2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-12 23:49:01 +0800
+
+    Add ExtEditor.cc
+
+A	src/ExtEditor.cc
+M	src/ExtEditor.h
+M	src/Makefile.am
+
+commit 16c742c8193da82959077dc743a965ca3008d5b0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-12 17:21:22 +0800
+
+    Fix typo in comment
+
+M	src/PinyinEngine.cc
+
+commit 9f4d0fcbe34d9f0c3d8f2aadd117974b36174030
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-12 17:07:00 +0800
+
+    Add some comments
+
+M	src/PinyinEngine.cc
+
+commit 3c1b478b282d796639deb210c97a2b495d029f70
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-12 16:41:50 +0800
+
+    Add ExtEditor.h
+
+A	src/ExtEditor.h
+M	src/Makefile.am
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit d558a8e641d15d88805ababdd3e8d571233d8ee4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-12 15:15:40 +0800
+
+    Fix chinese mode issues.
+
+M	src/PinyinEngine.cc
+
+commit 64182077becb35474b9c75bc56991370a987e955
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-11 14:12:09 +0800
+
+    Fix problem of auto commit
+
+M	src/PinyinEditor.cc
+
+commit 1e3f4faf7a1df27006ce5a52bf0c783c0e1706f0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-11 13:34:41 +0800
+
+    Clean up code
+
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.h
+
+commit 4ea6d5cc18adf9b76059589d7c0265c117e7a8e0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-11 13:10:09 +0800
+
+    Handle some punct keys
+
+M	src/PinyinEditor.cc
+
+commit 4b2cc678eec06c9da0a5a185100f919557bfc2ae
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-11 12:50:17 +0800
+
+    Do not pass Release key event to editors.
+
+M	src/DoublePinyinEditor.cc
+M	src/Editor.cc
+M	src/FallbackEditor.cc
+M	src/PinyinEditor.cc
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 30a249a7c58ffe379c02d0c4057dd5ac7d164c2b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-11 12:32:30 +0800
+
+    Add FallbackEditor
+
+A	src/FallbackEditor.cc
+A	src/FallbackEditor.h
+M	src/Makefile.am
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 50ef4dce7f948d13fb9dc46396bc414017738c48
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 14:25:38 +0800
+
+    Update po files.
+
+M	po/ibus-pinyin.pot
+M	po/ru.po
+M	po/zh_CN.po
+
+commit 96fcc6938e31a0f4bbe19f0f8ebe8fa84bb64006
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 14:23:12 +0800
+
+    Update POTFILES.in
+
+M	po/POTFILES.in
+
+commit 200aed6bb7a53d76cabe4559dfc43bf0005fdda3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 14:13:36 +0800
+
+    Show auxiliary text correctly.
+
+M	src/PinyinEditor.cc
+
+commit c4e6359b3f46c125d5e7d65428cbdfe8be2d3683
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 13:40:34 +0800
+
+    Update SimpTradConverterTable from wikipedia
+
+M	src/SimpTradConverterTable.h
+
+commit dc4b853b45f05ba7c5da721538da5cc1495a340b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 13:32:53 +0800
+
+    Handle ';' in DoublePinyinEditor.
+
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+M	src/FullPinyinEditor.cc
+
+commit 0e7dcb67c0762883c0976650e536e4748a580fd4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 13:11:42 +0800
+
+    Remove some unused code.
+
+M	src/PinyinEngine.h
+
+commit 67ec52a9391bc31840f12eb29cdb1829997c33f0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 12:58:40 +0800
+
+    Add wordlist
+
+A	data/wordlist
+
+commit 6db692b129f7648371cbcf427a19dc7b153064e6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 12:55:28 +0800
+
+    Move _() to PinyinProperties.cc
+
+M	src/PinyinProperties.cc
+M	src/PinyinProperties.h
+
+commit 86681649085508eebbce4d2a39d29a061fa99523
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-10 12:53:37 +0800
+
+    Implement candidateClicked method
+
+M	src/Editor.cc
+M	src/Editor.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+
+commit a6ec9cf51f8ddcf3f295ebe8f74b1c3a53248fae
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-07 13:25:35 +0800
+
+    Refactory classes, and use sigc++ to make code clear.
+
+M	configure.ac
+M	src/DoublePinyinEditor.cc
+M	src/DoublePinyinEditor.h
+A	src/Editor.cc
+A	src/Editor.h
+M	src/FullPinyinEditor.cc
+M	src/FullPinyinEditor.h
+M	src/Makefile.am
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinArray.h
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+A	src/PinyinProperties.cc
+A	src/PinyinProperties.h
+M	src/RawEditor.h
+M	src/Text.h
+
+commit efa0c8f199b0e058b3cc5f88f0d6e20c382570b3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-02-02 10:01:19 +0800
+
+    Fix problem when use '0' to select 10th candidate
+
+M	src/PinyinEngine.cc
+
+commit 9db3894d2b02e0e7e28955bf8564dcf5e1240624
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-26 21:27:16 +0800
+
+    Exit if can not connect to ibus
+
+M	src/Bus.h
+M	src/Main.cc
+
+commit 7c8dc0f92d59d0657b4edf42c03410e81bc1a8cd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-19 13:22:03 +0800
+
+    Add local.db
+
+M	src/Database.cc
+
+commit d43b51fcf3ff9f9d4f0b95db10f242018b3e1bc7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-18 16:41:22 +0800
+
+    Remove SIMP_TO_TRAD_NR
+
+M	src/SimpTradConverter.cc
+M	src/SimpTradConverterTable.h
+M	src/update-simptrad-table.py
+
+commit 2adb75fd7849d94019a36a13fbd3196ff707aea3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-18 16:39:58 +0800
+
+    Fix genpytable.py
+
+M	scripts/genpytable.py
+M	src/PinyinParser.cc
+M	src/PinyinParserTable.h
+
+commit 56518df0f50db706a9331b04c1b866c7de0fd814
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-18 16:24:02 +0800
+
+    Fix fuzzy and auto correct problem with 'rve rue'
+
+M	scripts/genpytable.py
+M	src/PinyinParser.cc
+M	src/PinyinParserTable.h
+
+commit ea33ab8c6312d9cad4f371b61e276cb82ac8bf3d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-18 16:22:25 +0800
+
+    Add option auto correct "ue -> ve"
+
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+
+commit 9c2e615dd98273c4344e93bb9058a79eb224daea
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-18 16:08:57 +0800
+
+    Fix a typo.
+
+M	src/Config.cc
+
+commit 722857195c111dbe41dc240747e73720999d5017
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-18 14:50:21 +0800
+
+    Use lve, nve to replace lue, nue
+
+M	scripts/genpytable.py
+M	scripts/pydict.py
+M	src/Config.cc
+M	src/PinyinParserTable.h
+M	src/Types.h
+
+commit abf357f7fb4db64b0487ebd1e1fff83670d27a16
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-18 13:11:56 +0800
+
+    Update SimpTradConverterTable.h
+
+M	src/SimpTradConverterTable.h
+
+commit 742bd5e1c74a19bf89b3bb9965dbd95d5a202e5f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-13 13:19:33 +0800
+
+    Add intltool in rpm spec file.
+
+M	ibus-pinyin.spec.in
+
+commit e8e197527ba0271f9fc440c60253a904c8006bd6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-04 10:01:03 +0800
+
+    Open user db in EXCLUSIVE mode.
+
+M	src/Database.cc
+
+commit d2f9f35a38c313449a2a1d40ea082d6b7a1f03b6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-04 09:38:33 +0800
+
+    Use PERSIST journal mode for better performance.
+
+M	src/Database.cc
+
+commit 0168e6e8d18455557e3412aef86f1d74cd643e9d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-04 09:33:52 +0800
+
+    Remove some duplicate code.
+
+M	src/Database.cc
+
+commit 5255574afea895f997c0c2dcca69826cb311c4cd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-04 08:27:42 +0800
+
+    Remove unused code.
+
+M	src/Database.h
+
+commit 1d75209df049d6440d231ea400012a4b3b37f162
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-04 08:25:41 +0800
+
+    Optimize sqlite for better performance.
+
+M	src/Database.cc
+
+commit 209e5a877991fd8e2c31b51dfd6a155df08da208
+Merge: ee861c1 8a49985
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-01 19:20:05 +0800
+
+    Merge branch 'stl'
+
+commit ee861c1028911ab2bee572dd27dfab8d6408604f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-01 19:18:22 +0800
+
+    Ignore number key if with some modifiers.
+
+M	src/PinyinEngine.cc
+
+commit 8a49985b01eb5d4a0c9dc6d4d0b94046ebb4db1d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-31 14:20:49 +0800
+
+    Use *_LDADD replace *_LDFLAGS
+
+M	src/Makefile.am
+
+commit c65c97a970ad103389c757e4752b9988c03891dd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 15:34:13 +0800
+
+    Fix appendUnicode problem.
+
+M	src/String.h
+
+commit 88df593befb03975149ddeea4a548b36e84d8c18
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 15:22:55 +0800
+
+    Remvoe set method of PinyinSegment
+
+M	src/PinyinArray.h
+M	src/PinyinParser.cc
+
+commit 151dc92a5abf86addc6457b2a955104820228968
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 15:20:12 +0800
+
+    Refine code.
+
+M	src/PinyinArray.h
+
+commit 01834cf05d5a58a3e0e90292de7da26840e08b7e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 14:06:34 +0800
+
+    Fix coding style problem
+
+M	src/String.h
+
+commit ed6dae4ecd54c6c3d13e3d90d1e6258b2e3b6e4a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 13:46:58 +0800
+
+    Remove some unused code.
+
+M	src/Array.h
+
+commit d7546ce273582eb2d349488e6dccac0fbeed888b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 13:46:20 +0800
+
+    Remove some unused code.
+
+M	src/PinyinParser.cc
+M	src/WideString.h
+
+commit e4eb144538957ce5fc5e0291838e152898985243
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 13:36:40 +0800
+
+    Remove some unused code.
+
+M	src/Array.h
+
+commit 66f093415d482a94243d0cca3f17168b749cf04a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 13:34:22 +0800
+
+    Replace GArray with std::vector
+
+M	src/Array.h
+M	src/Database.cc
+M	src/FullPinyinEditor.cc
+M	src/PhraseEditor.cc
+M	src/PinyinArray.h
+M	src/PinyinEngine.cc
+
+commit 8aecb7ba7a5470691599994847e1175bf65f1710
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 10:10:48 +0800
+
+    Remove unused code.
+
+M	src/String.h
+
+commit 665e60b1c8efc84148fd76beeb28762ef066a048
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-29 09:51:01 +0800
+
+    Reserve for String
+
+M	src/String.h
+
+commit 5515a1fd092a80abba2ba81d6e4aa8fd214563f8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-28 21:23:17 +0800
+
+    Implement Env util class
+
+M	src/Database.cc
+M	src/Util.h
+
+commit ccf8268c2e532dd89c19ad3dd6b92aef562c1e66
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-28 21:22:51 +0800
+
+    Reimplement operator<< (const gunichar *wstr)
+
+M	src/String.h
+
+commit 5ddd4d2ce16ddd812762db37bd13907c0ed7b604
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-28 18:12:00 +0800
+
+    Replase GString with std::string
+
+M	src/Database.cc
+M	src/Database.h
+M	src/String.h
+
+commit 42dcb9d9848eb180fc9a19a533084025681e32bf
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-28 17:06:26 +0800
+
+    Use STL to replace some class in Database
+
+M	src/Database.cc
+M	src/Database.h
+M	src/PhraseEditor.h
+
+commit 001c65de561863bf73fc1a34092d437bfe897d15
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-01-01 19:09:26 +0800
+
+    Overide operator-> of Prointer
+
+M	src/Pointer.h
+
+commit fa82e9bdf2dfc8406b4309a0617efd4bb7f85774
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-28 14:30:37 +0800
+
+    Add Some source files.
+
+A	src/CustomPhrase.cc
+A	src/CustomPhrase.h
+A	src/HashTable.h
+M	src/Makefile.am
+
+commit 4728ea9371fd8db91d971f1bfaf404c0437081c2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-13 08:35:10 +0800
+
+    Create databases' indexes in build time.
+
+M	ibus-pinyin.spec.in
+
+commit 34a762ae03bf4840f98aed803ca71ad870072ca4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-08 16:07:07 +0800
+
+    Fix make distcheck errors.
+
+A	po/POTFILES.skip
+
+commit e738d2c6534ff31601b2d7abca550155fa214c8b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-12-08 14:05:59 +0800
+
+    Remove some unused code.
+
+M	src/Engine.cc
+
+commit 615fffda8783d711532e9a348e078567e0d37c01
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-11-30 08:38:01 +0800
+
+    Fix numpad problem.
+
+M	src/PinyinEngine.cc
+
+commit df3078be38802ab9a97272fc3a735f8c942ff9c5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-28 13:03:14 +0800
+
+    WIP.
+
+M	src/FullPinyinEditor.cc
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+
+commit 445ad900614e3357effa765fe868670ad7dd437d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-28 11:48:56 +0800
+
+    Add new constructors.
+
+M	src/Array.h
+M	src/String.h
+
+commit 9b9cd44eb4a3fe4d5e0b2b96ff221e9cc4255c68
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-18 11:58:06 +0800
+
+    Add RawEditor.h
+
+M	src/Makefile.am
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+A	src/RawEditor.h
+
+commit b7b1c191e0431859370a71b8be713dd9616b7e29
+Merge: ee65708 5bc41f0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-16 14:08:06 +0800
+
+    Merge branch 'master' of github.com:phuang/ibus-pinyin
+
+commit 5bc41f03f51755020b26a76881aa88fdf5b1d9dc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-14 14:30:27 +0800
+
+    Update ru.po from Alexey Kotlyarov
+
+M	po/ru.po
+
+commit ee6570805dc8dca0c29ade184fb3192095e34280
+Merge: 987f18c 6f15555
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-13 08:39:42 +0800
+
+    Merge branch 'master' of github.com:phuang/ibus-pinyin
+
+commit 6f1555521ec77221492ef8e2e41be62d8f9349e3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-13 08:34:00 +0800
+
+    Update po files.
+
+M	po/ibus-pinyin.pot
+M	po/ru.po
+M	po/zh_CN.po
+
+commit f7bc5d6e04aaddb25974dd54118386104b740929
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-13 08:32:08 +0800
+
+    Add ru.po from koterpillar
+
+M	AUTHORS
+M	po/LINGUAS
+A	po/ru.po
+
+commit 987f18cb2223057084e7867e931861b834f92eea
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-12 09:02:11 +0800
+
+    Add Regex.h in Makefile.am
+
+M	src/Makefile.am
+
+commit 543a8eac21b9d5322f74362f09fe93c979121477
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-12 06:20:45 +0800
+
+    Add Regex.h
+
+M	src/FullPinyinEditor.cc
+M	src/PinyinEditor.cc
+M	src/PinyinEditor.h
+A	src/Regex.h
+
+commit aa521b442eb37158c55ea361eeb7272575bbbd87
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-11 19:16:34 +0800
+
+    Add some methods define
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit aa091d372671bb95fe2faf336630df0a332ada56
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-11 19:13:13 +0800
+
+    Add some comments
+
+M	src/PinyinEngine.h
+
+commit b1a7b427774f6682eb4f9b0165d3bcdc90468c91
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-11 19:11:23 +0800
+
+    Define several input modes
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 5c976eb12117b83d4b66b126f7f4f67efee00e3b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-11 16:46:24 +0800
+
+    Add m_prev_pressed_key_result to trace last pressed key result
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 9e0cb3d79dcbed222f206f015b6186f93c17e1c0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-11 15:52:04 +0800
+
+    Fix problem click number key, and number greater than current page size.
+
+M	src/PinyinEngine.cc
+
+commit 46cecc7c264af982b0fee9e59398965fb6cee117
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-11 15:31:32 +0800
+
+    Update header of zh_CN.po
+
+M	po/zh_CN.po
+
+commit e035410d2a8f92101feeedff56f70c5e91a5cffc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 16:13:28 +0800
+
+    Use ibus-setup icon
+
+M	src/Main.cc
+M	src/PinyinEngine.cc
+
+commit 560a2b3d108aa91fc4c86bd219937abaec9314ac
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 13:58:47 +0800
+
+    Refine autogen.sh
+
+M	autogen.sh
+
+commit 30f49d24befdaa71dc6225407c8fdcc86b6c5680
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 10:39:32 +0800
+
+    WIP.
+
+M	.gitignore
+M	po/.gitignore
+M	src/main.db
+
+commit 0d8ba7a632e07464d9a73d38823c19991ae11aff
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 10:36:37 +0800
+
+    Add BR libuuid-devel
+
+M	ibus-pinyin.spec.in
+
+commit 764f98a14c972f6fedbd656097d308c31879668e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 07:50:53 +0800
+
+    Use XDG cache dir for database
+
+M	src/Database.cc
+
+commit ffe7331c5a67eb51d0225f94bb7ba8133c060213
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 07:30:08 +0800
+
+    Change database dir to ~/.config/ibus/pinyin
+
+M	src/Database.cc
+
+commit c407e80f90182c09914639681de968abf01c8be6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 07:10:42 +0800
+
+    Change gtk version of ui file.
+
+M	setup/ibus-pinyin-preferences.ui
+
+commit 8b3a7e9dbfa097c594cc31c55c04ab72661ef033
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 07:07:11 +0800
+
+    Use gnome-autogen and update zh_CN.po
+
+M	autogen.sh
+M	configure.ac
+M	po/POTFILES.in
+M	po/ibus-pinyin.pot
+M	po/zh_CN.po
+
+commit d78465f9eb4fa032888b60c9ecf6a6c744f2ecd8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-10 06:34:55 +0800
+
+    Rename glade to ui
+
+M	po/POTFILES.in
+M	po/ibus-pinyin.pot
+M	setup/Makefile.am
+D	setup/ibus-pinyin-preferences.glade
+A	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+
+commit a7c655fc1e9d2818054ab92b7f5a74c274ae3897
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-09 21:16:13 +0800
+
+    Support using mouse to select candidate.
+
+M	src/Engine.cc
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 77268496348665c01a68871496b80723fd819c22
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-09 09:59:54 +0800
+
+    Update sumbol links
+
+M	src/valid_hanzi.py
+
+commit 2a95b4199d6e13385d752e79086398867ae852c5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-09 07:06:11 +0800
+
+    Rename simple pinyin to incomplete pinyin
+
+M	po/ibus-pinyin.pot
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.glade
+M	setup/main.py
+M	src/Config.cc
+M	src/FullPinyinEditor.cc
+M	src/PinyinParserTable.h
+M	src/Types.h
+
+commit 4ccb9ab33199c07aac25b8e017d01adb7fa512b5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-08 13:07:29 +0800
+
+    Rename database google to android
+
+M	Makefile.am
+M	configure.ac
+M	data/db/Makefile.am
+A	data/db/android/Makefile.am
+A	data/db/android/README
+A	data/db/android/create_db.py
+A	data/db/android/create_valid_hanzi.py
+A	data/db/android/id.py
+A	data/db/android/pydict.py
+A	data/db/android/rawdict_utf16_65105_freq.txt
+A	data/db/android/valid_hanzi.py
+A	data/db/android/valid_utf16.txt
+D	data/db/google/Makefile.am
+D	data/db/google/README
+D	data/db/google/create_db.py
+D	data/db/google/create_valid_hanzi.py
+D	data/db/google/id.py
+D	data/db/google/pydict.py
+D	data/db/google/rawdict_utf16_65105_freq.txt
+D	data/db/google/valid_hanzi.py
+D	data/db/google/valid_utf16.txt
+M	ibus-pinyin.spec.in
+M	src/Database.cc
+
+commit 5bdcee961d675d69e078845c7be6739649eb2b31
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-08 11:16:29 +0800
+
+    Test input argument of selectCandidate
+
+M	src/PhraseEditor.cc
+
+commit 6d895ea960f921afc12904b9ce11972368656e2e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-08 08:34:24 +0800
+
+    Fix script error in fedora 12
+
+M	src/php_2_py.php
+
+commit 2e1f5a55499603b85b50c60bc5a830fc8a3fb9bd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-07 21:49:14 +0800
+
+    Fix a typo
+
+M	src/PinyinEngine.cc
+
+commit 091e73e98f0e2ff711cedb6a94bb740ae2121da7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-07 07:37:47 +0800
+
+    Remove some commented code.
+
+M	src/PinyinEngine.cc
+
+commit bb9e10a51f1c024e994c107a3183fbb9c0772027
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-07 07:14:54 +0800
+
+    Update zh_CN.po
+
+M	po/ibus-pinyin.pot
+M	po/zh_CN.po
+
+commit 366ba41b91ca6b49651354b97887ab510969af74
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-07 07:06:08 +0800
+
+    Add configure option to choice if showing candidates in traditional
+    Chinese.
+
+M	setup/ibus-pinyin-preferences.glade
+M	setup/main.py
+M	src/Config.cc
+M	src/Config.h
+M	src/PinyinEngine.cc
+
+commit 7fecc5539e7b08ce598541689458dc42e009f7b2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 15:21:07 +0800
+
+    Refine some messages.
+
+M	data/db/Makefile.am
+
+commit 796b42579b4d448cc4ff0a634456cd98fff53524
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 15:16:25 +0800
+
+    Remove ZhConversion.php ZhConversion.py
+
+D	src/ZhConversion.php
+D	src/ZhConversion.py
+
+commit 90a6303589d02a5f867e7d946fecaaf8cb9fdafb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 15:15:45 +0800
+
+    Add target to create ZhConversion.{php, py}
+
+M	src/Makefile.am
+
+commit 84eddcfa8bcb893d6835843d1263602a44484dea
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 15:05:41 +0800
+
+    Rename scirpt name
+
+M	data/db/google/Makefile.am
+A	data/db/google/create_db.py
+D	data/db/google/create_db_from_google.py
+
+commit 2d6b56f3ba73c16d9ca2ec2d24ec112905a6396f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 15:03:34 +0800
+
+    Fix make distcheck errors.
+
+M	Makefile.am
+M	data/db/google/Makefile.am
+M	data/db/google/create_db_from_google.py
+M	data/db/google/create_valid_hanzi.py
+A	data/db/google/valid_hanzi.py
+M	po/ibus-pinyin.pot
+M	po/zh_CN.po
+T	src/valid_hanzi.py
+
+commit 169d23ca9644f0d62b6d8f084f356ee18874ef65
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 14:47:45 +0800
+
+    Only display traditional Chinese preedit & auxiliary text
+
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 95f5e3ffa0d9492fedf6a7fdafb5c2d927ff5684
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 13:42:52 +0800
+
+    Add Makefile.am in data/db/google
+
+A	data/db/google/Makefile.am
+
+commit 51aa686a911461292d28f6c15fd90565eab926d2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-06 11:18:53 +0800
+
+    Reimplement Simp to Trad
+
+A	data/db/google/create_valid_hanzi.py
+M	src/PinyinEngine.cc
+M	src/SimpTradConverter.cc
+M	src/SimpTradConverterTable.h
+M	src/String.h
+D	src/Unihan_Variants.txt
+A	src/ZhConversion.php
+A	src/ZhConversion.py
+A	src/php_2_py.php
+M	src/update-simptrad-table.py
+A	src/valid_hanzi.py
+
+commit 5fcba789bfa30a67ee652ebb137a169a3a006212
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 18:30:50 +0800
+
+    Add android git url
+
+M	data/db/google/README
+
+commit 5aca064041820dd12db6905859ed677741f3fbb8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 18:05:45 +0800
+
+    Add PinyinParserTable.h SimpTradConverterTable.h
+
+M	src/.gitignore
+M	src/Makefile.am
+A	src/PinyinParserTable.h
+A	src/SimpTradConverterTable.h
+
+commit 28aeb79317f5cefa316fe351e7b0ebacbff07eb0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 17:54:27 +0800
+
+    Generate SimpTradConvertTable.h from Unihan
+
+M	src/Makefile.am
+A	src/Unihan_Variants.txt
+A	src/update-simptrad-table.py
+
+commit e1fca2997da77309316446dc4b79314f7de5ed59
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 16:45:18 +0800
+
+    Add PinyinParserTable.h.open-phrase
+
+A	src/PinyinParserTable.h.open-phrase
+
+commit 746f8db61544ba27269fa33f27fdecbc3246d0cb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 16:42:16 +0800
+
+    Refine code
+
+M	scripts/genpytable.py
+
+commit 6f7acc02db4afa26082da5a561e01299f00be7ee
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 16:26:29 +0800
+
+    Remove unused function
+
+M	src/PinyinParser.cc
+
+commit 3a9b172b0a8f22686fe7c8e13fbbc547087450dd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 16:17:30 +0800
+
+    Adjust freq of google database
+
+M	data/db/google/create_db_from_google.py
+
+commit efa62ef0960cbebeb38110d9fc95f895da1d2a59
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 15:52:57 +0800
+
+    Add create_index.sql in data/db
+
+A	data/db/create_index.sql
+
+commit 7a755bd0134e600586dbd53186553bdfb5ebc0dc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 15:52:31 +0800
+
+    Remove create_index.sql in data
+
+D	data/create_index.sql
+
+commit 4518b8d196b6cd0f0c50f77bc99c808e3da434ee
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 15:42:14 +0800
+
+    Check if maindb exist before open it.
+
+M	src/Database.cc
+
+commit 7692e2d59ccf5d7419e499366ff548dbc42bc803
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 14:53:43 +0800
+
+    Fix symbol link
+
+M	src/main.db
+
+commit 3b45d3f4db14e9db2f49241c637fe93494020a76
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 14:51:38 +0800
+
+    Fix rpm build problems.
+
+M	data/db/google/create_db_from_google.py
+M	data/db/open-phrase/Makefile.am
+M	ibus-pinyin.spec.in
+
+commit 1ab8d3eaf4230c61ea4a78752334f99bac904621
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 14:38:24 +0800
+
+    Fix problem in install-data-hook
+
+M	data/db/Makefile.am
+M	data/db/open-phrase/Makefile.am
+
+commit 746b31da492ab63120655f287fc56b8fb26584eb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 14:24:55 +0800
+
+    Use google.db, if open-phrase.db does not exist.
+
+M	Makefile.am
+M	configure.ac
+M	data/Makefile.am
+A	data/create_index.sql
+A	data/db/Makefile.am
+A	data/db/google/README
+A	data/db/google/create_db_from_google.py
+A	data/db/google/id.py
+A	data/db/google/pydict.py
+A	data/db/google/rawdict_utf16_65105_freq.txt
+A	data/db/google/valid_utf16.txt
+A	data/db/open-phrase/Makefile.am
+D	data/google/README
+D	data/google/create_db_from_google.py
+D	data/google/create_index.sql
+D	data/google/id.py
+D	data/google/pydict.py
+D	data/google/rawdict_utf16_65105_freq.txt
+D	data/google/valid_utf16.txt
+M	src/Database.cc
+
+commit 66834d7005c5ef6f176b5b081d8b76973ff7605e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 14:00:40 +0800
+
+    WIP.
+
+M	configure.ac
+M	data/Makefile.am
+
+commit 05f27be4de0df3c59236badf44f1434b7b79d142
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 13:27:09 +0800
+
+    WIP.
+
+M	data/google/create_db_from_google.py
+A	data/google/create_index.sql
+
+commit a412a978ff08503a85c73c5a67e627a53b6bf03d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 13:23:30 +0800
+
+    WIP.
+
+A	data/google/create_db_from_google.py
+D	data/google/createdb.py
+A	data/google/id.py
+A	data/google/pydict.py
+
+commit 26235d24107158b0c200f9a3a6caa78b23ce68fd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 13:18:19 +0800
+
+    Add script for creating db from google pinyin data
+
+A	data/google/createdb.py
+M	scripts/id.py
+
+commit f0d700e8dfc3610eb577d57bb937ef7188b5e436
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 13:15:30 +0800
+
+    Add README
+
+A	data/google/README
+
+commit 23183f101caabd187af61dea8e19e527302d0b1d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 12:58:03 +0800
+
+    Add phrases dict from Android Pinyin IME
+
+A	data/google/rawdict_utf16_65105_freq.txt
+A	data/google/valid_utf16.txt
+
+commit 55cef919009b93a3a5204ceb6a846a8040209005
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 12:02:12 +0800
+
+    Refine coding style
+
+M	scripts/pydict.py
+
+commit 9d6249684c8d6497100a62e74603e9317b2aaf2a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 12:01:26 +0800
+
+    Update pydict.py
+
+M	scripts/pydict.py
+
+commit 81070b09ca9a8bec2ab76006aa049f460904e23a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 11:54:20 +0800
+
+    Move all scripts to $top_srcdir/scripts
+
+D	data/scripts/Makefile
+D	data/scripts/create_db.py
+D	data/scripts/create_index.py
+D	data/scripts/create_unique_index.py
+D	data/scripts/double.py
+D	data/scripts/id.py
+D	data/scripts/pydict.py
+D	data/scripts/pyutil.py
+M	po/zh_CN.po
+A	scripts/Makefile
+A	scripts/create_db.py
+A	scripts/create_index.py
+A	scripts/create_unique_index.py
+A	scripts/double.py
+A	scripts/genpytable.py
+A	scripts/gensimptradtable.py
+A	scripts/id.py
+A	scripts/pydict.py
+A	scripts/pyutil.py
+A	scripts/sctc.py
+M	src/Makefile.am
+D	src/scripts/genpytable.py
+D	src/scripts/gensimptradtable.py
+D	src/scripts/pydict.py
+D	src/scripts/sctc.py
+
+commit d866b6b936220d6f3f95a24a0d3c762186134ba6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 09:25:33 +0800
+
+    Modify the logic of processing capital letters
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 765dc6e1768bb1314b454481132315f6ed28d042
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-05 08:54:04 +0800
+
+    Input upper letters correctly
+
+M	src/PinyinEngine.cc
+
+commit 63d516ed5897fb9de3259c52cb6b00c873fec6ab
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-03 21:41:39 +0800
+
+    Input currect with keypad
+
+M	src/PinyinEngine.cc
+
+commit d0f38189ad1a0171be6e2196b0403c44f52a0b46
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-02 19:51:11 +0800
+
+    refine coding style
+
+M	src/WideString.h
+
+commit 1756fd7996a9fc6af873b8cee9ff6af8991fcce5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-02 19:49:07 +0800
+
+    Fix build warning
+
+M	src/Database.cc
+
+commit 5af19efc0e13f928769ee7255ef5ed1b840b2d9a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-02 08:21:09 +0800
+
+    Fix auto commit problem.
+
+M	src/PinyinEngine.cc
+
+commit 60cfd20aa525f1245565f45801ea2a678f147f62
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-02 08:00:02 +0800
+
+    Refine sql
+
+M	src/Database.cc
+
+commit 1997e24f2e3b11ac567d9cea43149d3dd1f7a0ec
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-02 07:57:20 +0800
+
+    Add executeSQL method.
+
+M	src/Database.cc
+M	src/Database.h
+
+commit bebf306e96c28f8fcec10a76d6b58e8becfff06f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-02 07:31:43 +0800
+
+    Process punctuations correctly
+
+M	src/PinyinEngine.cc
+
+commit 6958d5b6c9dfbf973566bf41a0ff8dd003e7e2e3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 16:14:21 +0800
+
+    Add some inline comments
+
+M	src/Database.cc
+
+commit 92241be43b67d99328281d222a1b52663ea1a5a3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 16:09:31 +0800
+
+    Tuning sqlite database for better performance.
+
+M	src/Database.cc
+
+commit fe526abc18ee805ebb6e5d396dccc5967c19c2c2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 12:09:44 +0800
+
+    Update project url
+
+M	ibus-pinyin.spec.in
+
+commit 5fac3733f4e76bde305153b6559288b100105184
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 12:04:53 +0800
+
+    Update .gitignore files
+
+M	.gitignore
+A	data/.gitignore
+M	data/Makefile.am
+M	po/.gitignore
+A	po/ibus-pinyin.pot
+A	setup/.gitignore
+A	src/.gitignore
+
+commit e3710c25e02180b3f684af509f8b272f5d32438b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 11:45:35 +0800
+
+    unify help message
+
+M	configure.ac
+
+commit 7b77b901d96e9fed80efc4074dec64c81373ed86
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 09:52:47 +0800
+
+    Add upload target
+
+M	Makefile.am
+
+commit 4f27c1a24bf44e294abdba9b2d9729247fa75c14
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 09:46:01 +0800
+
+    Add googlecode upload script
+
+A	tools/googlecode_upload.py
+
+commit eaaf6a123092e316bebcf2a1d597fd216921c10a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 09:17:34 +0800
+
+    Use g_strlcpy and g_strlcat to avoid buffer overflow
+
+M	src/Database.cc
+M	src/Phrase.h
+M	src/PinyinParser.cc
+
+commit 2ef56713a13c750257203182cea398f1309b8ede
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 09:11:08 +0800
+
+    Use strncat correctly
+
+M	src/Phrase.h
+
+commit fb8659454f750c14b8b3f2ea695fe40d7f152cd1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 08:46:56 +0800
+
+    Process keys on keypad correctly
+
+M	src/PinyinEngine.cc
+
+commit c0f86e9a34e82bb41858b80c530cf3df38e6153b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 08:11:59 +0800
+
+    Fix build error with sqlite 3.5
+
+M	src/Database.cc
+
+commit f30f9f83239bdafedf5fa64c33eec27dfb12ea20
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-10-01 07:48:46 +0800
+
+    Fix double pinyin problems.
+
+M	src/DoublePinyinEditor.cc
+M	src/PinyinParser.cc
+
+commit a949d50a4fca0d3d12024220a4a6e2f5c1646a45
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-30 22:38:40 +0800
+
+    Add --disable-pinyin-database argument of ./configure
+
+M	configure.ac
+M	data/Makefile.am
+
+commit 458d3dd50ec8dbec2237b5c796f65044d7bd79e6
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-30 22:08:47 +0800
+
+    Refine coding style
+
+M	src/PinyinEngine.cc
+
+commit 894b06bf59417ae6f05b40d5cdb1c53076bc4512
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-30 22:06:49 +0800
+
+    Commit full width space, only if in full mode
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 1caefa8402499902e5b89b2763c2ab5e75b06e37
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-30 19:46:22 +0800
+
+    Fix fuzzy pinyin problem with ian <=> iang
+
+M	src/Config.cc
+M	src/Types.h
+
+commit 02413c97d10f845d9daa90425a132b90b87d7d9b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-30 19:33:01 +0800
+
+    Fix ch c fuzzy pinyin problem
+
+M	src/Types.h
+
+commit 52e791f2cdd5d12c36698308c6ef35c5c7352218
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-30 16:55:15 +0800
+
+    Fix segment fault of fuzzy pinyin
+
+M	src/Database.h
+
+commit 5323e2385f36f72405d4ceffa24c2bb1bd2e9a84
+Author: Peng Huang <phuang@phuang-laptop.(none)>
+Date:   2009-09-30 13:59:06 +0800
+
+    Import debian packaging scripts from Ubuntu
+
+A	debian/changelog
+A	debian/compat
+A	debian/control
+A	debian/copyright
+A	debian/docs
+A	debian/ibus-pinyin.lintian-overrides
+A	debian/rules
+A	debian/watch
+
+commit 714143ad7539df66860607a316e36e1b7155d1dd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-30 07:50:21 +0800
+
+    Fix commi problem
+
+M	src/PhraseEditor.h
+M	src/PinyinEngine.cc
+
+commit eac3c4057934617567288069fc7515177e175322
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 19:31:38 +0800
+
+    Show preedit text correctly
+
+M	src/PinyinEngine.cc
+
+commit 7d2aeda8396d1c617ae2c0336f9fe8a384da6ead
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 19:22:56 +0800
+
+    Update preedit and auxiliary text format
+
+M	src/PinyinEngine.cc
+
+commit ca6793524c34c754709bf1126827b6d142d53bcb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 17:13:48 +0800
+
+    Fix some bugs
+
+M	src/PinyinEngine.cc
+
+commit 53501ecd68dd46aa97413adeab38e2cbfdfe610c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 16:54:56 +0800
+
+    Add Typing and Editing modes
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 6e126f3b96183a4820a2c5db374b16af92d27f5f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 16:19:28 +0800
+
+    Use ' ' replace '\'' in pinyin string
+
+M	src/PinyinEngine.cc
+
+commit 47bfea10eca0449551c930efaaa389263b749ff1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 16:01:23 +0800
+
+    Update zh_CN.po
+
+M	po/zh_CN.po
+
+commit 8f598fd6296df0d24916a030631e2967bc9dddcf
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 15:56:02 +0800
+
+    Fix some bugs.
+
+M	src/Array.h
+M	src/PinyinArray.h
+M	src/PinyinEngine.cc
+
+commit b3423070d9b267eb8c3755ca8a865250845aad5c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 15:34:12 +0800
+
+    Also set the foreground color of the highlight candidate in preedit text
+
+M	src/PinyinEngine.cc
+
+commit 6fc3c5aae690b2f4c1170dbcf890a43f8adf5f0c
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 15:27:01 +0800
+
+    Hide auxiliary text if no candidates
+
+M	src/PinyinEditor.h
+M	src/PinyinEngine.cc
+
+commit 9d66a329785cabc2aea5dc6501e03fe7df20a805
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 14:42:07 +0800
+
+    Adjust preedit text dynamically
+
+M	src/Array.h
+M	src/DoublePinyinEditor.cc
+M	src/PinyinArray.h
+M	src/PinyinEngine.cc
+M	src/PinyinParser.cc
+
+commit 699336c050105398d36940b4db9ba55beb04a517
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 13:47:05 +0800
+
+    Show unselected pinyin in preedit text
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit 80a09d4cda14d6294d7d6849af1e21eacad73c86
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 08:53:16 +0800
+
+    Use operator += of phrase
+
+M	src/Database.cc
+
+commit b75395ca94f913b964c43066875fdbfb0b488041
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 08:28:25 +0800
+
+    Refactory PhraseEditor
+
+M	src/Makefile.am
+M	src/Phrase.h
+M	src/PhraseArray.h
+M	src/PhraseEditor.cc
+M	src/PhraseEditor.h
+M	src/PinyinEngine.cc
+M	src/Types.h
+
+commit 1101d1d38fb5c78be0cf92893888804da6afc2a6
+Merge: 06f2ebb 5b5fa82
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 07:53:53 +0800
+
+    Merge branch '1.2.99' of git@github.com:phuang/ibus-pinyin into 1.2.99
+
+commit 5b5fa823cd1ccc656ad28323e19d3e6edb3afb4d
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 07:52:04 +0800
+
+    Add Phrase.h
+
+A	src/Phrase.h
+
+commit 06f2ebbe03b12c27b22beb6bff51a94e598d64a8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-29 06:56:13 +0800
+
+    Add some comments
+
+M	src/FullPinyinEditor.cc
+
+commit b02b9e47675ed2dcc8486faacada1b4a582056a3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-28 16:03:23 +0800
+
+    Press space to select highlight candidate
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit b7196b0435b8d4ccd61d06fe7df275c1f580d107
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-28 07:13:22 +0800
+
+    Commit half width '.' after half width numbers
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit ba136a3846ed111cfabb05b47c16c8a9c393b8fe
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-28 07:04:42 +0800
+
+    Reset before commit text to application.
+
+M	src/PinyinEngine.cc
+
+commit 6b097b4ca7bca4ac328c3296d5dc3a2f7c078215
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-27 16:48:25 +0800
+
+    Refine coding style
+
+M	src/Database.h
+
+commit 54f0169827e813747e6f295e12d13099b36d7bb1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-27 16:47:22 +0800
+
+    Use get replace operator []
+
+M	src/Database.h
+
+commit 8965a486d163828f7283a0b9ac3b83a56d6a0cef
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-27 16:43:30 +0800
+
+    Refectory conditions
+
+M	src/Database.cc
+M	src/Database.h
+
+commit ae26cda94d9ffc2df06414284a6e09bf24da2d0d
+Merge: 38c62f3 347d456
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-27 14:46:23 +0800
+
+    Merge branch '1.2.99' of github.com:phuang/ibus-pinyin into 1.2.99
+
+commit 347d4564f6015e32887a537861b2d5f6d3f31fb2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-26 07:37:49 +0800
+
+    Support WideString in String
+
+M	src/String.h
+M	src/WideString.h
+
+commit d94521ce1bf8405f0fd46a1050704dba050024f2
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-26 07:28:55 +0800
+
+    Add WideString
+
+M	src/Array.h
+M	src/Makefile.am
+M	src/PinyinEngine.cc
+A	src/WideString.h
+
+commit 38c62f348c03a8b715a8baa12eedcd75c68eafc7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 17:18:50 +0800
+
+    Reset in focusOut
+
+M	src/DoublePinyinEditor.cc
+M	src/FullPinyinEditor.cc
+M	src/FullPinyinEditor.h
+M	src/PinyinEngine.h
+
+commit cc46aa7c24252c17d213655e4dd9ea07682672de
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 16:19:10 +0800
+
+    Change author info
+
+M	AUTHORS
+M	Makefile.am
+M	configure.ac
+M	data/Makefile.am
+M	data/icons/Makefile.am
+M	data/scripts/pydict.py
+M	data/scripts/pyutil.py
+M	ibus-pinyin.spec.in
+M	m4/Makefile.am
+M	po/Makevars
+M	po/zh_CN.po
+M	setup/Makefile.am
+M	setup/ibus-setup-pinyin.in
+M	src/Makefile.am
+M	src/special_table
+
+commit 9e2d1632f9a7b512457a4ee276bf1ed824de6903
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 13:43:13 +0800
+
+    Implement auto commit.
+
+M	setup/ibus-pinyin-preferences.glade
+M	src/PinyinEngine.cc
+
+commit 1b7a439abe24cd350a0332c632302b78a3d99853
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 12:27:00 +0800
+
+    Use ? : operator
+
+M	src/PinyinEngine.cc
+
+commit 077a9b9ede0f64fdf54e2d3801a8a34cbb7b6543
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 11:40:49 +0800
+
+    Update zh_CN.po
+
+M	po/zh_CN.po
+
+commit b4041c918a42a6f26d190fd9009800bc12c42548
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 11:37:10 +0800
+
+    Implement shift select candidate
+
+M	setup/ibus-pinyin-preferences.glade
+M	setup/main.py
+M	src/Config.cc
+M	src/Config.h
+M	src/PinyinEngine.cc
+
+commit a0ee977ca23b41650f841089e1f184787324b22a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 10:45:48 +0800
+
+    Adjust the setup ui
+
+M	setup/ibus-pinyin-preferences.glade
+
+commit 348bf0203d58e22c64ef3e91fee2cc279c1af0aa
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 10:36:06 +0800
+
+    Delay update of page size
+
+M	setup/ibus-pinyin-preferences.glade
+
+commit 6bc7522f638b1d7f80d7c2706a62369a578505a1
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 10:34:01 +0800
+
+    Use HScale widget for page size
+
+M	setup/ibus-pinyin-preferences.glade
+M	setup/main.py
+
+commit 15cd217742d7c773867e067eed8d6de8af4af297
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 10:22:08 +0800
+
+    Adjust preferences dialog
+
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.glade
+
+commit 4e2273761ef1fb1b56ee63f582b0c6d6ffd230bc
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 09:59:51 +0800
+
+    Hide some unused options.
+
+M	setup/ibus-pinyin-preferences.glade
+
+commit 83b156c8854c87dbf01a0a8bb1e69d900873eabf
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-25 08:15:41 +0800
+
+    Fix some typos
+    Update zh_CN.po
+
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.glade
+
+commit 3fdf13e54e1e8c2ef417baa40f0c954a6cf8d2e3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 15:58:56 +0800
+
+    Add assert in simpToTrad
+
+M	src/SimpTradConverter.cc
+
+commit 64cc8d82fb927baa0d0fdd14bfd0a295b9ff22c0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 15:48:09 +0800
+
+    Refine coding style
+
+M	src/Text.h
+
+commit 32820f777a5bbc94ca9e521db545d264f973f62f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 15:20:33 +0800
+
+    Clean up icons
+
+M	data/icons/full-punct.svg
+M	data/icons/full.svg
+M	data/icons/half-punct.svg
+
+commit 27bab03f8813af661371d23706ed3a410228830a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 15:16:45 +0800
+
+    Clean up icons
+
+M	data/icons/simp-chinese.svg
+M	data/icons/trad-chinese.svg
+
+commit 15dd100c26f19308f5824142defb3a1ba38aa350
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 14:59:06 +0800
+
+    StaticText use Text as parent class.
+
+M	src/PinyinEngine.cc
+M	src/Text.h
+
+commit 613a80f34fcfffc559a0abf0252b187f18199c9b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 14:41:06 +0800
+
+    Remove unused variables.
+
+M	src/Makefile.am
+
+commit 94d850c70fd078dabfa8dea39112f95db545f99b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 14:30:13 +0800
+
+    Use name SimpTrad table
+
+M	src/scripts/gensimptradtable.py
+D	src/scripts/map.py
+A	src/scripts/sctc.py
+
+commit 4ce8b5db3be34deefc8785d9e9602142a1761c1f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 11:54:41 +0800
+
+    Fix some typos.
+
+M	setup/ibus-pinyin-preferences.glade
+M	setup/main.py
+
+commit 0f6dbec1e15bac3a115c8a0736ae894c6584b329
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 11:46:53 +0800
+
+    Add configure for Simplified/Traditional Chinese
+
+M	po/zh_CN.po
+M	setup/ibus-pinyin-preferences.glade
+M	setup/main.py
+M	src/Config.cc
+M	src/Config.h
+M	src/PinyinEngine.cc
+
+commit fc6e52a1619b3cd92c0de9960ab11370ca3d683b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 11:28:53 +0800
+
+    Add icons for simplified/traditional chinese
+
+M	data/icons/Makefile.am
+A	data/icons/simp-chinese.svg
+A	data/icons/trad-chinese.svg
+M	src/PinyinEngine.cc
+
+commit 902cee398e046244a992061b417efd0a72ed6d7b
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-24 08:38:19 +0800
+
+    Add Traditional Chinese support
+
+M	po/zh_CN.po
+M	src/LookupTable.h
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+M	src/Text.h
+
+commit 4560e4d77aed235f98041864b83d95c49ff542d9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 20:12:57 +0800
+
+    WIP.
+
+M	src/PinyinEngine.cc
+M	src/PinyinEngine.h
+
+commit b5ed6295724e9b69350e661587f46d3bcfda49d8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 20:04:28 +0800
+
+    Implement SimTradConverter
+
+M	src/SimpTradConverter.cc
+M	src/SimpTradConverter.h
+M	src/scripts/gensimptradtable.py
+
+commit 13e14bc02147d5575ee7e29c24286e349af00933
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 17:13:42 +0800
+
+    Add SimpTradConverter.
+
+M	po/zh_CN.po
+M	src/Makefile.am
+M	src/PinyinParser.cc
+A	src/SimpTradConverter.cc
+A	src/SimpTradConverter.h
+M	src/scripts/genpytable.py
+A	src/scripts/gensimptradtable.py
+A	src/scripts/map.py
+
+commit 34d0c0da7958579b241b5a51851ed18e1fc81ed9
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 16:16:10 +0800
+
+    Add Shift+Shace & Control+. shortcuts
+
+M	src/PinyinEngine.cc
+
+commit 820b19b3f9c80bfd56a1b0a3e1ee05f95d8cdf5f
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 13:42:49 +0800
+
+    Remove zh_CN.gmo
+
+D	po/zh_CN.gmo
+
+commit 7ab0dd288d917a5c588af4134320c32c13b9d801
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 13:39:45 +0800
+
+    Fix build errors.
+
+M	Makefile.am
+A	data/scripts/Makefile
+M	src/scripts/genpytable.py
+
+commit 9bc6ab1d2816b790c87885a426e9cda053be7050
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 13:31:09 +0800
+
+    Remove all files from .gitignore.
+
+M	.gitignore
+
+commit 998c9299f04a4756ff8a08ab3448b3f7860b9fe0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-23 13:30:02 +0800
+
+    Import c version pinyin engine
+
+M	AUTHORS
+M	Makefile.am
+M	README
+M	autogen.sh
+M	configure.ac
+A	data/Makefile.am
+A	data/icons/Makefile.am
+A	data/icons/chinese.svg
+A	data/icons/english.svg
+A	data/icons/full-punct.svg
+A	data/icons/full.svg
+A	data/icons/half-punct.svg
+A	data/icons/half.svg
+A	data/icons/ibus-pinyin.svg
+A	data/scripts/create_db.py
+A	data/scripts/create_index.py
+A	data/scripts/create_unique_index.py
+A	data/scripts/double.py
+A	data/scripts/id.py
+A	data/scripts/pydict.py
+A	data/scripts/pyutil.py
+D	debian/README.Debian
+D	debian/changelog
+D	debian/compat
+D	debian/control
+D	debian/copyright
+D	debian/cron.d.ex
+D	debian/dirs
+D	debian/docs
+D	debian/emacsen-install.ex
+D	debian/emacsen-remove.ex
+D	debian/emacsen-startup.ex
+D	debian/ibus-pinyin-default.ex
+D	debian/ibus-pinyin.doc-base.EX
+D	debian/init.d.ex
+D	debian/init.d.lsb.ex
+D	debian/manpage.1.ex
+D	debian/manpage.sgml.ex
+D	debian/manpage.xml.ex
+D	debian/menu.ex
+D	debian/postinst.ex
+D	debian/postrm.ex
+D	debian/preinst.ex
+D	debian/prerm.ex
+D	debian/rules
+D	debian/watch.ex
+D	engine/Makefile.am
+D	engine/factory.py
+D	engine/ibus-engine-pinyin.in
+D	engine/main.py
+D	engine/pinyin.py
+D	engine/pinyin.xml.in.in
+D	engine/pycreatedb.py
+D	engine/pydict.py
+D	engine/pyparser.py
+D	engine/pysqlitedb.py
+D	engine/pyutil.py
+D	engine/special_phrase
+D	engine/special_table
+D	engine/specialphrase.py
+D	engine/specialtable.py
+M	ibus-pinyin.spec.in
+D	icons/Makefile.am
+D	icons/chinese.svg
+D	icons/english.svg
+D	icons/full-letter.svg
+D	icons/full-punct.svg
+D	icons/half-letter.svg
+D	icons/half-punct.svg
+D	icons/ibus-pinyin.svg
+M	po/LINGUAS
+M	po/POTFILES.in
+D	po/ja.po
+A	po/zh_CN.gmo
+M	po/zh_CN.po
+M	setup/Makefile.am
+A	setup/ibus-pinyin-preferences.glade
+M	setup/ibus-setup-pinyin.in
+M	setup/main.py
+D	setup/pydict.py
+D	setup/setup.glade
+A	src/Array.h
+A	src/Bus.h
+A	src/Config.cc
+A	src/Config.h
+A	src/Database.cc
+A	src/Database.h
+A	src/DoublePinyinEditor.cc
+A	src/DoublePinyinEditor.h
+A	src/DoublePinyinTable.h
+A	src/Engine.cc
+A	src/Engine.h
+A	src/FullPinyinEditor.cc
+A	src/FullPinyinEditor.h
+A	src/HalfFullConverter.cc
+A	src/HalfFullConverter.h
+A	src/LookupTable.h
+A	src/Main.cc
+A	src/Makefile.am
+A	src/PhraseArray.h
+A	src/PhraseEditor.cc
+A	src/PhraseEditor.h
+A	src/PinyinArray.h
+A	src/PinyinEditor.cc
+A	src/PinyinEditor.h
+A	src/PinyinEngine.cc
+A	src/PinyinEngine.h
+A	src/PinyinParser.cc
+A	src/PinyinParser.h
+A	src/Pointer.h
+A	src/Property.h
+A	src/SpecialTable.cc
+A	src/SpecialTable.h
+A	src/String.h
+A	src/Text.h
+A	src/Types.h
+A	src/Util.h
+A	src/main.db
+A	src/pinyin.xml.in.in
+A	src/scripts/genpytable.py
+A	src/scripts/pydict.py
+A	src/special_table
+
+commit 9911013dd7e4edc7c295dad24121309b1fda5718
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-19 15:10:21 +0800
+
+    Update some strings.
+
+M	po/ja.po
+M	po/zh_CN.po
+M	setup/setup.glade
+
+commit 60dd01654c82899a97156a99bfa34c3514b8a078
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-15 13:35:17 +0800
+
+    Disable FuzzyPinyin in engine.py
+
+M	engine/pinyin.py
+
+commit ce469a0c93a3cb71c079a76b5b0de48b68f5ca00
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-09-15 13:29:41 +0800
+
+    Display English candidates in correct color.
+
+M	engine/pinyin.py
+
+commit 775d1ea766876016294bcc01a2df38107803928a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-06-12 14:57:19 +0800
+
+    Handle mouse click on lookup table.
+
+M	engine/pinyin.py
+
+commit 58db26f7ba33a59f9f98669e929d3b4c43e778d4
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-08-21 12:23:58 +0800
+
+    Call bindtextdomain
+
+M	setup/Makefile.am
+M	setup/ibus-setup-pinyin.in
+M	setup/main.py
+
+commit 531eaf2badafb45afdfd28f9148cdc7e3db30331
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-08-03 15:02:59 +0800
+
+    Reset preedit when press CapsLock key.
+
+M	engine/pinyin.py
+
+commit 8500e2894bd02b64e3f39eb36c450c2b32070b73
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-07-23 17:10:05 +0800
+
+    Show origin input when enable ShuangPin
+
+M	engine/pinyin.py
+
+commit 92eb30242e44b1924a3bf0818b315a51275c19f3
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-06-14 14:50:43 +0800
+
+    Modify process_key_event method & bump the version
+
+M	configure.ac
+M	engine/pinyin.py
+
+commit e3103262badb9b9784354c78ec9bb4a499b736c5
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-05-26 07:55:28 +0800
+
+    Only ask confirm when values changed.
+
+M	setup/main.py
+
+commit 39cf7c6a88046faa81afba16024736a5ad09c80e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-05-26 07:53:26 +0800
+
+    Center the about string
+
+M	setup/setup.glade
+
+commit 4d081ef806c95cf3d8ea9cdb2765c561ac4c26a0
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-05-26 07:51:39 +0800
+
+    Show About page in setup dialog
+
+M	setup/setup.glade
+
+commit 9bbb69a2b3e69d1bbe4a86887d1506cba5bb88af
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-05-25 14:01:09 +0800
+
+    Raise setup dialog when click setup icon.
+
+M	engine/pinyin.py
+M	setup/main.py
+
+commit ab99791ab560e0d1c0e806e7d708a6db121691bf
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2009-05-25 13:25:58 +0800
+
+    Hide some page in setup dialog.
+
+M	setup/setup.glade
+
+commit 1d7c4cc697322fc8cbd21f3fe0b49cd41c563dde
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2009-03-03 11:37:08 +0800
+
+    Try to cover errors when user_db is locked.
+
+M	engine/pinyin.py
+
+commit 9b2c20c8946f40928e89601f7ab7dd471a70a730
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2009-03-03 11:00:13 +0800
+
+    Remove some INDEX on py_phrase table to reduce the size of db file.
+    And refine coding style.
+
+M	engine/pysqlitedb.py
+
+commit 638416babf296f7f131de0c8b07221fa519cb929
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2009-02-24 17:19:48 +0800
+
+    Replace priority with rank.
+
+M	engine/pinyin.xml.in.in
+
+commit ad6cffb02a0a50338fb9ded8996c446ec6d172dc
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2009-02-24 16:41:03 +0800
+
+    Add priority in pinyin.xml.
+
+M	engine/pinyin.xml.in.in
+
+commit 0867f5388828b3e82ff175a23e679fe8e2617d4d
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2009-02-18 19:34:53 +0800
+
+    Fix problem when generate xml.
+
+M	engine/pinyin.xml.in.in
+
+commit a135c88d75f76711683993abaa040c03ba7a39f5
+Author: Peng Huang <phuang@phuang.nay.redhat.com>
+Date:   2009-02-12 11:15:22 +0800
+
+    Fix issue 254: Start pinyin setup failed when click setup property on
+    language panel.
+
+M	engine/ibus-engine-pinyin.in
+M	engine/pinyin.py
+
+commit 1e04cf629ec734a17b2e2bff05af56654a2f78fe
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2009-02-06 09:55:37 +0800
+
+    Fix problem when generate pinyin.xml
+
+M	configure.ac
+M	engine/Makefile.am
+D	engine/pinyin.xml.in
+A	engine/pinyin.xml.in.in
+M	po/ja.po
+M	po/zh_CN.po
+
+commit aaaa4768ecd33ee3f44b38fb29af7813c374f77f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2009-02-05 16:01:26 +0800
+
+    Migrate to ibus-1.1.
+
+M	configure.ac
+M	engine/Makefile.am
+M	engine/factory.py
+M	engine/ibus-engine-pinyin.in
+M	engine/main.py
+D	engine/pinyin.engine.in
+M	engine/pinyin.py
+A	engine/pinyin.xml.in
+M	ibus-pinyin.spec.in
+M	po/ja.po
+M	po/zh_CN.po
+M	setup/Makefile.am
+M	setup/main.py
+
+commit fc2075852ca2fcce099625ecd524e0eadf38999f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-10-07 10:34:14 +0800
+
+    Disable user db optimizing.
+
+M	setup/main.py
+M	setup/setup.glade
+
+commit dc8bfa8aa8116b4182834bc5eea854575fec1fce
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-10-04 10:35:07 +0800
+
+    Fix `make distcheck` error.
+
+M	po/POTFILES.in
+
+commit 37d4be2d30fa8a2fd3a0bd39c9f7a8fbb155a1dc
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-10-04 09:00:10 +0800
+
+    WIP.
+
+M	engine/factory.py
+
+commit efdd39ea3e2e3d72da1921649454a75fb975318e
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-10-03 17:29:02 +0800
+
+    Change config interface.
+
+M	engine/pinyin.py
+M	setup/main.py
+
+commit 4a0616f128ffead2a461600a0068d1495a03a21f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-25 13:55:01 +0800
+
+    Use pinyin-database-0.1.10.6.tar.bz2
+
+M	ibus-pinyin.spec.in
+
+commit 0892216bb1e017e9990f8ad6a86af5bc332632de
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-15 20:32:11 +0800
+
+    Use pinyin-database-0.1.10.6.tar.bz2.
+
+M	engine/Makefile.am
+
+commit 6a77264baf1037c9ab7950408f3456b177aef326
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-15 20:31:42 +0800
+
+    Change arguments of pycreatedb.py.
+
+M	engine/pycreatedb.py
+
+commit 9cc7eb4d128cce38aa989b8d90e7404f0fa6a36b
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-15 20:06:17 +0800
+
+    Refine coding style.
+
+M	engine/pycreatedb.py
+
+commit 4293565d5ffac5938248e5c787ec11ebbf5e5a88
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-15 12:23:41 +0800
+
+    Fix some typoes.
+
+M	engine/pinyin.py
+
+commit 196168b440f8cf160e23fd05d0663886e6f0aac3
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-15 02:56:52 +0800
+
+    Add Half punctuations feature by Jiahua Huang <jhuangjiahua@gmail.com>.
+
+M	engine/pinyin.py
+M	engine/pysqlitedb.py
+M	po/ja.po
+M	po/zh_CN.po
+M	setup/main.py
+M	setup/setup.glade
+
+commit e253a5d1a5cd03fa4d2bddb30d842122f2d1adcf
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-12 07:50:28 +0800
+
+    Import debian packing files by 一叶 <oneleaf@gmail.com>.
+
+A	debian/README.Debian
+A	debian/changelog
+A	debian/compat
+A	debian/control
+A	debian/copyright
+A	debian/cron.d.ex
+A	debian/dirs
+A	debian/docs
+A	debian/emacsen-install.ex
+A	debian/emacsen-remove.ex
+A	debian/emacsen-startup.ex
+A	debian/ibus-pinyin-default.ex
+A	debian/ibus-pinyin.doc-base.EX
+A	debian/init.d.ex
+A	debian/init.d.lsb.ex
+A	debian/manpage.1.ex
+A	debian/manpage.sgml.ex
+A	debian/manpage.xml.ex
+A	debian/menu.ex
+A	debian/postinst.ex
+A	debian/postrm.ex
+A	debian/preinst.ex
+A	debian/prerm.ex
+A	debian/rules
+A	debian/watch.ex
+
+commit 992d809adc9bb6e37ea68832868c2b0c405aed89
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-07 09:01:33 +0800
+
+    Hide fuzzy pinyin detial configure.
+
+M	setup/setup.glade
+
+commit 9a4a296fef26a1729f7bb6da6a16a415ac39aa51
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-07 08:37:49 +0800
+
+    Hide fuzzy pinyin detial configure.
+
+M	setup/setup.glade
+
+commit 26b7d6814d1d973b9cd227cdef8529aa402f6cf7
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-09-01 21:10:16 +0800
+
+    Update after process_key event.
+
+M	engine/pinyin.py
+
+commit d7f72b5b9bb422b2eb2bec860ca8fc0bbaf1a12f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-31 11:50:38 +0800
+
+    Fix SpellCheck problems.
+
+M	engine/pinyin.py
+
+commit 836819899a7b57428a50b475df20e41284832ef9
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-30 12:42:58 +0800
+
+    Add ja.po.
+
+A	po/ja.po
+
+commit 778f3dc3f41040e9bfb9babb669605a6cfa1bf27
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-30 07:54:11 +0800
+
+    Translate engine name.
+
+M	engine/factory.py
+M	po/zh_CN.po
+
+commit 8ad05ac166e1e76d98c3eb15aee601eb56f2f8c2
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-29 07:23:42 +0800
+
+    Add Japanese translation by UTUMI Hirosi <utuhiro78@yahoo.co.jp>.
+
+M	AUTHORS
+M	po/LINGUAS
+
+commit 4fdfbb9cd8810b0621969ab823eecb3d7df7f4d7
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-25 13:59:13 +0800
+
+    Enable maintainer-mode.
+
+M	configure.ac
+
+commit 6a3129c439a01cee7f8753618b36438b5014bcd8
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-22 12:03:02 +0800
+
+    Add Name.zh.
+
+M	engine/pinyin.engine.in
+
+commit c35d180957dbf38a50d78b13a6acf0e2a27ef76a
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-19 08:55:24 +0800
+
+    Refine code.
+
+M	engine/pinyin.py
+
+commit ee5648bce5eac608e457504a605dea256469ad1c
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-17 21:48:30 +0800
+
+    Fix problem when press LeftArrow with preedit.
+
+M	engine/pinyin.py
+
+commit cfffb78b2c215fe9a4a729bee4ec1777c2324f69
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-17 08:24:51 +0800
+
+    Fix wrong path.
+
+M	engine/pinyin.py
+
+commit 8a156d44015074655f3809b8fa9f5ed8cbb2604f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-15 12:17:29 +0800
+
+    Install ibus-setup-pinyin in bindir.
+
+M	ibus-pinyin.spec.in
+M	setup/Makefile.am
+
+commit 5aa6bf8b1ede1b38457cb5b5b5d92e4a41b1ce6f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-13 23:21:34 +0800
+
+    Remove unused sources files from POFILES.in.
+
+M	po/POTFILES.in
+M	po/zh_CN.po
+
+commit 559fb4a8497386c8a2f5684a58883fba432b6ae4
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-13 23:16:43 +0800
+
+    Use path to replace text.
+
+M	icons/english.svg
+M	icons/ibus-pinyin.svg
+
+commit f9d4c97799dc475a80cbebfaa9ec589e3e67b188
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-13 23:11:46 +0800
+
+    Add i18n support in spec file.
+
+M	ibus-pinyin.spec.in
+
+commit 85b1ca77319a394977ca94f2f8c4e7a3f3cae68f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-13 23:08:46 +0800
+
+    Add zh_CN.po
+
+A	po/zh_CN.po
+
+commit b8979fddf87da82a6a34cf57848be66ebe9393da
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-13 22:54:13 +0800
+
+    i18n WIP.
+
+A	po/LINGUAS
+M	po/POTFILES.in
+
+commit d2d44a33909d71c5602a7bb7a9358b4eb089a1f0
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-13 18:28:49 +0800
+
+    Ignore NumLock mask.
+
+M	engine/pinyin.py
+
+commit daff2154050c95f71a09664db4d9fd635612a097
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-13 16:01:57 +0800
+
+    Install ibus-engine-pinyin in @bindir@
+
+M	configure.ac
+M	engine/Makefile.am
+M	engine/pinyin.engine.in
+M	ibus-pinyin.spec.in
+
+commit 8421a297e4e612558816377fc0c480b151b77081
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-11 01:16:22 +0800
+
+    optimize lookup_table transport performance.
+
+M	engine/pinyin.py
+
+commit f72efe3a0d6a75e75fa23687586d3741c383b485
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-09 08:33:01 +0800
+
+    Refine coding style.
+
+M	configure.ac
+
+commit c60fc3e24fa5bce8362487733004f444a1c9ccc2
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-08 17:22:01 +0800
+
+    Modify for fedora packaging review.
+
+M	ibus-pinyin.spec.in
+
+commit 65ece255cd9d2e6d7ae8951a7f4e232406d568c2
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-08 15:13:10 +0800
+
+    Use GPLv2.
+
+M	COPYING
+
+commit 4ec9e409834694cfe68fb83d5594d52209f79828
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-08 13:16:53 +0800
+
+    Refine doc.
+
+M	README
+M	ibus-pinyin.spec.in
+
+commit 6b59ed7ee0dc0e87e45e86c2677c5ecb1f418b42
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-08 09:41:24 +0800
+
+    Fix problems reported by rpmlint
+
+M	Makefile.am
+M	README
+M	engine/Makefile.am
+M	ibus-pinyin.spec.in
+
+commit 59a0e164ed3c807bc77e38e2f63068151fc5f68a
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-07 19:26:14 +0800
+
+    Set tooltip for setup property.
+
+M	engine/pinyin.py
+
+commit 275b8af0d38a3f3f8b2f167f6d32302880d09ddb
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-06 14:29:19 +0800
+
+    Fix rpm problem.
+
+M	engine/Makefile.am
+M	engine/pinyin.engine.in
+M	engine/pysqlitedb.py
+M	ibus-pinyin.spec.in
+
+commit f9993e15e8554d1a6076b45319448b235343a266
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-05 21:18:56 +0800
+
+    Do not update ui duing English input mode.
+
+M	engine/pinyin.py
+
+commit b7fda37131e221e42e4bd06f835d4c12bd82fcb1
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-05 18:09:12 +0800
+
+    Group item in full-punct.svg
+
+M	icons/full-punct.svg
+
+commit a03c7edf5d96e2026ac865adcb09129e4bc2f59e
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-05 18:08:03 +0800
+
+    Edit full-punct.svg.
+
+M	icons/full-punct.svg
+
+commit 3fcd03547de68bcab9e3a5c84f30c78bded9fe43
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-05 11:25:32 +0800
+
+    Implement setup button in lanuage panel.
+
+M	engine/pinyin.py
+
+commit 017b9ae582d12c6cc3a63b097577e3307f851b71
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-05 10:56:45 +0800
+
+    Get install location from $IBUS_PINYIN_LOCATION.
+
+M	engine/Makefile.am
+M	engine/factory.py
+M	engine/pinyin.py
+M	icons/Makefile.am
+
+commit 0fe97edd530b363b858d6e59731d2dcc85b55ba5
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-05 10:46:55 +0800
+
+    Get install location from $IBUS_PINYIN_LOCATION.
+
+M	engine/Makefile.am
+M	engine/ibus-engine-pinyin.in
+M	engine/pinyin.py
+M	engine/pysqlitedb.py
+M	engine/specialphrase.py
+M	engine/specialtable.py
+
+commit c85a12d8233a0de3c54bb75d1b8cea3d9b71c550
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-02 21:38:12 +0800
+
+    Disable GBK by default.
+
+M	engine/pinyin.py
+M	setup/main.py
+
+commit b8cc28392439f2ef89a8082b58e3abe993b719e3
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-02 16:38:32 +0800
+
+    Remove autoheader in autogen.sh.
+
+M	autogen.sh
+
+commit 1cb0d2c1cbba0e5304db32d7242136f11575511a
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-08-02 16:24:55 +0800
+
+    Download py.db from SCIM-Python project.
+
+M	engine/Makefile.am
+
+commit 7f9640ee1fa7e6a404b63378163964ff0f46c90f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 20:27:08 +0800
+
+    WIP.
+
+M	setup/main.py
+
+commit bd0b9b00f32a6e89ae02957d8bd87dc233b4bf6d
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 19:48:57 +0800
+
+    Refine coding style.
+
+M	setup/main.py
+
+commit 50a7676aa97b84719ffb16369052a9557c961dbf
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 19:47:43 +0800
+
+    WIP.
+
+M	setup/main.py
+M	setup/setup.glade
+
+commit 4b70c60463cf791ebc820ba3740ed375bf348737
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 19:33:05 +0800
+
+    WIP.
+
+M	setup/Makefile.am
+M	setup/main.py
+
+commit ff2f5eb3c770d5bdacd919af0bcfac7fd7768107
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 19:28:59 +0800
+
+    Add a symbol link to ../engine/pydict.py
+
+A	setup/pydict.py
+
+commit efcdfd3ffb3cc7c6eb6f20246aea3f7bb7133e50
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 18:11:25 +0800
+
+    Change static methods' name.
+
+M	engine/factory.py
+M	engine/pinyin.py
+
+commit 8532f6aacdbef9532b5b0143150c724ee246a66b
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 17:01:59 +0800
+
+    Remove __init__.py.
+
+D	setup/__init__.py
+
+commit 7c79ccacf56185c830b48c63fb1b57f4efb1a4cc
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 16:28:52 +0800
+
+    WIP.
+
+M	configure.ac
+M	setup/Makefile.am
+A	setup/ibus-setup-pinyin.in
+
+commit 882ca1c1a07e69d26b54f97d64b9898e2e315433
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 16:25:39 +0800
+
+    Add setup.
+
+M	Makefile.am
+M	configure.ac
+M	engine/Makefile.am
+M	engine/ibus-engine-pinyin.in
+A	setup/Makefile.am
+A	setup/__init__.py
+A	setup/main.py
+A	setup/setup.glade
+
+commit d5c39aac7b5999c6aa69dc72dad2ee0b1751ad8e
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 16:13:12 +0800
+
+    Use ibus config schema.
+
+M	engine/factory.py
+M	engine/pinyin.py
+
+commit 6d2815e09ef2d068fa44d1dcfa5412631d64f235
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 13:13:36 +0800
+
+    Update UI before commit string.
+
+M	engine/pinyin.py
+
+commit dc5047095aeaeae36b8f256fcac488e5ec8d02c8
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 13:03:18 +0800
+
+    Rename IBus to Bus.
+
+M	engine/main.py
+
+commit fe89bf6474e902e26c14ea1a9fb1ae0671148ebb
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-31 12:11:12 +0800
+
+    WIP.
+
+M	engine/main.py
+
+commit 0d482d9d91b8013da8ad4fc9f7173d97a292eb39
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-28 14:29:47 +0800
+
+    Use IBus replace Connection.
+
+M	engine/factory.py
+M	engine/main.py
+
+commit 94039b8d966944bfa41435087bdd962124a8073a
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-25 17:01:57 +0800
+
+    Use ibus.Connection to replace dbus.Connection
+
+M	engine/main.py
+
+commit ffedf87ed82fadb762a00b1793c1c67ced06ed39
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-25 15:27:23 +0800
+
+    focus_in engine when enable.
+
+M	engine/pinyin.py
+
+commit 4fd33361000bfcf80a549e1ba494277993fbf0fa
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-25 11:15:39 +0800
+
+    Fix properties' problem when focus_in & focus_out
+
+M	engine/pinyin.py
+
+commit 28bc29b4fdf65eb17628d4c5746ba5fe7583973d
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-25 10:45:34 +0800
+
+    Check english if preedit is not empty.
+
+M	engine/pinyin.py
+
+commit fb131cea327cb7e8d52eff4ecdd5a87b922e51ce
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-24 13:31:19 +0800
+
+    Add shadown for icons.
+
+M	icons/chinese.svg
+M	icons/english.svg
+M	icons/full-letter.svg
+M	icons/full-punct.svg
+M	icons/half-letter.svg
+M	icons/half-punct.svg
+M	icons/ibus-pinyin.svg
+
+commit bd67973a8e455647142636ac44f6c5d557fd889b
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-24 13:01:32 +0800
+
+    Update pinyin icon.
+
+M	icons/ibus-pinyin.svg
+
+commit ef7ec3481fab16f16ff9a0d09de6d439f617b270
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-24 12:59:46 +0800
+
+    Create new icons.
+
+M	engine/factory.py
+M	engine/pinyin.py
+M	icons/Makefile.am
+A	icons/chinese.svg
+A	icons/english.svg
+A	icons/full-letter.svg
+A	icons/full-punct.svg
+A	icons/half-letter.svg
+A	icons/half-punct.svg
+
+commit cf110cb4094370ef59e42feef31407a6608ff8b9
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-23 16:09:06 +0800
+
+    Save data in ~/ibus/pinyin
+
+M	engine/pysqlitedb.py
+
+commit 4395775c092ecad7e701f8f78ce0312aa0c343c0
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-22 22:34:02 +0800
+
+    WIP
+
+M	engine/pinyin.py
+
+commit 0683bc7fdffe14e3d3370fd04a53926cbcb7ffa7
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-22 14:57:09 +0800
+
+    Add DBUS_DEBUG=true.
+
+M	engine/Makefile.am
+
+commit c5f3a3f327f2ad5f34e1382a2df695ae86889cb3
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-22 12:50:38 +0800
+
+    WIP.
+
+M	engine/pinyin.py
+
+commit 7c614c07c36c929caedabbb2b5ddd1cef0af67cb
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-20 12:55:56 +0800
+
+    Enhance performance.
+
+M	engine/pinyin.py
+
+commit 5ae43a9abd1775ab09775ef70799832bcce18dd4
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-20 07:37:42 +0800
+
+    Fix some typos.
+
+M	engine/pinyin.py
+
+commit 74aaa879e95a05f63dce14e32439c01394cf1a4c
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-20 07:37:03 +0800
+
+    Remove engine.py
+
+D	engine/engine.py
+
+commit 3074f2ffba196c78b408f313cc2bc967b22e9ab1
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 16:54:22 +0800
+
+    Fix bug.
+
+M	engine/Makefile.am
+M	engine/pinyin.engine.in
+
+commit 09c183f51cd1e52109d5481d5191952faa893dc4
+Merge: 39e0598 2cd5821
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 16:47:07 +0800
+
+    Merge commit 'tmpl/master' into temp
+    
+    Conflicts:
+    
+    	configure.ac
+    	engine/Makefile.am
+    	engine/engine.py
+    	engine/factory.py
+    	engine/main.py
+
+commit 2cd58216d71607f7ee417a30fab016015e3b7025
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 16:40:51 +0800
+
+    Add enchant.engine.in.
+
+M	configure.ac
+M	engine/Makefile.am
+A	engine/enchant.engine.in
+
+commit 39e0598679d369c2fae73929d8c098dfeb1b4202
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 16:35:55 +0800
+
+    Make page_{up,down} & cursor_{up,down} work.
+
+M	engine/pinyin.py
+
+commit cd59896a961cf8edacbbdacd9a56c6f06fe3c333
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 16:25:50 +0800
+
+    WIP.
+
+M	engine/pinyin.py
+
+commit 8f2318497a4e3e054ab549c4e29554ef4033252c
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 16:18:03 +0800
+
+    Fix a bug when create KeyEvent object.
+
+M	engine/pinyin.py
+
+commit 087557c33f2185c7866629e6729e5d428d93ec66
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 13:49:34 +0800
+
+    Add __invalidate function.
+
+M	engine/factory.py
+M	engine/pinyin.py
+
+commit 98051a45d3643233da16904dcd8c4a73727bbc0b
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 13:39:23 +0800
+
+    Remove engine.py.
+
+M	engine/Makefile.am
+D	engine/engine.py
+
+commit 036f8e7a4805003bd84fb74934de9bd65efd2b72
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 11:31:09 +0800
+
+    WIP.
+
+M	engine/factory.py
+M	engine/main.py
+M	engine/pinyin.py
+
+commit 08ed60f18bf97aa81ae63da4e162dfb008bb5f69
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 10:59:00 +0800
+
+    WIP.
+
+M	engine/pinyin.py
+
+commit b97883b6daaaa5185d48bc0d6d9b61a19f71da4b
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 10:45:14 +0800
+
+    Add LANG=en_US in test task.
+
+M	engine/Makefile.am
+
+commit b5282fef3d73c78b956ba755bfeb2ffe30e15ecf
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-18 10:40:35 +0800
+
+    Refactory Engine & EngineFactory.
+
+M	engine/engine.py
+M	engine/factory.py
+M	engine/main.py
+
+commit 2d61073e078d64ba1393034113f0ef7b349223a5
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-17 07:44:51 +0800
+
+    Rename ibus-engine-enchant.in to ibus-engine-pinyin.in
+
+M	configure.ac
+M	engine/Makefile.am
+D	engine/ibus-engine-enchant.in
+A	engine/ibus-engine-pinyin.in
+
+commit 84965105c3d8b689d53bb00f4da778401921a4a5
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 22:46:06 +0800
+
+    WIP.
+
+A	engine/pinyin.py
+A	engine/special_phrase
+A	engine/special_table
+A	engine/specialphrase.py
+A	engine/specialtable.py
+
+commit ceb12f46eaad2c186f0334369a62f3f19c76e9fb
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 22:20:37 +0800
+
+    Add pycreatedb.py
+
+M	engine/Makefile.am
+A	engine/pycreatedb.py
+
+commit de72e8c5172d8b52391b8d02f576ded5e958a968
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 22:16:50 +0800
+
+    Add pysqlitedb.py
+
+M	engine/Makefile.am
+A	engine/pysqlitedb.py
+
+commit 2ff9d96200b0d905520c913ef3c652bf9e8b8e00
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 19:44:22 +0800
+
+    refine coding style.
+
+M	engine/pydict.py
+M	engine/pyparser.py
+M	engine/pyutil.py
+
+commit efddab95f00292f4ffe69fbcc71055c4d1abbdb3
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 19:43:10 +0800
+
+    Replace tap with spaces.
+
+M	engine/pydict.py
+M	engine/pyparser.py
+M	engine/pyutil.py
+
+commit 0239c6260e1f155122d18412142a1e4cb1eea0db
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 19:42:10 +0800
+
+    Add pyutil.py
+
+M	engine/Makefile.am
+A	engine/pyutil.py
+
+commit 375f483fb28c88d443232576ff83bae74ac816c6
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 19:40:45 +0800
+
+    Add pyparser.py
+
+M	engine/Makefile.am
+A	engine/pyparser.py
+
+commit 9a4965b22dedf93de263ffe65da07632baf2f4ba
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-16 19:38:25 +0800
+
+    Add pydict.py
+
+M	engine/Makefile.am
+M	engine/factory.py
+M	engine/main.py
+A	engine/pydict.py
+
+commit 85b2059354c5cb53dae32b675d988079391a312a
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-15 17:05:53 +0800
+
+    Change vim settings and replace tab with spaces.
+
+M	engine/engine.py
+M	engine/factory.py
+M	engine/main.py
+
+commit 0a5aa6c5a7cee64a9327aa6c615f98dcebc0763f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-15 17:05:17 +0800
+
+    Change vim settings and replace tab with spaces.
+
+M	engine/engine.py
+M	engine/factory.py
+M	engine/main.py
+
+commit bdd57e9ca4fd3eb300706e975e10ba9a70d46dc3
+Merge: 9294f79 1c4769d
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-15 13:45:55 +0800
+
+    Merge commit 'tmpl/master'
+
+commit 1c4769d2d09646449ff5349cb047f99d7dcfc3e8
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-15 13:45:36 +0800
+
+    Fix a typo.
+
+M	engine/factory.py
+
+commit 9294f791411fdfcd666cfdc1e30ae339024b9dcc
+Merge: 7c00eb9 41fd717
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-15 13:44:29 +0800
+
+    Merge commit 'tmpl/master'
+
+commit 41fd717f3b26c1e337e3d92f78f67c9a79926818
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-15 13:42:15 +0800
+
+    Refine coding style
+
+M	engine/engine.py
+M	engine/factory.py
+M	engine/main.py
+
+commit 7c00eb9e07f6a6ae093d772900415fe0d94585de
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-04 11:22:09 +0800
+
+    Add exec in shell launch script.
+
+M	engine/ibus-engine-enchant.in
+
+commit 406ee586236520b70aee9e247828bae2f94b1d8b
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-04 11:20:59 +0800
+
+    Add exec in shell launch script.
+
+M	engine/ibus-engine-enchant.in
+
+commit add0371bc27ecfc6555cde544d6792fc7273b9ad
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-02 18:38:45 +0800
+
+    Add Destroy functions.
+
+M	engine/engine.py
+M	engine/factory.py
+
+commit cf49f79e427188914c2a425df05b066a3fb33b6e
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-02 17:44:51 +0800
+
+    Create PinYin project from template.
+
+M	.gitignore
+M	Makefile.am
+M	configure.ac
+M	engine/Makefile.am
+A	ibus-pinyin.spec.in
+D	ibus-tmpl.spec.in
+M	icons/Makefile.am
+D	icons/ibus-enchant.svg
+A	icons/ibus-pinyin.svg
+
+commit 7d8b4502603d38e023e9eba90a2a8391fded6edc
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-02 17:20:00 +0800
+
+    Use @PACKAGE_NAME@ to replace ibus-tmpl
+
+M	ibus-tmpl.spec.in
+
+commit 26e5a0081d754ef1f1a52cc1a4c8cbfbac4f4551
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-02 17:16:57 +0800
+
+    Change header in icons/Makefile.am
+
+M	icons/Makefile.am
+
+commit 3f3eecb73dfbdfca91d3bf7ae60ea8c7b41dd9bd
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-07-02 17:12:20 +0800
+
+    define package_name macro.
+
+M	Makefile.am
+M	configure.ac
+
+commit f6303d37775aff4c1087bea9da91345a5c849afd
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-06-29 16:48:38 +0800
+
+    Add icon.
+
+M	Makefile.am
+M	configure.ac
+M	engine/factory.py
+M	ibus-tmpl.spec.in
+A	icons/Makefile.am
+A	icons/ibus-enchant.svg
+
+commit b741f5db502727dfe40d4087019c882a85d96f9f
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-06-29 16:18:54 +0800
+
+    Use GPLv2.
+
+M	Makefile.am
+M	configure.ac
+M	engine/Makefile.am
+M	engine/engine.py
+M	engine/factory.py
+M	engine/ibus-engine-enchant.in
+M	engine/main.py
+M	ibus-tmpl.spec.in
+M	m4/Makefile.am
+
+commit 1e9f9787283d449fe7446a9fa19924c964980180
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-06-29 16:10:36 +0800
+
+    Add a template engine - enchant.
+
+M	Makefile.am
+M	configure.ac
+A	engine/Makefile.am
+A	engine/engine.py
+A	engine/factory.py
+A	engine/ibus-engine-enchant.in
+A	engine/main.py
+M	ibus-tmpl.spec.in
+
+commit 058ff8eec8aa8a7e5e8e7b404f2f47d87456bfaa
+Author: Huang Peng <shawn.p.huang@gmail.com>
+Date:   2008-06-29 15:57:07 +0800
+
+    Import IBus template project.
+
+A	.gitignore
+A	AUTHORS
+A	COPYING
+A	ChangeLog
+A	Makefile.am
+A	NEWS
+A	README
+A	autogen.sh
+A	configure.ac
+A	ibus-tmpl.spec.in
+A	m4/.gitignore
+A	m4/Makefile.am
+A	m4/as-version.m4
+A	po/.gitignore
+A	po/Makevars
+A	po/POTFILES.in
