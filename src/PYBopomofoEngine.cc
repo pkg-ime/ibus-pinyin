@@ -53,7 +53,7 @@ BopomofoEngine::BopomofoEngine (IBusEngine *engine)
     m_editors[MODE_EXTENSION].reset (new Editor (m_props, BopomofoConfig::instance ()));
 #endif
 
-    m_props.signalUpdateProperty ().connect (bind (&BopomofoEngine::updateProperty, this, _1));
+    m_props.signalUpdateProperty ().connect (std::bind (&BopomofoEngine::updateProperty, this, _1));
 
     for (i = MODE_INIT; i < MODE_LAST; i++) {
         connectEditorSignals (m_editors[i]);
@@ -82,9 +82,19 @@ BopomofoEngine::processKeyEvent (guint keyval, guint keycode, guint modifiers)
                 if (!m_editors[MODE_INIT]->text ().empty ())
                     m_editors[MODE_INIT]->reset ();
                 m_props.toggleModeChinese ();
+                return TRUE;
             }
         }
-        return TRUE;
+
+        if (m_input_mode == MODE_INIT &&
+            m_editors[MODE_INIT]->text ().empty ()) {
+            /* If it is init mode, and no any previouse input text,
+             * we will let client applications to handle release key event */
+            return FALSE;
+        }
+        else {
+            return TRUE;
+        }
     }
 
     /* Toggle simp/trad Chinese Mode when hotkey Ctrl + Shift + F pressed */
@@ -220,30 +230,30 @@ void
 BopomofoEngine::connectEditorSignals (EditorPtr editor)
 {
     editor->signalCommitText ().connect (
-        bind (&BopomofoEngine::commitText, this, _1));
+        std::bind (&BopomofoEngine::commitText, this, _1));
 
     editor->signalUpdatePreeditText ().connect (
-        bind (&BopomofoEngine::updatePreeditText, this, _1, _2, _3));
+        std::bind (&BopomofoEngine::updatePreeditText, this, _1, _2, _3));
     editor->signalShowPreeditText ().connect (
-        bind (&BopomofoEngine::showPreeditText, this));
+        std::bind (&BopomofoEngine::showPreeditText, this));
     editor->signalHidePreeditText ().connect (
-        bind (&BopomofoEngine::hidePreeditText, this));
+        std::bind (&BopomofoEngine::hidePreeditText, this));
 
     editor->signalUpdateAuxiliaryText ().connect (
-        bind (&BopomofoEngine::updateAuxiliaryText, this, _1, _2));
+        std::bind (&BopomofoEngine::updateAuxiliaryText, this, _1, _2));
     editor->signalShowAuxiliaryText ().connect (
-        bind (&BopomofoEngine::showAuxiliaryText, this));
+        std::bind (&BopomofoEngine::showAuxiliaryText, this));
     editor->signalHideAuxiliaryText ().connect (
-        bind (&BopomofoEngine::hideAuxiliaryText, this));
+        std::bind (&BopomofoEngine::hideAuxiliaryText, this));
 
     editor->signalUpdateLookupTable ().connect (
-        bind (&BopomofoEngine::updateLookupTable, this, _1, _2));
+        std::bind (&BopomofoEngine::updateLookupTable, this, _1, _2));
     editor->signalUpdateLookupTableFast ().connect (
-        bind (&BopomofoEngine::updateLookupTableFast, this, _1, _2));
+        std::bind (&BopomofoEngine::updateLookupTableFast, this, _1, _2));
     editor->signalShowLookupTable ().connect (
-        bind (&BopomofoEngine::showLookupTable, this));
+        std::bind (&BopomofoEngine::showLookupTable, this));
     editor->signalHideLookupTable ().connect (
-        bind (&BopomofoEngine::hideLookupTable, this));
+        std::bind (&BopomofoEngine::hideLookupTable, this));
 }
 
 };

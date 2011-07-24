@@ -12,6 +12,9 @@
 /* Defined if the requested minimum BOOST version is satisfied */
 #undef HAVE_BOOST
 
+/* Define to 1 if you have <boost/bind.hpp> */
+#undef HAVE_BOOST_BIND_HPP
+
 /* Define to 1 if you have <boost/signals2.hpp> */
 #undef HAVE_BOOST_SIGNALS2_HPP
 
@@ -23,6 +26,9 @@
 
 /* Define if the GNU gettext() function is already present or preinstalled. */
 #undef HAVE_GETTEXT
+
+/* Define to 1 if you have the `ibus_config_get_values' function. */
+#undef HAVE_IBUS_CONFIG_GET_VALUES
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H

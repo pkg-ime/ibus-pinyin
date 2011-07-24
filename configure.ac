@@ -19,10 +19,10 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 # if not 1, append datestamp to the version number.
-m4_define([ibus_released], [1])
+m4_define([ibus_released], [0])
 m4_define([ibus_major_version], [1])
 m4_define([ibus_minor_version], [3])
-m4_define([ibus_micro_version], [11])
+m4_define([ibus_micro_version], [99])
 m4_define(ibus_maybe_datestamp,
     m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
@@ -53,7 +53,7 @@ AM_PROG_LIBTOOL
 
 # check ibus
 PKG_CHECK_MODULES(IBUS, [
-    ibus-1.0
+    ibus-1.0 >= 1.3.99
 ])
 
 # check sqlite
@@ -88,23 +88,15 @@ AC_CHECK_FUNCS([uuid_create], [], [
 
 AM_CONDITIONAL(HAVE_LIBUUID, test x"$HAVE_LIBUUID" = x"yes")
 
-# check boost
-BOOST_REQUIRE([1.39])
-BOOST_FIND_HEADER([boost/signals2.hpp])
-# BOOST_FIND_HEADER([boost/signals2.hpp], [
-#     HAVE_BOOST_SIGNALS2=no
-#     BOOST_SIGNALS([s])
-# ], [
-#     AC_DEFINE(HAVE_BOOST_SIGNALS2_HPP, 1, [Define if found boost.signals2])
-#     HAVE_BOOST_SGINALS2=yes
-# ])
-# 
-# AM_CONDITIONAL(HAVE_BOOST_SIGNALS2, test x"$HAVE_BOOST_SIGNALS2" = x"yes")
-# 
-# check sigc
-# PKG_CHECK_MODULES(SIGC, [
-#     sigc++-2.0
-# ])
+# check if ibus_config_get_values, which is available in ibus-1.3.99+ (git master)
+save_CFLAGS="$CFLAGS"
+save_LIBS="$LIBS"
+CFLAGS="$CFLAGS $IBUS_CFLAGS"
+LIBS="$LIBS $IBUS_LIBS"
+AC_CHECK_FUNCS([ibus_config_get_values])
+CFLAGS="$save_CFLAGS"
+LIBS="$save_LIBS"
+
 
 # check env
 AC_PATH_PROG(ENV, env)
@@ -112,6 +104,21 @@ AC_SUBST(ENV)
 
 # check python
 AM_PATH_PYTHON([2.5])
+
+# --enable-boost
+AC_ARG_ENABLE(boost,
+    AC_HELP_STRING([--enable-boost],
+        [Use boost to replace stdc++0x.]),
+        [enable_boost=$enableval],
+        [enable_boost=no]
+)
+if test x"$enable_boost" = x"yes"; then
+    # check boost
+    BOOST_REQUIRE([1.39])
+    BOOST_FIND_HEADER([boost/bind.hpp])
+    BOOST_FIND_HEADER([boost/signals2.hpp])
+fi
+AM_CONDITIONAL(HAVE_BOOST, test x"$enable_boost" = x"yes")
 
 # --enable-opencc
 AC_ARG_ENABLE(opencc,
@@ -176,8 +183,17 @@ then
     );
 fi
 
-
 AM_CONDITIONAL(IBUS_BUILD_LUA_EXTENSION, [test x"$enable_lua_extension" = x"yes"])
+
+# --disable-english-input-mode
+AC_ARG_ENABLE(english-input-mode,
+    AS_HELP_STRING([--disable-english-input-mode],
+    [do not build english input mode]),
+    [enable_english_input_mode=$enableval],
+    [enable_english_input_mode=yes]
+)
+
+AM_CONDITIONAL(IBUS_BUILD_ENGLISH_INPUT_MODE, [test x"$enable_english_input_mode" = x"yes"])
 
 # OUTPUT files
 AC_CONFIG_FILES([ po/Makefile.in
@@ -203,9 +219,11 @@ AC_MSG_RESULT([
 Build options:
     Version                     $VERSION
     Install prefix              $prefix
+    Use boost                   $enable_boost
     Use opencc                  $enable_opencc
     Build database android      $enable_db_android
     Build database open-phrase  $enable_db_open_phrase
     Build lua extension         $enable_lua_extension
+    Build english input mode    $enable_english_input_mode
 ])
 

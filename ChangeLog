@@ -1,3 +1,329 @@
+commit cb5afea67473240d73f0c359c7dc6e553f87da14
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-07-05 13:09:29 -0400
+
+    Use ibus_config_get_values () to improve performance.
+    
+    BUG=http://crosbug.com/16287
+    TEST=Linux desktop
+    
+    Review URL: http://codereview.appspot.com/4670044
+
+M	configure.ac
+M	src/PYConfig.cc
+M	src/PYConfig.h
+
+commit 47bc0ca6978131de085f27d988a0f135474b6062
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-06-02 08:30:49 -0400
+
+    Fix a build warning.
+    
+    BUG=Build wanring
+    TEST=Manually
+    
+    Review URL: http://codereview.appspot.com/4528117
+
+M	src/PYPunctEditor.cc
+
+commit d89313116374fb647df89cba0aee8002a0750308
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-05-27 10:47:13 -0400
+
+    Fix make distcheck errors.
+    
+    BUG=make distcheck failed
+    TEST=Manually
+    
+    Review URL: http://codereview.appspot.com/4551054
+
+M	configure.ac
+M	data/Makefile.am
+M	data/db/android/Makefile.am
+M	data/db/open-phrase/Makefile.am
+
+commit 6a6469f3c85d3a60ee68e074ac3c6b854b837753
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-05-03 10:07:25 -0400
+
+    Fixed build errors in Ubuntu 11.04 and get distribution codename from /etc/lsb-release.
+    
+    BUG=None
+    TEST=Linux desktop
+    
+    Review URL: http://codereview.appspot.com/4428083
+
+M	Makefile.am
+M	src/PYConfig.cc
+M	src/PYDatabase.cc
+
+commit a16d70e01a441193c6bb8a38d7cf093a7ebed19c
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2011-04-22 07:31:53 -0400
+
+    add English Editor
+    to speed up English input
+    
+    BUG=none
+    TEST=build fine
+    
+    Review URL: http://codereview.appspot.com/4200041
+    Patch from Peng Wu <alexepico@gmail.com>.
+
+M	configure.ac
+M	data/Makefile.am
+A	data/english.awk
+M	src/Makefile.am
+A	src/PYEnglishEditor.cc
+A	src/PYEnglishEditor.h
+M	src/PYExtEditor.cc
+M	src/PYPinyinEngine.cc
+M	src/PYPinyinEngine.h
+
+commit d85a24507314194f1597c4c5d6c460408fcd3a9e
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-03-21 13:00:05 -0400
+
+    Add auto correct "on" => "ong", and combine some fuzzy pinyin options to save flag bits.
+    
+    BUG=none
+    TEST=Linux desktop
+    
+    Review URL: http://codereview.appspot.com/4273085
+
+M	data/db/android/Makefile.am
+M	data/db/open-phrase/Makefile.am
+M	scripts/genpytable.py
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/Makefile.am
+M	src/PYConfig.cc
+M	src/PYPinyinParserTable.h
+M	src/PYTypes.h
+
+commit 5d68b85c32049841ad1ac6220c6b03a528da7662
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-02-18 09:15:24 -0500
+
+    Update PYSimpTradConverterTable.h from wikipedia
+    
+    BUG=none
+    TEST=manual
+    
+    Review URL: http://codereview.appspot.com/4190049
+
+M	scripts/update-simptrad-table.py
+M	src/PYSimpTradConverterTable.h
+
+commit f60c85749674f38b8e5fee222cd89fcc46ba2688
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-02-07 11:33:37 -0500
+
+    Storing user database to disk, if engine idles more than 60 seconds.
+    
+    BUG=none
+    TEST=manual
+    
+    Review URL: http://codereview.appspot.com/4127050
+
+M	src/PYDatabase.cc
+M	src/PYDatabase.h
+
+commit a142d959cdba0406a2c614fadfa9367803c31286
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-01-18 10:12:40 -0500
+
+    Do not handle release key events, if engine is in init mode.
+    
+    Most application only process key press events, but some process key release events. This change will let Pinyin engine to ignore some release events in init mode, and let applications have chance to get release key events.
+    
+    BUG=none
+    TEST=Test within Ubuntu 10.10
+    
+    Review URL: http://codereview.appspot.com/3975042
+
+M	src/PYBopomofoEngine.cc
+M	src/PYPinyinEngine.cc
+
+commit 15b9b66b013ee83974b3ae16a76983cc10e9dbe8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-11-24 16:53:36 +0900
+
+    Use in memory user database to improve performance.
+    
+    I found pinyin's performance is very low when system IO load is big. So
+    I let pinyin use im memory user database to improve the performance, and
+    write the database to the harddisk in 60 seconds or when engine exits.
+    
+    BUG=none
+    TEST=manual
+    
+    Review URL: http://codereview.appspot.com/3303041
+
+M	src/PYDatabase.cc
+M	src/PYDatabase.h
+M	src/PYMain.cc
+M	src/PYString.h
+
+commit f067b7a651cf24f7234441a31c0f88191cb74a42
+Author: Peng Wu <alexepico@gmail.com>
+Date:   2010-11-12 15:06:09 +0800
+
+    add author
+
+M	setup/ibus-pinyin-preferences.ui
+M	src/pinyin.xml.in.in
+
+commit e6f36dbffa9da69fd3819ce21ac7504f50b055e7
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-11-04 16:26:18 +0900
+
+    Fix deb build errors.
+
+M	Makefile.am
+M	debian/control
+
+commit a17468d8ade1df427ca204605f608b9e4ab67b50
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-10-29 09:31:05 +0900
+
+    Change default ubunut serie to mavreick
+
+M	Makefile.am
+
+commit 9b655b630a50e9cd7a9415f07b2ddb4348b2db64
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-10-29 09:28:48 +0900
+
+    Bump version to 1.3.99
+
+M	configure.ac
+
+commit 16a3b3d689de672efc1ed8eb4604160cd38d7302
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-10-22 20:36:54 +0900
+
+    Fix build errors with ibus-1.4
+
+M	configure.ac
+M	debian/control
+
+commit ead9afe09d8e580bc2abb3556cf778c0a29c243c
+Author: phuang <phuang@phuang-MacPro.(none)>
+Date:   2010-10-18 22:02:33 +0900
+
+    Fix some errors when build debian packages.
+
+M	Makefile.am
+M	debian/control
+M	debian/rules
+
+commit 2924d05cf008f7c7794d4f4b65940a70ba2247bd
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-07-12 18:14:46 +0800
+
+    Fix problem with ibus-2.0
+
+M	configure.ac
+M	src/PYConfig.cc
+M	src/PYConfig.h
+
+commit bcf86cbf44e2a9658fda42724ed066f3f05ced79
+Author: Yuren Ju <yurenju@gmail.com>
+Date:   2010-10-20 18:49:33 +0800
+
+    added simp. chinese and hong kang translation
+
+M	po/zh_CN.po
+M	po/zh_HK.po
+
+commit d43d04a9b92f7abd719cf3da666c23eee43fb67c
+Author: Yuren Ju <yurenju@gmail.com>
+Date:   2010-10-20 18:44:23 +0800
+
+    add options for enter key, original feature is commit original english text, new feature is commit first candidate phrase
+
+M	po/zh_TW.po
+M	setup/ibus-pinyin-preferences.ui
+M	setup/main.py
+M	src/PYBopomofoEditor.cc
+M	src/PYConfig.cc
+M	src/PYConfig.h
+
+commit 5a0ba0b751abe079fad8bc90316501cd489f50e6
+Author: Yuren Ju <yurenju@gmail.com>
+Date:   2010-10-11 17:07:25 +0800
+
+    use ， & 。 instead of 《 & 》 for traditional chinese user
+
+M	src/PYFallbackEditor.cc
+
+commit a0b31c7a250cfa7af1b52056a1d1ada81b22a455
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-09-27 14:09:07 +0800
+
+    Add option --disable-boost to support build without boost
+    
+    When build without boost, ibus-pinyin will use smart pointer
+    from c++0x and use the signal templates embedded instead of
+    boost::signals2.
+    
+    BUG=chromium-os:5055
+    TEST=manual
+    
+    Review URL: http://codereview.appspot.com/2205044
+
+M	configure.ac
+M	src/Makefile.am
+M	src/PYBopomofoEngine.cc
+M	src/PYConfig.cc
+M	src/PYConfig.h
+M	src/PYDatabase.cc
+M	src/PYDatabase.h
+M	src/PYEditor.h
+M	src/PYEngine.cc
+M	src/PYExtEditor.cc
+M	src/PYPhraseEditor.h
+M	src/PYPinyinEngine.cc
+M	src/PYPunctEditor.cc
+M	src/PYPunctEditor.h
+M	src/PYSignal.h
+M	src/PYSpecialPhraseTable.h
+M	src/PYUtil.h
+
+commit 27c2f7ea0ef69094db2dfc009bb661276fc90227
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2010-09-27 10:10:33 +0800
+
+    Add codereview.settings.
+    
+    This is for us to use codereview.appspot.com for code reviews.
+    
+    Instructions to use codereview.appspot.com:
+    
+    1. Get depot_tools and add PATH to the directory
+    http://dev.chromium.org/developers/how-tos/depottools
+    
+    2. In your local IBus git repository,
+    
+    % git checkout master
+    % git checkout -b somefix
+    make changes
+    % git cl upload
+    do code reviews at codereview.appspot.com
+    once it's done, run "git cl push" if you can commit.
+    otherwise, ask committers to commit on behalf.
+    
+    Add target for build debian packages.
+    
+    BUG=none
+    TEST=build fine
+    
+    Review URL: http://codereview.appspot.com/2229048
+
+M	Makefile.am
+A	codereview.settings
+
 commit eb321b4ad179d0f30a6bbf08bcc8e793a0c29f19
 Author: Peng Huang <shawn.p.huang@gmail.com>
 Date:   2010-09-06 10:43:20 +0800
