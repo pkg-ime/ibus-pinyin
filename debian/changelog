@@ -1,3 +1,16 @@
+ibus-pinyin (1.3.99.20110706-1) unstable; urgency=low
+
+  * New upstream release
+  * Use dh in debian/rules
+  * Bump standards version to 3.9.2
+  * Set VCS to git.debian.org
+  * Set DM-Upload-Allowed to yes
+  * Set X-Python-Version to >= 2.5
+  * Add debian/*.install files
+  * Fix "Switch to dh_python2" (Closes: #635029)
+
+ -- Asias He <asias.hejun@gmail.com>  Sun, 24 Jul 2011 16:01:18 +0800
+
 ibus-pinyin (1.3.11-1) unstable; urgency=low
 
   [ Asias He ]
