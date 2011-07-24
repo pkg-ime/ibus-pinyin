@@ -21,16 +21,20 @@
 #ifndef __PY_CONFIG_H_
 #define __PY_CONFIG_H_
 
+#ifdef HAVE_CONFIG_H
+#  include <config.h>
+#endif
+
 #include <string>
-#include <boost/scoped_ptr.hpp>
 #include <ibus.h>
+#include "PYUtil.h"
 #include "PYObject.h"
 
 namespace PY {
 
 class Bus;
 
-class Config : Object {
+class Config : public Object {
 protected:
     Config (Bus & bus, const std::string & name);
     virtual ~Config (void);
@@ -56,23 +60,24 @@ public:
     gboolean guideKey (void) const              { return m_guide_key; }
     gboolean auxiliarySelectKeyF (void) const   { return m_auxiliary_select_key_f; }
     gboolean auxiliarySelectKeyKP (void) const  { return m_auxiliary_select_key_kp; }
+    gboolean enterKey (void) const  { return m_enter_key; }
 
 protected:
     bool read (const gchar * name, bool defval);
     gint read (const gchar * name, gint defval);
-    const gchar * read (const gchar * name, const gchar * defval);
+    std::string read (const gchar * name, const gchar * defval);
+    void initDefaultValues (void);
 
     virtual void readDefaultValues (void);
-
-    virtual gboolean valueChanged (const std::string & section,
-                                   const std::string & name,
-                                   const GValue  *value);
+    virtual gboolean valueChanged (const std::string  &section,
+                                   const std::string  &name,
+                                   GVariant           *value);
 private:
-    static void valueChangedCallback (IBusConfig    *config,
-                                      const gchar   *section,
-                                      const gchar   *name,
-                                      const GValue  *value,
-                                      Config        *self);
+    static void valueChangedCallback (IBusConfig     *config,
+                                      const gchar    *section,
+                                      const gchar    *name,
+                                      GVariant       *value,
+                                      Config         *self);
 
 protected:
     std::string m_section;
@@ -101,6 +106,8 @@ protected:
     gboolean m_guide_key;
     gboolean m_auxiliary_select_key_f;
     gboolean m_auxiliary_select_key_kp;
+
+    gboolean m_enter_key;
 };
 
 /* PinyinConfig */
@@ -113,12 +120,12 @@ protected:
     PinyinConfig (Bus & bus);
     virtual void readDefaultValues (void);
 
-    virtual gboolean valueChanged (const std::string & section,
-                                   const std::string & name,
-                                   const GValue  *value);
+    virtual gboolean valueChanged (const std::string &section,
+                                   const std::string &name,
+                                   GVariant          *value);
 
 private:
-    static boost::scoped_ptr<PinyinConfig> m_instance;
+    static std::unique_ptr<PinyinConfig> m_instance;
 };
 
 /* Bopomof Config */
@@ -131,12 +138,12 @@ protected:
     BopomofoConfig (Bus & bus);
     virtual void readDefaultValues (void);
 
-    virtual gboolean valueChanged (const std::string & section,
-                                   const std::string & name,
-                                   const GValue  *value);
+    virtual gboolean valueChanged (const std::string &section,
+                                   const std::string &name,
+                                   GVariant          *value);
 
 private:
-    static boost::scoped_ptr<BopomofoConfig> m_instance;
+    static std::unique_ptr<BopomofoConfig> m_instance;
 };
 
 };

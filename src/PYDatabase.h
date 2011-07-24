@@ -21,8 +21,7 @@
 #ifndef __PY_DATABASE_H_
 #define __PY_DATABASE_H_
 
-#include <boost/shared_ptr.hpp>
-#include <boost/scoped_ptr.hpp>
+#include "PYUtil.h"
 #include "PYString.h"
 #include "PYTypes.h"
 #include "PYPhraseArray.h"
@@ -35,7 +34,7 @@ class PinyinArray;
 struct Phrase;
 
 class SQLStmt;
-typedef boost::shared_ptr<SQLStmt> SQLStmtPtr;
+typedef std::shared_ptr<SQLStmt> SQLStmtPtr;
 
 class Database;
 
@@ -75,24 +74,30 @@ public:
     void conditionsTriple (void);
 
     static void init (void);
+    static void finalize (void);
     static Database & instance (void) { return *m_instance; }
 
 private:
     gboolean open (void);
-    gboolean openUserDB (const gchar *userdb);
+    gboolean loadUserDB (void);
+    gboolean saveUserDB (void);
     void prefetch (void);
     void phraseSql (const Phrase & p, String & sql);
     void phraseWhereSql (const Phrase & p, String & sql);
-    gboolean executeSQL (const gchar *sql);
+    gboolean executeSQL (const gchar *sql, sqlite3 *db = NULL);
+    void modified (void);
+    static gboolean timeoutCallback (gpointer data);
 
 private:
     sqlite3 *m_db;              /* sqlite3 database */
 
     String m_sql;        /* sql stmt */
     String m_buffer;     /* temp buffer */
+    guint m_timeout_id;
+    GTimer *m_timer;
 
 private:
-    static boost::scoped_ptr<Database> m_instance;
+    static std::unique_ptr<Database> m_instance;
 };
 
 

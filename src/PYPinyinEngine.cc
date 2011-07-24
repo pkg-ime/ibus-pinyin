@@ -26,6 +26,9 @@
 #ifdef IBUS_BUILD_LUA_EXTENSION
 #include "PYExtEditor.h"
 #endif
+#ifdef IBUS_BUILD_ENGLISH_INPUT_MODE
+#include "PYEnglishEditor.h"
+#endif
 #include "PYFullPinyinEditor.h"
 #include "PYDoublePinyinEditor.h"
 #include "PYFallbackEditor.h"
@@ -54,8 +57,13 @@ PinyinEngine::PinyinEngine (IBusEngine *engine)
 #else
     m_editors[MODE_EXTENSION].reset (new Editor (m_props, PinyinConfig::instance ()));
 #endif
+#ifdef IBUS_BUILD_ENGLISH_INPUT_MODE
+    m_editors[MODE_ENGLISH].reset (new EnglishEditor (m_props, PinyinConfig::instance ()));
+#else
+    m_editors[MODE_ENGLISH].reset (new Editor (m_props, PinyinConfig::instance ()));
+#endif
 
-    m_props.signalUpdateProperty ().connect (bind (&PinyinEngine::updateProperty, this, _1));
+    m_props.signalUpdateProperty ().connect (std::bind (&PinyinEngine::updateProperty, this, _1));
 
     for (i = MODE_INIT; i < MODE_LAST; i++) {
         connectEditorSignals (m_editors[i]);
@@ -84,14 +92,24 @@ PinyinEngine::processKeyEvent (guint keyval, guint keycode, guint modifiers)
                 if (!m_editors[MODE_INIT]->text ().empty ())
                     m_editors[MODE_INIT]->reset ();
                 m_props.toggleModeChinese ();
+                return TRUE;
             }
         }
-        return TRUE;
+
+        if (m_input_mode == MODE_INIT &&
+            m_editors[MODE_INIT]->text ().empty ()) {
+            /* If it is init mode, and no any previouse input text,
+             * we will let client applications to handle release key event */
+            return FALSE;
+        }
+        else {
+            return TRUE;
+        }
     }
 
     /* Toggle simp/trad Chinese Mode when hotkey Ctrl + Shift + F pressed */
     if (keyval == IBUS_F && scmshm_test (modifiers, (IBUS_SHIFT_MASK | IBUS_CONTROL_MASK))) {
-        m_props.toggleModeSimp();
+        m_props.toggleModeSimp ();
         m_prev_pressed_key = IBUS_F;
         return TRUE;
     }
@@ -111,6 +129,14 @@ PinyinEngine::processKeyEvent (guint keyval, guint keycode, guint modifiers)
                     if (PinyinConfig::instance ().doublePinyin ())
                         break;
                     m_input_mode = MODE_EXTENSION;
+                    break;
+#endif
+#ifdef IBUS_BUILD_ENGLISH_INPUT_MODE
+                case IBUS_v:
+                    // do not enable english mode when use double pinyin.
+                    if (PinyinConfig::instance ().doublePinyin ())
+                        break;
+                    m_input_mode = MODE_ENGLISH;
                     break;
 #endif
                 }
@@ -264,30 +290,30 @@ void
 PinyinEngine::connectEditorSignals (EditorPtr editor)
 {
     editor->signalCommitText ().connect (
-        bind (&PinyinEngine::commitText, this, _1));
+        std::bind (&PinyinEngine::commitText, this, _1));
 
     editor->signalUpdatePreeditText ().connect (
-        bind (&PinyinEngine::updatePreeditText, this, _1, _2, _3));
+        std::bind (&PinyinEngine::updatePreeditText, this, _1, _2, _3));
     editor->signalShowPreeditText ().connect (
-        bind (&PinyinEngine::showPreeditText, this));
+        std::bind (&PinyinEngine::showPreeditText, this));
     editor->signalHidePreeditText ().connect (
-        bind (&PinyinEngine::hidePreeditText, this));
+        std::bind (&PinyinEngine::hidePreeditText, this));
 
     editor->signalUpdateAuxiliaryText ().connect (
-        bind (&PinyinEngine::updateAuxiliaryText, this, _1, _2));
+        std::bind (&PinyinEngine::updateAuxiliaryText, this, _1, _2));
     editor->signalShowAuxiliaryText ().connect (
-        bind (&PinyinEngine::showAuxiliaryText, this));
+        std::bind (&PinyinEngine::showAuxiliaryText, this));
     editor->signalHideAuxiliaryText ().connect (
-        bind (&PinyinEngine::hideAuxiliaryText, this));
+        std::bind (&PinyinEngine::hideAuxiliaryText, this));
 
     editor->signalUpdateLookupTable ().connect (
-        bind (&PinyinEngine::updateLookupTable, this, _1, _2));
+        std::bind (&PinyinEngine::updateLookupTable, this, _1, _2));
     editor->signalUpdateLookupTableFast ().connect (
-        bind (&PinyinEngine::updateLookupTableFast, this, _1, _2));
+        std::bind (&PinyinEngine::updateLookupTableFast, this, _1, _2));
     editor->signalShowLookupTable ().connect (
-        bind (&PinyinEngine::showLookupTable, this));
+        std::bind (&PinyinEngine::showLookupTable, this));
     editor->signalHideLookupTable ().connect (
-        bind (&PinyinEngine::hideLookupTable, this));
+        std::bind (&PinyinEngine::hideLookupTable, this));
 }
 
 };

@@ -105,10 +105,15 @@ ibus_engine_pinyin_h_sources = \
 	PYText.h \
 	PYTypes.h \
 	PYUtil.h \
+	PYEnglishEditor.h \
 	$(NULL)
 
 if IBUS_BUILD_LUA_EXTENSION
 ibus_engine_pinyin_c_sources += PYExtEditor.cc
+endif
+
+if IBUS_BUILD_ENGLISH_INPUT_MODE
+ibus_engine_pinyin_c_sources += PYEnglishEditor.cc
 endif
 
 ibus_engine_pinyin_SOURCES = \
@@ -117,15 +122,26 @@ ibus_engine_pinyin_SOURCES = \
 	$(ibus_engine_pinyin_built_c_sources) \
 	$(ibus_engine_pinyin_built_h_sources) \
 	$(NULL)
+
+
 ibus_engine_pinyin_CXXFLAGS = \
 	@IBUS_CFLAGS@ \
 	@SQLITE_CFLAGS@ \
-	@BOOST_CPPFLAGS@ \
 	@OPENCC_CFLAGS@ \
 	-DGETTEXT_PACKAGE=\"@GETTEXT_PACKAGE@\" \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	-DLIBEXECDIR=\"$(libexecdir)\" \
 	$(NULL)
+
+if HAVE_BOOST
+ibus_engine_pinyin_CXXFLAGS += \
+	@BOOST_CPPFLAGS@ \
+	$(NULL)
+else
+ibus_engine_pinyin_CXXFLAGS += \
+	-std=c++0x \
+	$(NULL)
+endif
 
 ibus_engine_pinyin_LDADD = \
 	@IBUS_LIBS@ \
@@ -154,16 +170,11 @@ if IBUS_BUILD_LUA_EXTENSION
 	$(NULL)
 endif
 
-
-# if HAVE_BOOST_SIGNALS2
-# # do nothing
-# else
-# ibus_engine_pinyin_CXXFLAGS += $(LIBUUID_CFLAGS)
-# ibus_engine_pinyin_LDADD += \
-# 	$(BOOST_SIGNALS_LDFLAGS) \
-# 	$(BOOST_SIGNALS_LIBS) \
-# 	$(NULL)
-# endif
+if IBUS_BUILD_ENGLISH_INPUT_MODE
+   ibus_engine_pinyin_CXXFLAGS += \
+	-DIBUS_BUILD_ENGLISH_INPUT_MODE \
+	$(NULL)
+endif
 
 BUILT_SOURCES = \
 	$(ibus_engine_built_c_sources) \
@@ -190,16 +201,24 @@ CLEANFILES = \
 	$(NULL)
 
 PYBopomofoKeyboard.h:
-	$(PYTHON) $(top_srcdir)/scripts/genbopomofokeyboard.py > $@
+	$(AM_V_GEN) \
+	$(PYTHON) $(top_srcdir)/scripts/genbopomofokeyboard.py > $@ || \
+		( $(RM) $@; exit 1 )
 
 PYPinyinParserTable.h:
-	$(PYTHON) $(top_srcdir)/scripts/genpytable.py > $@
+	$(AM_V_GEN) \
+	$(PYTHON) $(top_srcdir)/scripts/genpytable.py > $@ || \
+		( $(RM) $@; exit 1 )
 
 PYPunctTable.h:
-	$(PYTHON) $(top_srcdir)/scripts/genpuncttable.py > $@
+	$(AM_V_GEN) \
+	$(PYTHON) $(top_srcdir)/scripts/genpuncttable.py > $@ || \
+		( $(RM) $@; exit 1 )
 
 PYSimpTradConverterTable.h:
-	$(PYTHON) $(top_srcdir)/scripts/update-simptrad-table.py > $@
+	$(AM_V_GEN) \
+	$(PYTHON) $(top_srcdir)/scripts/update-simptrad-table.py > $@ || \
+		( $(RM) $@; exit 1 )
 
 update-simptrad-table:
 	$(RM) ZhConversion.php ZhConversion.py PYSimpTradConverterTable.h
@@ -224,10 +243,13 @@ test: ibus-engine-pinyin
 # test: ibus-engine-pinyin
 # 	$(ENV) G_DEBUG=fatal_warnings \
 # 	$(builddir)/ibus-engine-pinyin
-
 ZhConversion.php:
-	svn cat http://svn.wikimedia.org/svnroot/mediawiki/trunk/phase3/includes/ZhConversion.php > $@
+	$(AM_V_GEN) \
+	svn cat http://svn.wikimedia.org/svnroot/mediawiki/trunk/phase3/includes/ZhConversion.php > $@ || \
+		( $(RM) $@; exit 1 )
 
 ZhConversion.py: ZhConversion.php
-	php $(top_srcdir)/scripts/php_2_py.php > $@
+	$(AM_V_GEN) \
+	php $(top_srcdir)/scripts/php_2_py.php > $@ || \
+		( $(RM) $@; exit 1 )
 

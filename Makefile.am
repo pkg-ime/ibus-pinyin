@@ -80,11 +80,12 @@ srpm: dist @PACKAGE_NAME@.spec
 debian/changelog:
 	$(AM_V_GEN) \
 	( \
+		. /etc/lsb-release; \
 		date=`date -R`; \
 		version=@VERSION@; \
 		serie=$(serie); \
 		if test -z "$$serie"; then \
-		  serie=lucid; \
+		  serie=$$DISTRIB_CODENAME; \
 		fi; \
 		if test -z "$$release"; then \
 		  release=1; \
@@ -97,12 +98,25 @@ ppa: dist debian/changelog
 	$(AM_V_GEN) \
 	( \
 		mkdir ppa; \
+		cp $(distdir).tar.gz ppa/@PACKAGE_NAME@_@PACKAGE_VERSION@.orig.tar.gz ; \
 		cd ppa; \
 		tar zxvf ../$(distdir).tar.gz ; \
 		cd $(distdir); \
 		cp -a ../../debian . ; \
 		cd debian; \
 		debuild -S -sa ; \
+	)
+
+dpkg: dist debian/changelog
+	$(AM_V_GEN) \
+	( \
+		mkdir ppa; \
+		cd ppa; \
+		tar zxvf ../$(distdir).tar.gz ; \
+		cd $(distdir); \
+		cp -a ../../debian . ; \
+		cd debian; \
+		debuild -b -uc -us; \
 	)
 
 upload: dist
