@@ -4,7 +4,3 @@
 
 override_dh_auto_configure:
 	dh_auto_configure -- --enable-opencc
-override_dh_install:
-	mkdir -p $(CURDIR)/debian/tmp/usr/share/ibus-pinyin/db
-	ln -sf /usr/share/pinyin-database/main.db $(CURDIR)/debian/tmp/usr/share/ibus-pinyin/db/open-phrase.db
-	dh_install
