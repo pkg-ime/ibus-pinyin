@@ -4,3 +4,8 @@
 
 override_dh_auto_configure:
 	dh_auto_configure -- --enable-opencc
+
+override_dh_auto_clean:
+	rm -f data/db/android/*.pyc
+	dh_auto_clean
+
