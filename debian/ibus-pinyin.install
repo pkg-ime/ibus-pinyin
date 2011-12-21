@@ -4,4 +4,6 @@ usr/share/locale
 usr/share/ibus-pinyin/icons
 usr/share/ibus-pinyin/setup
 usr/share/ibus-pinyin/phrases.txt
-
+usr/share/ibus-pinyin/base.lua
+usr/share/ibus-pinyin/db/create_index.sql
+usr/share/ibus-pinyin/db/english.db
