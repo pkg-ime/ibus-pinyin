@@ -1,6 +1,5 @@
 ibus-pinyin (1.3.99.20110706-2) unstable; urgency=low
 
-  * Non-maintainer upload.
   * Install missing files. Closes: #646341
   * Remove useless lintian override file.
   * Use dh_link to make symlink properly. 
