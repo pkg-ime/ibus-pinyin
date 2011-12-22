@@ -18,4 +18,4 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 def get_version():
-    return "1.3.99.20110706"
+    return "1.4.0"

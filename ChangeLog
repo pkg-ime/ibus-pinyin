@@ -1,3 +1,43 @@
+commit 0e658c782158a8973bd2e6f3ae6c627daf7d191a
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-12-20 22:19:56 -0500
+
+    Bump version for 1.4.0 release.
+    
+    BUG=None
+    TEST=make distcheck
+    
+    Review URL: http://codereview.appspot.com/5498057
+
+M	configure.ac
+
+commit b88b7d0e6a53576ee38424412ade2550c7323ad8
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-10-28 14:11:33 -0400
+
+    Fix some issues which may cause crash likely.
+    
+    BUG=http://code.google.com/p/ibus/issues/detail?id=1325
+    TEST=Manually
+    
+    Review URL: http://codereview.appspot.com/5298065
+
+M	src/PYEnglishEditor.cc
+M	src/PYEnglishEditor.h
+
+commit f736b49d4e0e424bf8fd2ef1786bec4539a066eb
+Author: Peng Huang <shawn.p.huang@gmail.com>
+Date:   2011-10-26 11:15:36 -0400
+
+    Exit if config component is not ready instead of crash.
+    
+    BUG=crash when ibus config is not ready
+    TEST=Linux desktop
+    
+    Review URL: http://codereview.appspot.com/5321054
+
+M	src/PYMain.cc
+
 commit cb5afea67473240d73f0c359c7dc6e553f87da14
 Author: Peng Huang <shawn.p.huang@gmail.com>
 Date:   2011-07-05 13:09:29 -0400
